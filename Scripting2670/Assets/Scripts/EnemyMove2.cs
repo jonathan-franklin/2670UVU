@@ -9,6 +9,7 @@ public class EnemyMove2 : MonoBehaviour {
 	private NavMeshAgent agent;
 	private Transform player;
 	void Awake () {
+		//change
 		agent = GetComponent<NavMeshAgent>();
 		SendToEnemy.SendTransform += SendTransformHandler;
 	}

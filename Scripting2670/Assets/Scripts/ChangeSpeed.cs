@@ -14,6 +14,7 @@ public class ChangeSpeed : MonoBehaviour {
 		
 		switch (speedType)
 		{
+			//change
 			case StaticVars.GameSpeed.DRAG:
 				SendSpeed(StaticVars.dragSpeed, StaticVars.dragGravity);
 				break;
