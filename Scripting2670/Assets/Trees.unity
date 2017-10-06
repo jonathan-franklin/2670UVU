@@ -1,0 +1,5964 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!29 &1
+OcclusionCullingSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_OcclusionBakeSettings:
+    smallestOccluder: 5
+    smallestHole: 0.25
+    backfaceThreshold: 100
+  m_SceneGUID: 00000000000000000000000000000000
+  m_OcclusionCullingData: {fileID: 0}
+--- !u!104 &2
+RenderSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 8
+  m_Fog: 0
+  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogMode: 3
+  m_FogDensity: 0.01
+  m_LinearFogStart: 0
+  m_LinearFogEnd: 300
+  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
+  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
+  m_AmbientIntensity: 1
+  m_AmbientMode: 0
+  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_HaloStrength: 0.5
+  m_FlareStrength: 1
+  m_FlareFadeSpeed: 3
+  m_HaloTexture: {fileID: 0}
+  m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
+  m_DefaultReflectionMode: 0
+  m_DefaultReflectionResolution: 128
+  m_ReflectionBounces: 1
+  m_ReflectionIntensity: 1
+  m_CustomReflection: {fileID: 0}
+  m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+--- !u!157 &3
+LightmapSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 11
+  m_GIWorkflowMode: 0
+  m_GISettings:
+    serializedVersion: 2
+    m_BounceScale: 1
+    m_IndirectOutputScale: 1
+    m_AlbedoBoost: 1
+    m_TemporalCoherenceThreshold: 1
+    m_EnvironmentLightingMode: 0
+    m_EnableBakedLightmaps: 1
+    m_EnableRealtimeLightmaps: 1
+  m_LightmapEditorSettings:
+    serializedVersion: 9
+    m_Resolution: 2
+    m_BakeResolution: 40
+    m_TextureWidth: 1024
+    m_TextureHeight: 1024
+    m_AO: 0
+    m_AOMaxDistance: 1
+    m_CompAOExponent: 1
+    m_CompAOExponentDirect: 0
+    m_Padding: 2
+    m_LightmapParameters: {fileID: 0}
+    m_LightmapsBakeMode: 1
+    m_TextureCompression: 1
+    m_FinalGather: 0
+    m_FinalGatherFiltering: 1
+    m_FinalGatherRayCount: 256
+    m_ReflectionCompression: 2
+    m_MixedBakeMode: 2
+    m_BakeBackend: 0
+    m_PVRSampling: 1
+    m_PVRDirectSampleCount: 32
+    m_PVRSampleCount: 500
+    m_PVRBounces: 2
+    m_PVRFiltering: 0
+    m_PVRFilteringMode: 1
+    m_PVRCulling: 1
+    m_PVRFilteringGaussRadiusDirect: 1
+    m_PVRFilteringGaussRadiusIndirect: 5
+    m_PVRFilteringGaussRadiusAO: 2
+    m_PVRFilteringAtrousColorSigma: 1
+    m_PVRFilteringAtrousNormalSigma: 1
+    m_PVRFilteringAtrousPositionSigma: 1
+  m_LightingDataAsset: {fileID: 0}
+  m_UseShadowmask: 1
+--- !u!196 &4
+NavMeshSettings:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_BuildSettings:
+    serializedVersion: 2
+    agentTypeID: 0
+    agentRadius: 0.5
+    agentHeight: 2
+    agentSlope: 45
+    agentClimb: 0.4
+    ledgeDropHeight: 0
+    maxJumpAcrossDistance: 0
+    minRegionArea: 2
+    manualCellSize: 0
+    cellSize: 0.16666667
+    manualTileSize: 0
+    tileSize: 256
+    accuratePlacement: 0
+  m_NavMeshData: {fileID: 0}
+--- !u!1 &240296979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 240296981}
+  - component: {fileID: 240296980}
+  m_Layer: 0
+  m_Name: tube_object1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &240296980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 240296979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff99a095fe19b134ba65828c84ebb09e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAssetId: 5
+  myNodeId: 6
+  myObjectNodeId: 6
+  myAsset: {fileID: 1555827815}
+  myObjectId: 6
+  myObjectName: tube_object1
+  myObjectVisible: 1
+  myObjectInfo:
+    hasTransformChanged: 0
+    haveGeosChanged: 0
+    isVisible: 0
+    isInstancer: 0
+    isInstanced: 0
+    geoCount: 0
+    nodeId: -1
+    objectToInstanceId: 0
+  myGeos:
+  - {fileID: 1213316539}
+--- !u!4 &240296981
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 240296979}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.02}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1213316541}
+  m_Father: {fileID: 1555827816}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &339136314
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 339136316}
+  - component: {fileID: 339136315}
+  m_Layer: 0
+  m_Name: tube_object1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &339136315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 339136314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff99a095fe19b134ba65828c84ebb09e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAssetId: 0
+  myNodeId: 3
+  myObjectNodeId: 3
+  myAsset: {fileID: 868835118}
+  myObjectId: 3
+  myObjectName: tube_object1
+  myObjectVisible: 1
+  myObjectInfo:
+    hasTransformChanged: 0
+    haveGeosChanged: 0
+    isVisible: 0
+    isInstancer: 0
+    isInstanced: 0
+    geoCount: 0
+    nodeId: -1
+    objectToInstanceId: 0
+  myGeos:
+  - {fileID: 1659500930}
+--- !u!4 &339136316
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 339136314}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1659500932}
+  m_Father: {fileID: 868835119}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &527967192
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 527967194}
+  - component: {fileID: 527967193}
+  m_Layer: 0
+  m_Name: Ungrouped_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &527967193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 527967192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c5421560b7d6a6409dc540526667811, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAssetId: 0
+  myNodeId: -1
+  myObjectNodeId: 3
+  myAsset: {fileID: 868835118}
+  myObjectId: 3
+  myObjectName: tube_object1
+  myObjectVisible: 1
+  myObjectInfo:
+    hasTransformChanged: 0
+    haveGeosChanged: 0
+    isVisible: 0
+    isInstancer: 0
+    isInstanced: 0
+    geoCount: 0
+    nodeId: -1
+    objectToInstanceId: 0
+  myGeos: []
+  myGeoId: 4
+  myGeoName: mountain1
+  myGeoType: 0
+  myIsEditable: 0
+  myIsDisplay: 1
+  myObjectControl: {fileID: 339136315}
+  myGeoAttributeManager: {fileID: 0}
+  myParts: []
+  myPartId: 1
+  myPartName: Ungrouped_1
+  myPartType: 0
+  myMaterialId: -1
+  myVertexList: 00000000
+  myLastLocalToWorld:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: -0.93
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  myTransformChanged: 1
+  myShowDisplayOptions: 1
+  myShowPointNumbers: 0
+  myShowPointGroup: 0
+  mySelectedPointGroup: 
+  myShowPrimitiveGroup: 0
+  mySelectedPrimitiveGroup: 
+  myShowIntermediateResultControls: 0
+  myShowInfo: 0
+  myGeoControl: {fileID: 1659500931}
+--- !u!4 &527967194
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 527967192}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1659500932}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &856621496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd2db8917335237438c5919ad082f019, type: 3}
+  m_Name: Tree2_UndoInfo
+  m_EditorClassIdentifier: 
+  isGeoVisible: 1
+  showPinnedInstances: 1
+  showOnlyVertexColours: 0
+  generateUVs: 0
+  generateLightmapUV2s: 0
+  generateTangents: 1
+  enableCooking: 1
+  cookingTriggersDownCooks: 1
+  playmodePerFrameCooking: 0
+  pushUnityTransformToHoudini: 1
+  transformChangeTriggersCooks: 0
+  importTemplatedGeos: 0
+  splitGeosByGroupOverride: 0
+  splitGeosByGroup: 1
+  splitPointsGeosByGroupOverride: 0
+  splitPointsByVertexAttribute: 1
+  splitPointsByVertexAttributeOverride: 0
+  omitPartNameEnumeration: 0
+  bakeStartTime: 0
+  bakeEndTime: 1
+  bakeSamplesPerSecond: 30
+--- !u!1 &868835116
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 868835119}
+  - component: {fileID: 868835118}
+  - component: {fileID: 868835117}
+  m_Layer: 0
+  m_Name: Tree1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &868835117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 868835116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d50d11faa64faa243b8964c758f67fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myControl: {fileID: 868835118}
+  myEditable: 1
+  myParmCount: 43
+  myParmIntValueCount: 14
+  myParmFloatValueCount: 30
+  myprParmStringValueCoun: 12
+  myprParmChoiceCount: 46
+  myParms:
+  - id: 0
+    parentId: -1
+    childIndex: 0
+    type: 11
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 2
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 0
+    floatValuesIndex: 0
+    stringValuesIndex: 0
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 1
+    parentId: -1
+    childIndex: 1
+    type: 13
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 22
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 0
+    floatValuesIndex: 0
+    stringValuesIndex: 0
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 2
+    parentId: -1
+    childIndex: 2
+    type: 13
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 13
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 0
+    floatValuesIndex: 0
+    stringValuesIndex: 0
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 3
+    parentId: 1
+    childIndex: 0
+    type: 0
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 6
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 1
+    labelNone: 0
+    intValuesIndex: 0
+    floatValuesIndex: 0
+    stringValuesIndex: 0
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 4
+    parentId: 1
+    childIndex: 1
+    type: 0
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 6
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 1
+    floatValuesIndex: 0
+    stringValuesIndex: 0
+    choiceIndex: 6
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 5
+    parentId: 1
+    childIndex: 2
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 4
+    size: 3
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 2
+    floatValuesIndex: 0
+    stringValuesIndex: 0
+    choiceIndex: 12
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 6
+    parentId: 1
+    childIndex: 3
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 4
+    size: 3
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 360
+    UIMin: 0
+    UIMax: 360
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 2
+    floatValuesIndex: 3
+    stringValuesIndex: 0
+    choiceIndex: 12
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 7
+    parentId: 1
+    childIndex: 4
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 4
+    size: 3
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 2
+    floatValuesIndex: 6
+    stringValuesIndex: 0
+    choiceIndex: 12
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 8
+    parentId: 1
+    childIndex: 5
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 3
+    size: 3
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 2
+    floatValuesIndex: 9
+    stringValuesIndex: 0
+    choiceIndex: 12
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 9
+    parentId: 1
+    childIndex: 6
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 2
+    floatValuesIndex: 12
+    stringValuesIndex: 0
+    choiceIndex: 12
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 10
+    parentId: 1
+    childIndex: 7
+    type: 3
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 6
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 2
+    floatValuesIndex: 13
+    stringValuesIndex: 0
+    choiceIndex: 12
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 11
+    parentId: 1
+    childIndex: 8
+    type: 2
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 2
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 3
+    floatValuesIndex: 13
+    stringValuesIndex: 0
+    choiceIndex: 18
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 12
+    parentId: 1
+    childIndex: 9
+    type: 2
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 2
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 4
+    floatValuesIndex: 13
+    stringValuesIndex: 0
+    choiceIndex: 20
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 13
+    parentId: 1
+    childIndex: 10
+    type: 2
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 2
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 5
+    floatValuesIndex: 13
+    stringValuesIndex: 0
+    choiceIndex: 22
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 14
+    parentId: 1
+    childIndex: 11
+    type: 10
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 5
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 1
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 6
+    floatValuesIndex: 13
+    stringValuesIndex: 0
+    choiceIndex: 24
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 15
+    parentId: 1
+    childIndex: 12
+    type: 10
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 2
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 1
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 6
+    floatValuesIndex: 13
+    stringValuesIndex: 1
+    choiceIndex: 24
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 16
+    parentId: 1
+    childIndex: 13
+    type: 10
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 2
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 1
+    disabled: 1
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 6
+    floatValuesIndex: 13
+    stringValuesIndex: 2
+    choiceIndex: 24
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 17
+    parentId: 1
+    childIndex: 14
+    type: 6
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 5
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 1
+    disabled: 1
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 6
+    floatValuesIndex: 13
+    stringValuesIndex: 3
+    choiceIndex: 24
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 18
+    parentId: 1
+    childIndex: 15
+    type: 10
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 2
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 1
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 6
+    floatValuesIndex: 13
+    stringValuesIndex: 4
+    choiceIndex: 29
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 19
+    parentId: 1
+    childIndex: 16
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: -360
+    max: 360
+    UIMin: -360
+    UIMax: 360
+    invisible: 1
+    disabled: 1
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 6
+    floatValuesIndex: 13
+    stringValuesIndex: 5
+    choiceIndex: 29
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 20
+    parentId: 1
+    childIndex: 17
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 1
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 1
+    disabled: 1
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 6
+    floatValuesIndex: 14
+    stringValuesIndex: 5
+    choiceIndex: 29
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 21
+    parentId: 1
+    childIndex: 18
+    type: 0
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 2
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 1
+    disabled: 1
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 6
+    floatValuesIndex: 15
+    stringValuesIndex: 5
+    choiceIndex: 29
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 22
+    parentId: 1
+    childIndex: 19
+    type: 0
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 1
+    UIMin: 0
+    UIMax: 1
+    invisible: 1
+    disabled: 1
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 7
+    floatValuesIndex: 15
+    stringValuesIndex: 5
+    choiceIndex: 31
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 23
+    parentId: 1
+    childIndex: 20
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 3
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 1
+    disabled: 1
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 8
+    floatValuesIndex: 15
+    stringValuesIndex: 5
+    choiceIndex: 31
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 24
+    parentId: 1
+    childIndex: 21
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: -1
+    max: 1
+    UIMin: -1
+    UIMax: 1
+    invisible: 1
+    disabled: 1
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 8
+    floatValuesIndex: 18
+    stringValuesIndex: 5
+    choiceIndex: 31
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 25
+    parentId: 2
+    childIndex: 0
+    type: 6
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 1
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 8
+    floatValuesIndex: 19
+    stringValuesIndex: 5
+    choiceIndex: 31
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 26
+    parentId: 2
+    childIndex: 1
+    type: 6
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 1
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 8
+    floatValuesIndex: 19
+    stringValuesIndex: 6
+    choiceIndex: 31
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 27
+    parentId: 2
+    childIndex: 2
+    type: 6
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 1
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 8
+    floatValuesIndex: 19
+    stringValuesIndex: 7
+    choiceIndex: 31
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 28
+    parentId: 2
+    childIndex: 3
+    type: 6
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 1
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 8
+    floatValuesIndex: 19
+    stringValuesIndex: 8
+    choiceIndex: 31
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 29
+    parentId: 2
+    childIndex: 4
+    type: 2
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 2
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 1
+    labelNone: 1
+    intValuesIndex: 8
+    floatValuesIndex: 19
+    stringValuesIndex: 9
+    choiceIndex: 31
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 30
+    parentId: 2
+    childIndex: 5
+    type: 0
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 1
+    hasMax: 1
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 1
+    UIMin: 0
+    UIMax: 1
+    invisible: 0
+    disabled: 1
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 9
+    floatValuesIndex: 19
+    stringValuesIndex: 9
+    choiceIndex: 33
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 31
+    parentId: 2
+    childIndex: 6
+    type: 6
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 7
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 10
+    floatValuesIndex: 19
+    stringValuesIndex: 9
+    choiceIndex: 33
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 32
+    parentId: 2
+    childIndex: 7
+    type: 6
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 2
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 10
+    floatValuesIndex: 19
+    stringValuesIndex: 10
+    choiceIndex: 40
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 33
+    parentId: 2
+    childIndex: 8
+    type: 2
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 2
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 10
+    floatValuesIndex: 19
+    stringValuesIndex: 11
+    choiceIndex: 40
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 34
+    parentId: 2
+    childIndex: 9
+    type: 7
+    typeInfoSH: 224
+    permissions: 2
+    tagCount: 1
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 11
+    floatValuesIndex: 19
+    stringValuesIndex: 11
+    choiceIndex: 42
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 35
+    parentId: 2
+    childIndex: 10
+    type: 2
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 2
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 11
+    floatValuesIndex: 19
+    stringValuesIndex: 12
+    choiceIndex: 42
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 36
+    parentId: 2
+    childIndex: 11
+    type: 2
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 2
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 1
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 12
+    floatValuesIndex: 19
+    stringValuesIndex: 12
+    choiceIndex: 44
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 37
+    parentId: 2
+    childIndex: 12
+    type: 5
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 3
+    choiceCount: 0
+    hasMin: 1
+    hasMax: 1
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 1
+    UIMin: 0
+    UIMax: 1
+    invisible: 1
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 13
+    floatValuesIndex: 19
+    stringValuesIndex: 12
+    choiceIndex: 46
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 38
+    parentId: -1
+    childIndex: 36
+    type: 0
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 1
+    size: 1
+    choiceCount: 0
+    hasMin: 1
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 1
+    max: 20
+    UIMin: 1
+    UIMax: 20
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 13
+    floatValuesIndex: 22
+    stringValuesIndex: 12
+    choiceIndex: 46
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 39
+    parentId: -1
+    childIndex: 37
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 3
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 14
+    floatValuesIndex: 22
+    stringValuesIndex: 12
+    choiceIndex: 46
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 40
+    parentId: -1
+    childIndex: 38
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 3
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 4
+    UIMin: 0
+    UIMax: 4
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 14
+    floatValuesIndex: 23
+    stringValuesIndex: 12
+    choiceIndex: 46
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 41
+    parentId: -1
+    childIndex: 39
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 1
+    size: 3
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: -1
+    max: 1
+    UIMin: -1
+    UIMax: 1
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 14
+    floatValuesIndex: 24
+    stringValuesIndex: 12
+    choiceIndex: 46
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 42
+    parentId: -1
+    childIndex: 40
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 1
+    size: 3
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: -1
+    max: 1
+    UIMin: -1
+    UIMax: 1
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 14
+    floatValuesIndex: 27
+    stringValuesIndex: 12
+    choiceIndex: 46
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  myParmIntValues: 000000000000000000000000000000000000000000000000010000000100000000000000010000000100000001000000010000000a000000
+  myParmFloatValues:
+  - 0
+  - 0
+  - -0.93
+  - 0
+  - -0
+  - 0
+  - 1
+  - 1
+  - 1
+  - 0
+  - 0
+  - 0
+  - 1
+  - 0
+  - 0
+  - 0
+  - 1
+  - 0
+  - 0
+  - 1
+  - 1
+  - 1
+  - 1.5
+  - 1.4528571
+  - 0.9
+  - 1.1
+  - 0.9
+  - 0
+  - 0.5
+  - 0
+  myParmStringHandles: be0100007f010000e6010000e7010000e4010000e5010000ea010000eb010000e8010000e9010000fc010000fd010000
+  myParmChoiceLists:
+  - parentParmId: 3
+  - parentParmId: 3
+  - parentParmId: 3
+  - parentParmId: 3
+  - parentParmId: 3
+  - parentParmId: 3
+  - parentParmId: 4
+  - parentParmId: 4
+  - parentParmId: 4
+  - parentParmId: 4
+  - parentParmId: 4
+  - parentParmId: 4
+  - parentParmId: 10
+  - parentParmId: 10
+  - parentParmId: 10
+  - parentParmId: 10
+  - parentParmId: 10
+  - parentParmId: 10
+  - parentParmId: 11
+  - parentParmId: 11
+  - parentParmId: 12
+  - parentParmId: 12
+  - parentParmId: 13
+  - parentParmId: 13
+  - parentParmId: 17
+  - parentParmId: 17
+  - parentParmId: 17
+  - parentParmId: 17
+  - parentParmId: 17
+  - parentParmId: 21
+  - parentParmId: 21
+  - parentParmId: 29
+  - parentParmId: 29
+  - parentParmId: 31
+  - parentParmId: 31
+  - parentParmId: 31
+  - parentParmId: 31
+  - parentParmId: 31
+  - parentParmId: 31
+  - parentParmId: 31
+  - parentParmId: 33
+  - parentParmId: 33
+  - parentParmId: 35
+  - parentParmId: 35
+  - parentParmId: 36
+  - parentParmId: 36
+  myParmInfoStrings:
+  - typeInfo: 
+    name: stdswitcher3
+    label: 
+    templateName: 
+    help: 
+  - typeInfo: 
+    name: stdswitcher3_0
+    label: Transform
+    templateName: stdswitcher3_0
+    help: 
+  - typeInfo: 
+    name: stdswitcher3_1
+    label: Subnet
+    templateName: stdswitcher3_1
+    help: 
+  - typeInfo: 
+    name: xOrd
+    label: Transform Order
+    templateName: xOrd
+    help: 
+  - typeInfo: 
+    name: rOrd
+    label: Rotate Order
+    templateName: rOrd
+    help: 
+  - typeInfo: 
+    name: t
+    label: Translate
+    templateName: t
+    help: 
+  - typeInfo: 
+    name: r
+    label: Rotate
+    templateName: r
+    help: 
+  - typeInfo: 
+    name: s
+    label: Scale
+    templateName: s
+    help: 
+  - typeInfo: 
+    name: p
+    label: Pivot
+    templateName: p
+    help: 
+  - typeInfo: 
+    name: scale
+    label: Uniform Scale
+    templateName: scale
+    help: 
+  - typeInfo: 
+    name: pre_xform
+    label: Modify Pre-Transform
+    templateName: pre_xform
+    help: 
+  - typeInfo: 
+    name: keeppos
+    label: Keep Position When Parenting
+    templateName: keeppos
+    help: 
+  - typeInfo: 
+    name: childcomp
+    label: Child Compensation
+    templateName: childcomp
+    help: 
+  - typeInfo: 
+    name: constraints_on
+    label: Enable Constraints
+    templateName: constraints_on
+    help: 
+  - typeInfo: 
+    name: constraints_path
+    label: Constraints
+    templateName: constraints_path
+    help: 
+  - typeInfo: 
+    name: lookatpath
+    label: Look At
+    templateName: lookatpath
+    help: 
+  - typeInfo: 
+    name: lookupobjpath
+    label: Look Up Object
+    templateName: lookupobjpath
+    help: 
+  - typeInfo: 
+    name: lookup
+    label: Look At Up Vector
+    templateName: lookup
+    help: 
+  - typeInfo: 
+    name: pathobjpath
+    label: Path Object
+    templateName: pathobjpath
+    help: 
+  - typeInfo: 
+    name: roll
+    label: Roll
+    templateName: roll
+    help: 
+  - typeInfo: 
+    name: pos
+    label: Position
+    templateName: pos
+    help: 
+  - typeInfo: 
+    name: uparmtype
+    label: Parameterization
+    templateName: uparmtype
+    help: 
+  - typeInfo: 
+    name: pathorient
+    label: Orient Along Path
+    templateName: pathorient
+    help: 
+  - typeInfo: 
+    name: up
+    label: Orient Up Vector
+    templateName: up
+    help: 
+  - typeInfo: 
+    name: bank
+    label: Auto-Bank factor
+    templateName: bank
+    help: 
+  - typeInfo: 
+    name: label1
+    label: 'Input #1 Label'
+    templateName: label1
+    help: 
+  - typeInfo: 
+    name: label2
+    label: 'Input #2 Label'
+    templateName: label2
+    help: 
+  - typeInfo: 
+    name: label3
+    label: 'Input #3 Label'
+    templateName: label3
+    help: 
+  - typeInfo: 
+    name: label4
+    label: 'Input #4 Label'
+    templateName: label4
+    help: 
+  - typeInfo: 
+    name: tdisplay
+    label: Display
+    templateName: tdisplay
+    help: 
+  - typeInfo: 
+    name: display
+    label: Display
+    templateName: display
+    help: 
+  - typeInfo: 
+    name: outputobj
+    label: Output Transform
+    templateName: outputobj
+    help: 
+  - typeInfo: 
+    name: visibleobjects
+    label: Visible Children
+    templateName: visibleobjects
+    help: 
+  - typeInfo: 
+    name: picking
+    label: Viewport Selecting Enabled
+    templateName: picking
+    help: 
+  - typeInfo: 
+    name: pickscript
+    label: Select Script
+    templateName: pickscript
+    help: 
+  - typeInfo: 
+    name: caching
+    label: Cache Object Transform
+    templateName: caching
+    help: 
+  - typeInfo: 
+    name: use_dcolor
+    label: Set Wireframe Color
+    templateName: use_dcolor
+    help: 
+  - typeInfo: 
+    name: dcolor
+    label: Wireframe Color
+    templateName: dcolor
+    help: 
+  - typeInfo: 
+    name: TreeSections
+    label: Tree Sections
+    templateName: TreeSections
+    help: 
+  - typeInfo: 
+    name: TreeRoughnessScale
+    label: Roughness Scale
+    templateName: TreeRoughnessScale
+    help: 
+  - typeInfo: 
+    name: TreeRoughness
+    label: Roughness
+    templateName: TreeRoughness
+    help: 
+  - typeInfo: 
+    name: s2
+    label: TreeScale
+    templateName: s2
+    help: 
+  - typeInfo: 
+    name: t2
+    label: TreeHeight
+    templateName: t2
+    help: 
+  myParmInputs:
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  myParmChoiceInfoStrings:
+  - label: Scale Rot Trans
+    value: srt
+  - label: Scale Trans Rot
+    value: str
+  - label: Rot Scale Trans
+    value: rst
+  - label: Rot Trans Scale
+    value: rts
+  - label: Trans Scale Rot
+    value: tsr
+  - label: Trans Rot Scale
+    value: trs
+  - label: Rx Ry Rz
+    value: xyz
+  - label: Rx Rz Ry
+    value: xzy
+  - label: Ry Rx Rz
+    value: yxz
+  - label: Ry Rz Rx
+    value: yzx
+  - label: Rz Rx Ry
+    value: zxy
+  - label: Rz Ry Rx
+    value: zyx
+  - label: Clean Transform
+    value: clean
+  - label: Clean Translates
+    value: cleantrans
+  - label: Clean Rotates
+    value: cleanrot
+  - label: Clean Scales
+    value: cleanscales
+  - label: Extract Pre-transform
+    value: extract
+  - label: Reset Pre-transform
+    value: reset
+  - label: off
+    value: off
+  - label: on
+    value: on
+  - label: off
+    value: off
+  - label: on
+    value: on
+  - label: off
+    value: off
+  - label: on
+    value: on
+  - label: Don't Use Up Vector
+    value: off
+  - label: Use Up Vector
+    value: on
+  - label: Use Quaternions
+    value: quat
+  - label: Use Global Position
+    value: pos
+  - label: Use Up Object
+    value: obj
+  - label: Uniform
+    value: uniform
+  - label: Arc Length
+    value: arc
+  - label: off
+    value: off
+  - label: on
+    value: on
+  - label: No Object
+    value: 
+  - label: Input Object 1
+    value: _input1_obj_
+  - label: Input Object 2
+    value: _input2_obj_
+  - label: Input Object 3
+    value: _input3_obj_
+  - label: Input Object 4
+    value: _input4_obj_
+  - label: _separator_
+    value: _separator_
+  - label: tube_object1
+    value: tube_object1
+  - label: off
+    value: off
+  - label: on
+    value: on
+  - label: off
+    value: off
+  - label: on
+    value: on
+  - label: off
+    value: off
+  - label: on
+    value: on
+  myParmStringValues:
+  - 
+  - 
+  - 
+  - on
+  - 
+  - 'Sub-Network Input #1'
+  - 'Sub-Network Input #2'
+  - 'Sub-Network Input #3'
+  - 'Sub-Network Input #4'
+  - _input1_obj_
+  - '*'
+  - 
+  myLastChangedParmId: -1
+  myParmsUndoInfo: {fileID: 1707908576}
+  myFolderListSelections: 0000000000000000
+  myFolderListSelectionIds: ffffffffffffffff
+--- !u!114 &868835118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 868835116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f0b6aed776866648abb28f3e8379991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAssetId: 0
+  myNodeId: 0
+  myObjectNodeId: 0
+  myAsset: {fileID: 868835118}
+  myObjectId: -1
+  myObjectName: object_name
+  myObjectVisible: 0
+  myObjectInfo:
+    hasTransformChanged: 0
+    haveGeosChanged: 0
+    isVisible: 0
+    isInstancer: 0
+    isInstanced: 0
+    geoCount: 0
+    nodeId: -1
+    objectToInstanceId: 0
+  myGeos: []
+  myNodeInfo:
+    id: 0
+    parentId: 2
+    nameSH: 7
+    type: 1
+    isValid: 1
+    totalCookCount: 1
+    uniqueHoudiniNodeId: 13
+    parmCount: 43
+    parmIntValueCount: 14
+    parmFloatValueCount: 30
+    parmStringValueCount: 12
+    parmChoiceCount: 46
+    childNodeCount: 1
+    inputCount: 0
+    createdPostAssetLoad: 1
+  myPreset: 235053495f5052455345540a76657273696f6e20322e30610a6f7076616c7565730a7b0a76657273696f6e20302e380a7374647377697463686572095b2030096c6f636b733d30205d09280930093009290a784f7264095b2030096c6f636b733d30205d092809227372742209290a724f7264095b2030096c6f636b733d30205d0928092278797a2209290a74095b2030096c6f636b733d30205d092809300930092d302e393330303030303037313532353537333709290a72095b2030096c6f636b733d30205d09280930092d30093009290a73095b2030096c6f636b733d30205d092809310931093109290a70095b2030096c6f636b733d30205d092809300930093009290a7363616c65095b2030096c6f636b733d30205d0928093109290a7072655f78666f726d095b2030096c6f636b733d30205d0928093009290a6b656570706f73095b2030096c6f636b733d30205d092809226f66662209290a6368696c64636f6d70095b2030096c6f636b733d30205d092809226f66662209290a636f6e73747261696e74735f6f6e095b2030096c6f636b733d30205d092809226f66662209290a636f6e73747261696e74735f70617468095b2030096c6f636b733d30205d092809222209290a6c6f6f6b617470617468095b2030096c6f636b733d30205d092809222209290a6c6f6f6b75706f626a70617468095b2030096c6f636b733d30205d092809222209290a6c6f6f6b7570095b2030096c6f636b733d30205d0928096f6e09290a706174686f626a70617468095b2030096c6f636b733d30205d092809222209290a726f6c6c095b2030096c6f636b733d30205d0928093009290a706f73095b2030096c6f636b733d30205d0928093009290a757061726d74797065095b2030096c6f636b733d30205d092809226172632209290a706174686f7269656e74095b2030096c6f636b733d30205d0928093109290a7570095b2030096c6f636b733d30205d092809300931093009290a62616e6b095b2030096c6f636b733d30205d0928093009290a6c6162656c31095b2030096c6f636b733d30205d092809225375622d4e6574776f726b20496e7075742023312209290a6c6162656c32095b2030096c6f636b733d30205d092809225375622d4e6574776f726b20496e7075742023322209290a6c6162656c33095b2030096c6f636b733d30205d092809225375622d4e6574776f726b20496e7075742023332209290a6c6162656c34095b2030096c6f636b733d30205d092809225375622d4e6574776f726b20496e7075742023342209290a74646973706c6179095b2030096c6f636b733d30205d092809226f66662209290a646973706c6179095b2030096c6f636b733d30205d0928093109290a6f75747075746f626a095b2030096c6f636b733d30205d0928095f696e707574315f6f626a5f09290a76697369626c656f626a65637473095b2030096c6f636b733d30205d0928092a09290a7069636b696e67095b2030096c6f636b733d30205d092809226f6e2209290a7069636b736372697074095b2030096c6f636b733d30205d092809222209290a63616368696e67095b2030096c6f636b733d30205d092809226f6e2209290a7573655f64636f6c6f72095b2030096c6f636b733d30205d092809226f6e2209290a64636f6c6f72095b2030096c6f636b733d30205d092809310931093109290a737464737769746368657233095b2030096c6f636b733d30205d09280930093009290a5472656553656374696f6e73095b2030096c6f636b733d30205d092809313009290a54726565526f7567686e6573735363616c65095b2030096c6f636b733d30205d092809312e3509290a54726565526f7567686e657373095b2030096c6f636b733d30205d092809312e3435323835373133363732363337393409290a7332095b2030096c6f636b733d30205d092809302e393030303030303030303030303030303209312e3130303030303030303030303030303109302e393030303030303030303030303030303209290a7432095b2030096c6f636b733d30205d0928093009302e35093009290a7d0a
+  myAssetValidationId: 13
+  myAssetName: Tree1
+  myAssetOpName: Object/Tree
+  myAssetHelp: 
+  myAssetType: 0
+  myTransformInputCount: 0
+  myGeoInputCount: 0
+  myGeoInputsTransformTypes: 
+  myDownStreamTransformAssets: []
+  myUpStreamTransformAssets: []
+  myUpStreamTransformObjects: []
+  myUpStreamGeoAssets: []
+  myUpStreamGeoObjects: []
+  myUpStreamGeoInputAssetIds: 
+  myUpStreamGeoInputAssetValidationIds: 
+  myDownStreamAssets: []
+  myPresetsMap: {fileID: 0}
+  myObjectCount: 1
+  myHandleCount: 0
+  myGameObjects:
+  - {fileID: 339136314}
+  myGeoAttributeManagerMap: {fileID: 0}
+  myBakeStartTime: 0
+  myBakeEndTime: 1
+  myBakeSamplesPerSecond: 30
+  myShowHoudiniControls: 1
+  myShowCookLog: 0
+  myShowHelp: 0
+  myShowAssetSettings: 1
+  myShowBakeOptions: 0
+  myShowPaintTools: 0
+  myShowInputControls: 1
+  myAssetOptionsCategory: 0
+  myIsGeoVisible: 1
+  myShowPinnedInstances: 1
+  myShowOnlyVertexColours: 0
+  myGenerateUVs: 0
+  myGenerateLightmapUV2s: 0
+  myGenerateTangents: 1
+  myEnableCooking: 1
+  myCookingTriggersDownCooks: 1
+  myPlaymodePerFrameCooking: 0
+  myPushUnityTransformToHoudini: 1
+  myTransformChangeTriggersCooks: 0
+  myImportTemplatedGeos: 0
+  mySplitGeosByGroupOverride: 0
+  mySplitGeosByGroup: 1
+  mySplitPointsByVertexAttributesOverride: 0
+  mySplitPointsByVertexAttributes: 1
+  myOmitPartNameEnumeration: 0
+  myEnableLogging: 0
+  myTransInputNames: []
+  myGeoInputNames: []
+  myLastLocalToWorld:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: -0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: -0.93
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  myAssetOTLUndoInfo: {fileID: 1727218631}
+  myAssetPath: Assets/Houdini/Tree.hdanc
+  myActiveAttributeManager: {fileID: 0}
+  myEditPaintGeos: []
+  myHandleInfos: []
+--- !u!4 &868835119
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 868835116}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: -0.93}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 339136316}
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &938225446
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 938225448}
+  - component: {fileID: 938225447}
+  m_Layer: 0
+  m_Name: Directional Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &938225447
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 938225446}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 1
+  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &938225448
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 938225446}
+  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!43 &939086525
+Mesh:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: CONTROL/Tree2/tube_object1/mountain1/Ungrouped_0/Mesh
+  serializedVersion: 8
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 180
+    topology: 0
+    firstVertex: 0
+    vertexCount: 120
+    localAABB:
+      m_Center: {x: 0.0018315315, y: 1.6999474, z: -0.05375725}
+      m_Extent: {x: 1.0493433, y: 1.8252695, z: 1.0998628}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexBuffer: 00000d000c0000000e000d0000000f000e00000010000f0000001100100000001200110000001300120000001400130000001500140000001600150000001700160000000c00170018002500240018002600250018002700260018002800270018002900280018002a00290018002b002a0018002c002b0018002d002c0018002e002d0018002f002e00180024002f0030003d003c0030003e003d0030003f003e00300040003f0030004100400030004200410030004300420030004400430030004500440030004600450030004700460030003c00470048005500540048005600550048005700560048005800570048005900580048005a00590048005b005a0048005c005b0048005d005c0048005e005d0048005f005e00480054005f0060006d006c0060006e006d0060006f006e00600070006f0060007100700060007200710060007300720060007400730060007500740060007600750060007700760060006c007700
+  m_Skin: []
+  m_VertexData:
+    m_CurrentChannels: 143
+    m_VertexCount: 120
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 24
+      format: 2
+      dimension: 4
+    - stream: 0
+      offset: 28
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 36
+      format: 0
+      dimension: 4
+    m_DataSize: 6240
+    _typelessdata: 05bfd72f6b45713f1543cab03e64013d23ce7f3f2765bb3cffffffff000000000000000048df7fbfea6c013d000000000000803f000000800000803f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000800000803f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000800000803f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000800000803f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000800000803f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000800000803f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000800000803f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000800000803f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000800000803f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000800000803f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000800000803f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803fde1486bfb77d6cbd3aadb631fe4c30bfc5a3383faf4198bdffffffff0000000000000000ef2639bf3cca30bf000000000000803ffe446abf132a43bd6c4107bf08da1dbf02923a3f8b7398beffffffff0000000000000000566f43bf0b5a25bf000000000000803f9a060bbff0ce79bcbdcc70bf6303debe81963e3feef501bfffffffff00000000000000008c365dbf13d800bf000000000000803fe9785b332a97713dd3a993bf737441bc083b4b3f27a41bbfffffffff0000000000000000c1f87fbfb8a873bc000000000000803f1a340c3f94f9a7bbefd672bf0105f63e2b513e3f7831eebeffffffff0000000000000000140057bfadf60a3f000000000000803f1cc15f3f3f6eccbd452f01bfb24e263fd4ca313f91569ebeffffffff000000000000000001f53abf51e12e3f000000000000803fe68c863f96fc5bbd2b5ac0338513303f46cc393f642f60bcffffffff0000000000000000bad039bfbe17303f000000000000803f23f6613fb500b6bd8075023fd1c0113fa73d333f7996dc3effffffff0000000000000000be9e46bf0683213f000000000000803f216ffc3e6a5400be4a9d5a3f04e8cb3e38912d3f142a1e3fffffffff000000000000000060bc5cbff0a8013f000000000000803fcd5a61b28cd372bdcae6853f0a38393ed9d8353ff2222e3fffffffff0000000000000000621578bffcae7c3e000000000000803f730d10bf1dfbe43ca381793f2e0b73bec6e4453f2e9b163fffffffff000000000000000071b974bf8c4796be000000000000803f512577bf0508853c89b00e3f34c119bf38eb433f7a066d3effffffff00000000000000005b6349bf030c1ebf000000000000803f44206030895ac93f4420e0af5940c7bb65fe7f3f2db862bbffffffff0000000000000000cafe7fbfa840c7bb000000000000803f00000080cdcccc3f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080cdcccc3f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080cdcccc3f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080cdcccc3f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080cdcccc3f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080cdcccc3f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080cdcccc3f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080cdcccc3f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080cdcccc3f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080cdcccc3f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080cdcccc3f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f3f2e6cbfe4eee03eff37023248ef45bf4711213f23ffa2bdffffffff00000000000000007e9421bf889046bf000000000000803fc01c45bf8d7fd13e0f9be3bec5e948bf9c3a173f2dd23fbeffffffff00000000000000004af419bfa9884cbf000000000000803fe61c0fbfda811d3ffbe077bf2493cebeef97413f4fde03bfffffffff00000000000000003add61bf6302f1be000000000000803f0a913533a9f8f03e3b1775bf0e2c353e8635253fee3c3ebfffffffff0000000000000000000000008b49413f6fdb273f0000803ffaa6f73efe94f53e1e7956bfe91fc23e25a1293fb15925bfffffffff00000000000000003a325ebf3f48fe3e000000000000803fe755533f8b0fef3e8207f4be7ab8253fcd17273f3985c9beffffffff0000000000000000a4c335bf7845343f000000000000803f92197b3facc9fb3edb40b7330b883d3ff5ec2b3f753beebcffffffff000000000000000095ff2bbf949c3d3f000000000000803ff153583fea6ff93e48cbf93e8a62283f250a2b3f0d14b23effffffff0000000000000000f76d36bf1b99333f000000000000803fde5e003f99f8023f2c585e3f5525b13ee6c62f3fc6af233fffffffff0000000000000000bf9d64bf8665e63e000000000000803fb8d14ab2fc42f23ebece753f793a7c3d2709283fd37c403fffffffff00000000000000000000000085da40bff25a283f0000803fc3e506bf35b80e3f3ea6693f808bb8bef850383fead1173fffffffff0000000000000000a2ea64bf5433e5be000000000000803f873a52bf89c2ec3e3fc0f23eb2363bbf9b00243f00ad6f3effffffff000000000000000026b028bf029040bf000000000000803f000000800e2a084090a211b023f7a6bc18f27f3f300b433bffffffff000000000000000063f27fbf54f7a6bc000000000000803f00000080a4700d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a4700d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a4700d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a4700d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a4700d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a4700d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a4700d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a4700d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a4700d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a4700d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a4700d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803fb47954bf607f743f2c246e3193dc50bf0fd9133f0cc3ea3cffffffff00000000000000009ce813bf8bf250bf000000000000803fc69a28bf4166673f15b0c2be4c544ebf4c65053f87cd8fbeffffffff00000000000000008dfd0abfa1fb56bf000000000000803fa86ef5be0662863ff48c54bf438a15bfc367243f8c1ffebeffffffff0000000000000000dd603dbf50412cbf000000000000803f3958473358c2863f467476bf98b9fa3d7a85293f79403dbfffffffff000000000000000000000000acaf3e3f65ce2a3f0000803fa429dc3e7d287a3f9baa3ebfe463f73e898c183f4d3524bfffffffff00000000000000005dd846bf0f3c213f000000000000803f50ba433f34767e3fcb01e2be7da6353f39101d3fcb6db1beffffffff0000000000000000507027bf5ea6413f000000000000803f50cc513fad86723f30d7953390d6513fdfb5113f660b84bdffffffff0000000000000000a50312bf9046523f000000000000803feb3b4f3f661f843f1c4bef3e11032c3f4b1e263fe9c8b63effffffff00000000000000004fd631bf8425383f000000000000803f88cdd63e2136763f57063a3f3cf2d03eb48b153f849a333fffffffff00000000000000006adc51bf0c9c123f000000000000803f8c8936b2ea53843fbad96f3f9bb3263e0e52243fedd33f3fffffffff000000000000000000000000e36b42bfcf8a263f0000803f9b6bf8beaa7b873f6c23573fc75514bf2a55263ffeebfb3effffffff0000000000000000830f3fbf2a632abf000000000000803f936324bf9fd0633fe4d1bd3e9d6451bf1c99013f58ed8b3effffffff000000000000000024ba06bf17ae59bf000000000000803f0000008019f72940e56fb2b1834e2f3d46b87f3f35859a3cffffffff0000000000000000edc37fbf7f562f3d000000000000803f000000801a2f354000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000801a2f354000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000801a2f354000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000801a2f354000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000801a2f354000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000801a2f354000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000801a2f354000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000801a2f354000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000801a2f354000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000801a2f354000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000801a2f354000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f9bcc5cbf4facc43fcbfa5eb18e2f49bf9c0a1b3f24ceffbdffffffff0000000000000000e4431cbf14c64abf000000000000803ff0c638bfc96ec23fba5cd5be9a2527bf91d0163f97bef3beffffffff0000000000000000c27e2bbf1e113ebf000000000000803fed78cbbe1c74bf3f573630bf9063d8bef1b0103f425e35bfffffffff0000000000000000000000008c1e483f7fa61f3f0000803fbdd11c338627c33ffbc157bf868e7ebd5daa183f7be14cbfffffffff0000000000000000000000000f474d3f0ef6183f0000803f9bdad73ef02ec33f5aef3abfee160b3fd2c2163fa72b19bfffffffff0000000000000000ee273cbfeb962d3f000000000000803f66601e3fe33fb93fa6e0b6be5693543f0e4bff3e08af7ebeffffffff0000000000000000acc903bfd8785b3f000000000000803f2bb7313fceb1b73f16de2433037b5d3f18eefb3ec06cc6bdffffffff0000000000000000f31efdbe06875e3f000000000000803f71c32d3f0c9abe3f13a5c83e7376473ff47b0d3f6e6e973effffffff00000000000000004b1c14bfedcd503f000000000000803f0cf2c93e5dfebe3fd6e32e3f8849b23e9f410f3f2b87403fffffffff000000000000000000000000d1614dbf21d2183f0000803f984824b23078ba3f5ded3a3f2d35eabd9749043f0835593fffffffff0000000000000000000000003da45abf3c29053f0000803f7403b5be24b0b83f29c31c3f6fc349be9b5cf93e6bd2593fffffffff0000000000000000000000006a2d5ebf0c59fe3e0000803f5b4150bf7599ca3fec78f03efd4c09bfdb1c253f2b5d0b3fffffffff000000000000000020d644bf4bae23bf000000000000803fd41ac230279d6140ccb51d3190a1d2bc06e97f3fe774cfbbffffffff000000000000000056ea7fbfa4a2d2bc000000000000803f00000080d0b35d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080d0b35d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080d0b35d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080d0b35d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080d0b35d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080d0b35d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080d0b35d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080d0b35d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080d0b35d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080d0b35d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080d0b35d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f086623bf52bcfa3f006c5c3298796cbf60b9c03ea050913dffffffff00000000000000000a36c1be8f126dbf000000000000803f9dfb23bfe9900040e159bdbebf3c43bf675be03ed197f3beffffffff00000000000000005513ffbe00f85dbf000000000000803f956d9ebeb482f93fe63309bfb533d3be63cfba3e8eae55bfffffffff0000000000000000000000009e916a3f0612cd3e0000803f80570a33fc5dfe3ff92132bfb4c3f8bdd27cd13e128367bfffffffff000000000000000000000000303d693fe10cd33e0000803f6640b33e94a4fe3f843c1bbf3be3c13e3f9bd33ebeff53bfffffffff000000000000000000000000e20e653f4da2e43e0000803f3150283fa92e0140f659c2be5c53383fa83fe53ea7b907bfffffffff00000000000000002c3007bfdf64593f000000000000803f2624463f39a60140b463a133d98c613fb9d9e83ea829053effffffff00000000000000003dd8eabe5c7b633f000000000000803f0083133fc971fc3ffa54aa3efc5c553ff6fcc83efc20c73effffffff0000000000000000092adabeca98673f000000000000803f03dcd63ea6b50340e1123a3f2a8eb63eaa3efd3e23e84a3fffffffff000000000000000000000000562e59bfb587073f0000803fefda13b242e6f83fdaf21b3f4b5ff4bd5ccdb63e0f2b6d3fffffffff000000000000000000000000f4df6ebf1b1eb83e0000803fee28bebe6daa0040eeae243f84d0aebecec8df3e4504553fffffffff000000000000000000000000e2a262bfaa17ee3e0000803f3c9618bf8ae3fd3f2731b03ebc345bbf9766ce3e5957a53effffffff0000000000000000d315dabe8c9d67bf000000000000803f
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0.0018315315, y: 1.6999474, z: -0.05375725}
+    m_Extent: {x: 1.0493433, y: 1.8252695, z: 1.0998628}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshOptimized: 0
+--- !u!21 &1155294167
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Houdini/SpecularVertexColor
+  m_Shader: {fileID: 4800000, guid: 371e49b649506284e86ccddef0ce5393, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Shininess: 0.078125
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+--- !u!1 &1213316539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1213316541}
+  - component: {fileID: 1213316540}
+  m_Layer: 0
+  m_Name: mountain1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1213316540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1213316539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d560dd11496e0249b374ce33d65f155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAssetId: 5
+  myNodeId: 7
+  myObjectNodeId: 6
+  myAsset: {fileID: 1555827815}
+  myObjectId: 6
+  myObjectName: tube_object1
+  myObjectVisible: 1
+  myObjectInfo:
+    hasTransformChanged: 0
+    haveGeosChanged: 0
+    isVisible: 0
+    isInstancer: 0
+    isInstanced: 0
+    geoCount: 0
+    nodeId: -1
+    objectToInstanceId: 0
+  myGeos: []
+  myGeoId: 7
+  myGeoName: mountain1
+  myGeoType: 0
+  myIsEditable: 0
+  myIsDisplay: 1
+  myObjectControl: {fileID: 240296980}
+  myGeoAttributeManager: {fileID: 0}
+  myParts:
+  - {fileID: 1768543793}
+  - {fileID: 1426733009}
+--- !u!4 &1213316541
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1213316539}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1768543797}
+  - {fileID: 1426733011}
+  m_Father: {fileID: 240296981}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1426733009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1426733011}
+  - component: {fileID: 1426733010}
+  m_Layer: 0
+  m_Name: Ungrouped_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1426733010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1426733009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c5421560b7d6a6409dc540526667811, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAssetId: 5
+  myNodeId: -1
+  myObjectNodeId: 6
+  myAsset: {fileID: 1555827815}
+  myObjectId: 6
+  myObjectName: tube_object1
+  myObjectVisible: 1
+  myObjectInfo:
+    hasTransformChanged: 0
+    haveGeosChanged: 0
+    isVisible: 0
+    isInstancer: 0
+    isInstanced: 0
+    geoCount: 0
+    nodeId: -1
+    objectToInstanceId: 0
+  myGeos: []
+  myGeoId: 7
+  myGeoName: mountain1
+  myGeoType: 0
+  myIsEditable: 0
+  myIsDisplay: 1
+  myObjectControl: {fileID: 240296980}
+  myGeoAttributeManager: {fileID: 0}
+  myParts: []
+  myPartId: 1
+  myPartName: Ungrouped_1
+  myPartType: 0
+  myMaterialId: -1
+  myVertexList: 00000000
+  myLastLocalToWorld:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 3.69
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  myTransformChanged: 1
+  myShowDisplayOptions: 1
+  myShowPointNumbers: 0
+  myShowPointGroup: 0
+  mySelectedPointGroup: 
+  myShowPrimitiveGroup: 0
+  mySelectedPrimitiveGroup: 
+  myShowIntermediateResultControls: 0
+  myShowInfo: 0
+  myGeoControl: {fileID: 1213316540}
+--- !u!4 &1426733011
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1426733009}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1213316541}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1481342688
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1481342693}
+  - component: {fileID: 1481342692}
+  - component: {fileID: 1481342691}
+  - component: {fileID: 1481342690}
+  - component: {fileID: 1481342689}
+  m_Layer: 0
+  m_Name: Main Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &1481342689
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1481342688}
+  m_Enabled: 1
+--- !u!124 &1481342690
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1481342688}
+  m_Enabled: 1
+--- !u!92 &1481342691
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1481342688}
+  m_Enabled: 1
+--- !u!20 &1481342692
+Camera:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1481342688}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+  m_StereoMirrorMode: 0
+--- !u!4 &1481342693
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1481342688}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1544968955
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4137406747593930, guid: ba1515a483755da4f9c4ad658b516e89, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137406747593930, guid: ba1515a483755da4f9c4ad658b516e89, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137406747593930, guid: ba1515a483755da4f9c4ad658b516e89, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 11.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137406747593930, guid: ba1515a483755da4f9c4ad658b516e89, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137406747593930, guid: ba1515a483755da4f9c4ad658b516e89, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137406747593930, guid: ba1515a483755da4f9c4ad658b516e89, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137406747593930, guid: ba1515a483755da4f9c4ad658b516e89, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137406747593930, guid: ba1515a483755da4f9c4ad658b516e89, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1433406238826968, guid: ba1515a483755da4f9c4ad658b516e89, type: 2}
+      propertyPath: m_Name
+      value: Tree1 (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ba1515a483755da4f9c4ad658b516e89, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &1555827813
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1555827816}
+  - component: {fileID: 1555827815}
+  - component: {fileID: 1555827814}
+  m_Layer: 0
+  m_Name: Tree1 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1555827814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1555827813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d50d11faa64faa243b8964c758f67fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myControl: {fileID: 1555827815}
+  myEditable: 1
+  myParmCount: 43
+  myParmIntValueCount: 14
+  myParmFloatValueCount: 30
+  myprParmStringValueCoun: 12
+  myprParmChoiceCount: 46
+  myParms:
+  - id: 0
+    parentId: -1
+    childIndex: 0
+    type: 11
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 2
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 0
+    floatValuesIndex: 0
+    stringValuesIndex: 0
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 1
+    parentId: -1
+    childIndex: 1
+    type: 13
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 22
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 0
+    floatValuesIndex: 0
+    stringValuesIndex: 0
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 2
+    parentId: -1
+    childIndex: 2
+    type: 13
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 13
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 0
+    floatValuesIndex: 0
+    stringValuesIndex: 0
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 3
+    parentId: 1
+    childIndex: 0
+    type: 0
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 6
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 1
+    labelNone: 0
+    intValuesIndex: 0
+    floatValuesIndex: 0
+    stringValuesIndex: 0
+    choiceIndex: 0
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 4
+    parentId: 1
+    childIndex: 1
+    type: 0
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 6
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 1
+    floatValuesIndex: 0
+    stringValuesIndex: 0
+    choiceIndex: 6
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 5
+    parentId: 1
+    childIndex: 2
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 4
+    size: 3
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 2
+    floatValuesIndex: 0
+    stringValuesIndex: 0
+    choiceIndex: 12
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 6
+    parentId: 1
+    childIndex: 3
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 4
+    size: 3
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 360
+    UIMin: 0
+    UIMax: 360
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 2
+    floatValuesIndex: 3
+    stringValuesIndex: 0
+    choiceIndex: 12
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 7
+    parentId: 1
+    childIndex: 4
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 4
+    size: 3
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 2
+    floatValuesIndex: 6
+    stringValuesIndex: 0
+    choiceIndex: 12
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 8
+    parentId: 1
+    childIndex: 5
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 3
+    size: 3
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 2
+    floatValuesIndex: 9
+    stringValuesIndex: 0
+    choiceIndex: 12
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 9
+    parentId: 1
+    childIndex: 6
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 2
+    floatValuesIndex: 12
+    stringValuesIndex: 0
+    choiceIndex: 12
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 10
+    parentId: 1
+    childIndex: 7
+    type: 3
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 6
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 2
+    floatValuesIndex: 13
+    stringValuesIndex: 0
+    choiceIndex: 12
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 11
+    parentId: 1
+    childIndex: 8
+    type: 2
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 2
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 3
+    floatValuesIndex: 13
+    stringValuesIndex: 0
+    choiceIndex: 18
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 12
+    parentId: 1
+    childIndex: 9
+    type: 2
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 2
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 4
+    floatValuesIndex: 13
+    stringValuesIndex: 0
+    choiceIndex: 20
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 13
+    parentId: 1
+    childIndex: 10
+    type: 2
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 2
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 5
+    floatValuesIndex: 13
+    stringValuesIndex: 0
+    choiceIndex: 22
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 14
+    parentId: 1
+    childIndex: 11
+    type: 10
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 5
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 1
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 6
+    floatValuesIndex: 13
+    stringValuesIndex: 0
+    choiceIndex: 24
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 15
+    parentId: 1
+    childIndex: 12
+    type: 10
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 2
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 1
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 6
+    floatValuesIndex: 13
+    stringValuesIndex: 1
+    choiceIndex: 24
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 16
+    parentId: 1
+    childIndex: 13
+    type: 10
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 2
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 1
+    disabled: 1
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 6
+    floatValuesIndex: 13
+    stringValuesIndex: 2
+    choiceIndex: 24
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 17
+    parentId: 1
+    childIndex: 14
+    type: 6
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 5
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 1
+    disabled: 1
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 6
+    floatValuesIndex: 13
+    stringValuesIndex: 3
+    choiceIndex: 24
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 18
+    parentId: 1
+    childIndex: 15
+    type: 10
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 2
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 1
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 6
+    floatValuesIndex: 13
+    stringValuesIndex: 4
+    choiceIndex: 29
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 19
+    parentId: 1
+    childIndex: 16
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: -360
+    max: 360
+    UIMin: -360
+    UIMax: 360
+    invisible: 1
+    disabled: 1
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 6
+    floatValuesIndex: 13
+    stringValuesIndex: 5
+    choiceIndex: 29
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 20
+    parentId: 1
+    childIndex: 17
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 1
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 1
+    disabled: 1
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 6
+    floatValuesIndex: 14
+    stringValuesIndex: 5
+    choiceIndex: 29
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 21
+    parentId: 1
+    childIndex: 18
+    type: 0
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 2
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 1
+    disabled: 1
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 6
+    floatValuesIndex: 15
+    stringValuesIndex: 5
+    choiceIndex: 29
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 22
+    parentId: 1
+    childIndex: 19
+    type: 0
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 1
+    UIMin: 0
+    UIMax: 1
+    invisible: 1
+    disabled: 1
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 7
+    floatValuesIndex: 15
+    stringValuesIndex: 5
+    choiceIndex: 31
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 23
+    parentId: 1
+    childIndex: 20
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 3
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 1
+    disabled: 1
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 8
+    floatValuesIndex: 15
+    stringValuesIndex: 5
+    choiceIndex: 31
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 24
+    parentId: 1
+    childIndex: 21
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: -1
+    max: 1
+    UIMin: -1
+    UIMax: 1
+    invisible: 1
+    disabled: 1
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 8
+    floatValuesIndex: 18
+    stringValuesIndex: 5
+    choiceIndex: 31
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 25
+    parentId: 2
+    childIndex: 0
+    type: 6
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 1
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 8
+    floatValuesIndex: 19
+    stringValuesIndex: 5
+    choiceIndex: 31
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 26
+    parentId: 2
+    childIndex: 1
+    type: 6
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 1
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 8
+    floatValuesIndex: 19
+    stringValuesIndex: 6
+    choiceIndex: 31
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 27
+    parentId: 2
+    childIndex: 2
+    type: 6
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 1
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 8
+    floatValuesIndex: 19
+    stringValuesIndex: 7
+    choiceIndex: 31
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 28
+    parentId: 2
+    childIndex: 3
+    type: 6
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 1
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 8
+    floatValuesIndex: 19
+    stringValuesIndex: 8
+    choiceIndex: 31
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 29
+    parentId: 2
+    childIndex: 4
+    type: 2
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 2
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 1
+    labelNone: 1
+    intValuesIndex: 8
+    floatValuesIndex: 19
+    stringValuesIndex: 9
+    choiceIndex: 31
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 30
+    parentId: 2
+    childIndex: 5
+    type: 0
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 0
+    hasMin: 1
+    hasMax: 1
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 1
+    UIMin: 0
+    UIMax: 1
+    invisible: 0
+    disabled: 1
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 9
+    floatValuesIndex: 19
+    stringValuesIndex: 9
+    choiceIndex: 33
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 31
+    parentId: 2
+    childIndex: 6
+    type: 6
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 7
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 10
+    floatValuesIndex: 19
+    stringValuesIndex: 9
+    choiceIndex: 33
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 32
+    parentId: 2
+    childIndex: 7
+    type: 6
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 2
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 10
+    floatValuesIndex: 19
+    stringValuesIndex: 10
+    choiceIndex: 40
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 33
+    parentId: 2
+    childIndex: 8
+    type: 2
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 2
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 10
+    floatValuesIndex: 19
+    stringValuesIndex: 11
+    choiceIndex: 40
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 34
+    parentId: 2
+    childIndex: 9
+    type: 7
+    typeInfoSH: 727
+    permissions: 2
+    tagCount: 1
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 11
+    floatValuesIndex: 19
+    stringValuesIndex: 11
+    choiceIndex: 42
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 35
+    parentId: 2
+    childIndex: 10
+    type: 2
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 2
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 11
+    floatValuesIndex: 19
+    stringValuesIndex: 12
+    choiceIndex: 42
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 36
+    parentId: 2
+    childIndex: 11
+    type: 2
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 1
+    choiceCount: 2
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 0
+    hasUIMax: 0
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 1
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 12
+    floatValuesIndex: 19
+    stringValuesIndex: 12
+    choiceIndex: 44
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 37
+    parentId: 2
+    childIndex: 12
+    type: 5
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 0
+    size: 3
+    choiceCount: 0
+    hasMin: 1
+    hasMax: 1
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 1
+    UIMin: 0
+    UIMax: 1
+    invisible: 1
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 13
+    floatValuesIndex: 19
+    stringValuesIndex: 12
+    choiceIndex: 46
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 38
+    parentId: -1
+    childIndex: 36
+    type: 0
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 1
+    size: 1
+    choiceCount: 0
+    hasMin: 1
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 1
+    max: 20
+    UIMin: 1
+    UIMax: 20
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 13
+    floatValuesIndex: 22
+    stringValuesIndex: 12
+    choiceIndex: 46
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 39
+    parentId: -1
+    childIndex: 37
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 3
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 10
+    UIMin: 0
+    UIMax: 10
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 14
+    floatValuesIndex: 22
+    stringValuesIndex: 12
+    choiceIndex: 46
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 40
+    parentId: -1
+    childIndex: 38
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 3
+    size: 1
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: 0
+    max: 4
+    UIMin: 0
+    UIMax: 4
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 14
+    floatValuesIndex: 23
+    stringValuesIndex: 12
+    choiceIndex: 46
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 41
+    parentId: -1
+    childIndex: 39
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 1
+    size: 3
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: -1
+    max: 1
+    UIMin: -1
+    UIMax: 1
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 14
+    floatValuesIndex: 24
+    stringValuesIndex: 12
+    choiceIndex: 46
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  - id: 42
+    parentId: -1
+    childIndex: 40
+    type: 4
+    typeInfoSH: 0
+    permissions: 0
+    tagCount: 1
+    size: 3
+    choiceCount: 0
+    hasMin: 0
+    hasMax: 0
+    hasUIMin: 1
+    hasUIMax: 1
+    min: -1
+    max: 1
+    UIMin: -1
+    UIMax: 1
+    invisible: 0
+    disabled: 0
+    spare: 0
+    joinNext: 0
+    labelNone: 0
+    intValuesIndex: 14
+    floatValuesIndex: 27
+    stringValuesIndex: 12
+    choiceIndex: 46
+    isChildOfMultiParm: 0
+    instanceNum: -1
+    instanceLength: 0
+    instanceCount: 0
+    instanceStartOffset: -1
+    rampType: -1
+  myParmIntValues: 0000000000000000000000000000000000000000000000000100000001000000000000000100000001000000010000000100000005000000
+  myParmFloatValues:
+  - 0
+  - 0
+  - 3.67
+  - 0
+  - -0
+  - 0
+  - 1
+  - 1
+  - 1
+  - 0
+  - 0
+  - 0
+  - 1
+  - 0
+  - 0
+  - 0
+  - 1
+  - 0
+  - 0
+  - 1
+  - 1
+  - 1
+  - 0.5
+  - 1.4528571
+  - 0.9
+  - 1.1
+  - 0.9
+  - 0
+  - 0.5
+  - 0
+  myParmStringHandles: b503000076030000dd030000de030000db030000dc030000e1030000e2030000df030000e0030000f3030000f4030000
+  myParmChoiceLists:
+  - parentParmId: 3
+  - parentParmId: 3
+  - parentParmId: 3
+  - parentParmId: 3
+  - parentParmId: 3
+  - parentParmId: 3
+  - parentParmId: 4
+  - parentParmId: 4
+  - parentParmId: 4
+  - parentParmId: 4
+  - parentParmId: 4
+  - parentParmId: 4
+  - parentParmId: 10
+  - parentParmId: 10
+  - parentParmId: 10
+  - parentParmId: 10
+  - parentParmId: 10
+  - parentParmId: 10
+  - parentParmId: 11
+  - parentParmId: 11
+  - parentParmId: 12
+  - parentParmId: 12
+  - parentParmId: 13
+  - parentParmId: 13
+  - parentParmId: 17
+  - parentParmId: 17
+  - parentParmId: 17
+  - parentParmId: 17
+  - parentParmId: 17
+  - parentParmId: 21
+  - parentParmId: 21
+  - parentParmId: 29
+  - parentParmId: 29
+  - parentParmId: 31
+  - parentParmId: 31
+  - parentParmId: 31
+  - parentParmId: 31
+  - parentParmId: 31
+  - parentParmId: 31
+  - parentParmId: 31
+  - parentParmId: 33
+  - parentParmId: 33
+  - parentParmId: 35
+  - parentParmId: 35
+  - parentParmId: 36
+  - parentParmId: 36
+  myParmInfoStrings:
+  - typeInfo: 
+    name: stdswitcher3
+    label: 
+    templateName: 
+    help: 
+  - typeInfo: 
+    name: stdswitcher3_0
+    label: Transform
+    templateName: stdswitcher3_0
+    help: 
+  - typeInfo: 
+    name: stdswitcher3_1
+    label: Subnet
+    templateName: stdswitcher3_1
+    help: 
+  - typeInfo: 
+    name: xOrd
+    label: Transform Order
+    templateName: xOrd
+    help: 
+  - typeInfo: 
+    name: rOrd
+    label: Rotate Order
+    templateName: rOrd
+    help: 
+  - typeInfo: 
+    name: t
+    label: Translate
+    templateName: t
+    help: 
+  - typeInfo: 
+    name: r
+    label: Rotate
+    templateName: r
+    help: 
+  - typeInfo: 
+    name: s
+    label: Scale
+    templateName: s
+    help: 
+  - typeInfo: 
+    name: p
+    label: Pivot
+    templateName: p
+    help: 
+  - typeInfo: 
+    name: scale
+    label: Uniform Scale
+    templateName: scale
+    help: 
+  - typeInfo: 
+    name: pre_xform
+    label: Modify Pre-Transform
+    templateName: pre_xform
+    help: 
+  - typeInfo: 
+    name: keeppos
+    label: Keep Position When Parenting
+    templateName: keeppos
+    help: 
+  - typeInfo: 
+    name: childcomp
+    label: Child Compensation
+    templateName: childcomp
+    help: 
+  - typeInfo: 
+    name: constraints_on
+    label: Enable Constraints
+    templateName: constraints_on
+    help: 
+  - typeInfo: 
+    name: constraints_path
+    label: Constraints
+    templateName: constraints_path
+    help: 
+  - typeInfo: 
+    name: lookatpath
+    label: Look At
+    templateName: lookatpath
+    help: 
+  - typeInfo: 
+    name: lookupobjpath
+    label: Look Up Object
+    templateName: lookupobjpath
+    help: 
+  - typeInfo: 
+    name: lookup
+    label: Look At Up Vector
+    templateName: lookup
+    help: 
+  - typeInfo: 
+    name: pathobjpath
+    label: Path Object
+    templateName: pathobjpath
+    help: 
+  - typeInfo: 
+    name: roll
+    label: Roll
+    templateName: roll
+    help: 
+  - typeInfo: 
+    name: pos
+    label: Position
+    templateName: pos
+    help: 
+  - typeInfo: 
+    name: uparmtype
+    label: Parameterization
+    templateName: uparmtype
+    help: 
+  - typeInfo: 
+    name: pathorient
+    label: Orient Along Path
+    templateName: pathorient
+    help: 
+  - typeInfo: 
+    name: up
+    label: Orient Up Vector
+    templateName: up
+    help: 
+  - typeInfo: 
+    name: bank
+    label: Auto-Bank factor
+    templateName: bank
+    help: 
+  - typeInfo: 
+    name: label1
+    label: 'Input #1 Label'
+    templateName: label1
+    help: 
+  - typeInfo: 
+    name: label2
+    label: 'Input #2 Label'
+    templateName: label2
+    help: 
+  - typeInfo: 
+    name: label3
+    label: 'Input #3 Label'
+    templateName: label3
+    help: 
+  - typeInfo: 
+    name: label4
+    label: 'Input #4 Label'
+    templateName: label4
+    help: 
+  - typeInfo: 
+    name: tdisplay
+    label: Display
+    templateName: tdisplay
+    help: 
+  - typeInfo: 
+    name: display
+    label: Display
+    templateName: display
+    help: 
+  - typeInfo: 
+    name: outputobj
+    label: Output Transform
+    templateName: outputobj
+    help: 
+  - typeInfo: 
+    name: visibleobjects
+    label: Visible Children
+    templateName: visibleobjects
+    help: 
+  - typeInfo: 
+    name: picking
+    label: Viewport Selecting Enabled
+    templateName: picking
+    help: 
+  - typeInfo: 
+    name: pickscript
+    label: Select Script
+    templateName: pickscript
+    help: 
+  - typeInfo: 
+    name: caching
+    label: Cache Object Transform
+    templateName: caching
+    help: 
+  - typeInfo: 
+    name: use_dcolor
+    label: Set Wireframe Color
+    templateName: use_dcolor
+    help: 
+  - typeInfo: 
+    name: dcolor
+    label: Wireframe Color
+    templateName: dcolor
+    help: 
+  - typeInfo: 
+    name: TreeSections
+    label: Tree Sections
+    templateName: TreeSections
+    help: 
+  - typeInfo: 
+    name: TreeRoughnessScale
+    label: Roughness Scale
+    templateName: TreeRoughnessScale
+    help: 
+  - typeInfo: 
+    name: TreeRoughness
+    label: Roughness
+    templateName: TreeRoughness
+    help: 
+  - typeInfo: 
+    name: s2
+    label: TreeScale
+    templateName: s2
+    help: 
+  - typeInfo: 
+    name: t2
+    label: TreeHeight
+    templateName: t2
+    help: 
+  myParmInputs:
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  - isAsset: 0
+    inputObject: {fileID: 0}
+    newInputObject: {fileID: 0}
+    inputNodeId: 0
+    inputNodeUniqueId: 0
+  myParmChoiceInfoStrings:
+  - label: Scale Rot Trans
+    value: srt
+  - label: Scale Trans Rot
+    value: str
+  - label: Rot Scale Trans
+    value: rst
+  - label: Rot Trans Scale
+    value: rts
+  - label: Trans Scale Rot
+    value: tsr
+  - label: Trans Rot Scale
+    value: trs
+  - label: Rx Ry Rz
+    value: xyz
+  - label: Rx Rz Ry
+    value: xzy
+  - label: Ry Rx Rz
+    value: yxz
+  - label: Ry Rz Rx
+    value: yzx
+  - label: Rz Rx Ry
+    value: zxy
+  - label: Rz Ry Rx
+    value: zyx
+  - label: Clean Transform
+    value: clean
+  - label: Clean Translates
+    value: cleantrans
+  - label: Clean Rotates
+    value: cleanrot
+  - label: Clean Scales
+    value: cleanscales
+  - label: Extract Pre-transform
+    value: extract
+  - label: Reset Pre-transform
+    value: reset
+  - label: off
+    value: off
+  - label: on
+    value: on
+  - label: off
+    value: off
+  - label: on
+    value: on
+  - label: off
+    value: off
+  - label: on
+    value: on
+  - label: Don't Use Up Vector
+    value: off
+  - label: Use Up Vector
+    value: on
+  - label: Use Quaternions
+    value: quat
+  - label: Use Global Position
+    value: pos
+  - label: Use Up Object
+    value: obj
+  - label: Uniform
+    value: uniform
+  - label: Arc Length
+    value: arc
+  - label: off
+    value: off
+  - label: on
+    value: on
+  - label: No Object
+    value: 
+  - label: Input Object 1
+    value: _input1_obj_
+  - label: Input Object 2
+    value: _input2_obj_
+  - label: Input Object 3
+    value: _input3_obj_
+  - label: Input Object 4
+    value: _input4_obj_
+  - label: _separator_
+    value: _separator_
+  - label: tube_object1
+    value: tube_object1
+  - label: off
+    value: off
+  - label: on
+    value: on
+  - label: off
+    value: off
+  - label: on
+    value: on
+  - label: off
+    value: off
+  - label: on
+    value: on
+  myParmStringValues:
+  - 
+  - 
+  - 
+  - on
+  - 
+  - 'Sub-Network Input #1'
+  - 'Sub-Network Input #2'
+  - 'Sub-Network Input #3'
+  - 'Sub-Network Input #4'
+  - _input1_obj_
+  - '*'
+  - 
+  myLastChangedParmId: -1
+  myParmsUndoInfo: {fileID: 2133753061}
+  myFolderListSelections: 0000000000000000
+  myFolderListSelectionIds: ffffffffffffffff
+--- !u!114 &1555827815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1555827813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f0b6aed776866648abb28f3e8379991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAssetId: 5
+  myNodeId: 5
+  myObjectNodeId: 5
+  myAsset: {fileID: 1555827815}
+  myObjectId: -1
+  myObjectName: object_name
+  myObjectVisible: 0
+  myObjectInfo:
+    hasTransformChanged: 0
+    haveGeosChanged: 0
+    isVisible: 0
+    isInstancer: 0
+    isInstanced: 0
+    geoCount: 0
+    nodeId: -1
+    objectToInstanceId: 0
+  myGeos: []
+  myNodeInfo:
+    id: 5
+    parentId: 2
+    nameSH: 510
+    type: 1
+    isValid: 1
+    totalCookCount: 1
+    uniqueHoudiniNodeId: 80
+    parmCount: 43
+    parmIntValueCount: 14
+    parmFloatValueCount: 30
+    parmStringValueCount: 12
+    parmChoiceCount: 46
+    childNodeCount: 1
+    inputCount: 0
+    createdPostAssetLoad: 1
+  myPreset: 235053495f5052455345540a76657273696f6e20322e30610a6f7076616c7565730a7b0a76657273696f6e20302e380a7374647377697463686572095b2030096c6f636b733d30205d09280930093009290a784f7264095b2030096c6f636b733d30205d092809227372742209290a724f7264095b2030096c6f636b733d30205d0928092278797a2209290a74095b2030096c6f636b733d30205d09280930093009332e3637303030303037363239333934353309290a72095b2030096c6f636b733d30205d09280930092d30093009290a73095b2030096c6f636b733d30205d092809310931093109290a70095b2030096c6f636b733d30205d092809300930093009290a7363616c65095b2030096c6f636b733d30205d0928093109290a7072655f78666f726d095b2030096c6f636b733d30205d0928093009290a6b656570706f73095b2030096c6f636b733d30205d092809226f66662209290a6368696c64636f6d70095b2030096c6f636b733d30205d092809226f66662209290a636f6e73747261696e74735f6f6e095b2030096c6f636b733d30205d092809226f66662209290a636f6e73747261696e74735f70617468095b2030096c6f636b733d30205d092809222209290a6c6f6f6b617470617468095b2030096c6f636b733d30205d092809222209290a6c6f6f6b75706f626a70617468095b2030096c6f636b733d30205d092809222209290a6c6f6f6b7570095b2030096c6f636b733d30205d0928096f6e09290a706174686f626a70617468095b2030096c6f636b733d30205d092809222209290a726f6c6c095b2030096c6f636b733d30205d0928093009290a706f73095b2030096c6f636b733d30205d0928093009290a757061726d74797065095b2030096c6f636b733d30205d092809226172632209290a706174686f7269656e74095b2030096c6f636b733d30205d0928093109290a7570095b2030096c6f636b733d30205d092809300931093009290a62616e6b095b2030096c6f636b733d30205d0928093009290a6c6162656c31095b2030096c6f636b733d30205d092809225375622d4e6574776f726b20496e7075742023312209290a6c6162656c32095b2030096c6f636b733d30205d092809225375622d4e6574776f726b20496e7075742023322209290a6c6162656c33095b2030096c6f636b733d30205d092809225375622d4e6574776f726b20496e7075742023332209290a6c6162656c34095b2030096c6f636b733d30205d092809225375622d4e6574776f726b20496e7075742023342209290a74646973706c6179095b2030096c6f636b733d30205d092809226f66662209290a646973706c6179095b2030096c6f636b733d30205d0928093109290a6f75747075746f626a095b2030096c6f636b733d30205d0928095f696e707574315f6f626a5f09290a76697369626c656f626a65637473095b2030096c6f636b733d30205d0928092a09290a7069636b696e67095b2030096c6f636b733d30205d092809226f6e2209290a7069636b736372697074095b2030096c6f636b733d30205d092809222209290a63616368696e67095b2030096c6f636b733d30205d092809226f6e2209290a7573655f64636f6c6f72095b2030096c6f636b733d30205d092809226f6e2209290a64636f6c6f72095b2030096c6f636b733d30205d092809310931093109290a737464737769746368657233095b2030096c6f636b733d30205d09280930093009290a5472656553656374696f6e73095b2030096c6f636b733d30205d0928093509290a54726565526f7567686e6573735363616c65095b2030096c6f636b733d30205d092809302e3509290a54726565526f7567686e657373095b2030096c6f636b733d30205d092809312e3435323835373133363732363337393409290a7332095b2030096c6f636b733d30205d092809302e393030303030303030303030303030303209312e3130303030303030303030303030303109302e393030303030303030303030303030303209290a7432095b2030096c6f636b733d30205d0928093009302e35093009290a7d0a
+  myAssetValidationId: 80
+  myAssetName: Tree2
+  myAssetOpName: Object/Tree
+  myAssetHelp: 
+  myAssetType: 0
+  myTransformInputCount: 0
+  myGeoInputCount: 0
+  myGeoInputsTransformTypes: 
+  myDownStreamTransformAssets: []
+  myUpStreamTransformAssets: []
+  myUpStreamTransformObjects: []
+  myUpStreamGeoAssets: []
+  myUpStreamGeoObjects: []
+  myUpStreamGeoInputAssetIds: 
+  myUpStreamGeoInputAssetValidationIds: 
+  myDownStreamAssets: []
+  myPresetsMap: {fileID: 0}
+  myObjectCount: 1
+  myHandleCount: 0
+  myGameObjects:
+  - {fileID: 240296979}
+  myGeoAttributeManagerMap: {fileID: 0}
+  myBakeStartTime: 0
+  myBakeEndTime: 1
+  myBakeSamplesPerSecond: 30
+  myShowHoudiniControls: 1
+  myShowCookLog: 0
+  myShowHelp: 0
+  myShowAssetSettings: 1
+  myShowBakeOptions: 0
+  myShowPaintTools: 0
+  myShowInputControls: 1
+  myAssetOptionsCategory: 0
+  myIsGeoVisible: 1
+  myShowPinnedInstances: 1
+  myShowOnlyVertexColours: 0
+  myGenerateUVs: 0
+  myGenerateLightmapUV2s: 0
+  myGenerateTangents: 1
+  myEnableCooking: 1
+  myCookingTriggersDownCooks: 1
+  myPlaymodePerFrameCooking: 0
+  myPushUnityTransformToHoudini: 1
+  myTransformChangeTriggersCooks: 0
+  myImportTemplatedGeos: 0
+  mySplitGeosByGroupOverride: 0
+  mySplitGeosByGroup: 1
+  mySplitPointsByVertexAttributesOverride: 0
+  mySplitPointsByVertexAttributes: 1
+  myOmitPartNameEnumeration: 0
+  myEnableLogging: 0
+  myTransInputNames: []
+  myGeoInputNames: []
+  myLastLocalToWorld:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: -0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 3.67
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  myAssetOTLUndoInfo: {fileID: 856621496}
+  myAssetPath: Assets/Houdini/Tree.hdanc
+  myActiveAttributeManager: {fileID: 0}
+  myEditPaintGeos: []
+  myHandleInfos: []
+--- !u!4 &1555827816
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1555827813}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 3.67}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 240296981}
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1659500930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1659500932}
+  - component: {fileID: 1659500931}
+  m_Layer: 0
+  m_Name: mountain1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1659500931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1659500930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d560dd11496e0249b374ce33d65f155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAssetId: 0
+  myNodeId: 4
+  myObjectNodeId: 3
+  myAsset: {fileID: 868835118}
+  myObjectId: 3
+  myObjectName: tube_object1
+  myObjectVisible: 1
+  myObjectInfo:
+    hasTransformChanged: 0
+    haveGeosChanged: 0
+    isVisible: 0
+    isInstancer: 0
+    isInstanced: 0
+    geoCount: 0
+    nodeId: -1
+    objectToInstanceId: 0
+  myGeos: []
+  myGeoId: 4
+  myGeoName: mountain1
+  myGeoType: 0
+  myIsEditable: 0
+  myIsDisplay: 1
+  myObjectControl: {fileID: 339136315}
+  myGeoAttributeManager: {fileID: 0}
+  myParts:
+  - {fileID: 1722892068}
+  - {fileID: 527967192}
+--- !u!4 &1659500932
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1659500930}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1722892072}
+  - {fileID: 527967194}
+  m_Father: {fileID: 339136316}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1707908576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb61dda6b88a5d4e895b869b3254b40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parmNames:
+  - xOrd
+  - rOrd
+  - t
+  - r
+  - s
+  - p
+  - scale
+  - pre_xform
+  - keeppos
+  - childcomp
+  - constraints_on
+  - constraints_path
+  - lookatpath
+  - lookupobjpath
+  - lookup
+  - pathobjpath
+  - roll
+  - pos
+  - uparmtype
+  - pathorient
+  - up
+  - bank
+  - label1
+  - label2
+  - label3
+  - label4
+  - tdisplay
+  - display
+  - outputobj
+  - visibleobjects
+  - picking
+  - pickscript
+  - caching
+  - use_dcolor
+  - dcolor
+  - TreeSections
+  - TreeRoughnessScale
+  - TreeRoughness
+  - s2
+  - t2
+  parmIndices: 0000000001000000000000000300000006000000090000000c0000000200000003000000040000000500000000000000010000000200000003000000040000000d0000000e00000006000000070000000f00000012000000050000000600000007000000080000000800000009000000090000000a0000000a0000000b0000000b0000000c000000130000000d0000001600000017000000180000001b000000
+  parmIntValues: 000000000000000000000000000000000000000000000000010000000100000000000000010000000100000001000000010000000a000000
+  parmFloatValues:
+  - 0
+  - 0
+  - -0.93
+  - 0
+  - -0
+  - 0
+  - 1
+  - 1
+  - 1
+  - 0
+  - 0
+  - 0
+  - 1
+  - 0
+  - 0
+  - 0
+  - 1
+  - 0
+  - 0
+  - 1
+  - 1
+  - 1
+  - 1.5
+  - 1.4528571
+  - 0.9
+  - 1.1
+  - 0.9
+  - 0
+  - 0.5
+  - 0
+  parmStringValues:
+  - 
+  - 
+  - 
+  - on
+  - 
+  - 'Sub-Network Input #1'
+  - 'Sub-Network Input #2'
+  - 'Sub-Network Input #3'
+  - 'Sub-Network Input #4'
+  - _input1_obj_
+  - '*'
+  - 
+--- !u!1 &1722892068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1722892072}
+  - component: {fileID: 1722892071}
+  - component: {fileID: 1722892070}
+  - component: {fileID: 1722892069}
+  m_Layer: 0
+  m_Name: Ungrouped_0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &1722892069
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1722892068}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 1155294167}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1722892070
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1722892068}
+  m_Mesh: {fileID: 1775544103}
+--- !u!114 &1722892071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1722892068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c5421560b7d6a6409dc540526667811, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAssetId: 0
+  myNodeId: -1
+  myObjectNodeId: 3
+  myAsset: {fileID: 868835118}
+  myObjectId: 3
+  myObjectName: tube_object1
+  myObjectVisible: 1
+  myObjectInfo:
+    hasTransformChanged: 0
+    haveGeosChanged: 0
+    isVisible: 0
+    isInstancer: 0
+    isInstanced: 0
+    geoCount: 0
+    nodeId: -1
+    objectToInstanceId: 0
+  myGeos: []
+  myGeoId: 4
+  myGeoName: mountain1
+  myGeoType: 0
+  myIsEditable: 0
+  myIsDisplay: 1
+  myObjectControl: {fileID: 339136315}
+  myGeoAttributeManager: {fileID: 0}
+  myParts: []
+  myPartId: 0
+  myPartName: Ungrouped_0
+  myPartType: 0
+  myMaterialId: -1
+  myVertexList: 000000000d0000000c000000000000000e0000000d000000000000000f0000000e00000000000000100000000f000000000000001100000010000000000000001200000011000000000000001300000012000000000000001400000013000000000000001500000014000000000000001600000015000000000000001700000016000000000000000c00000017000000180000002500000024000000180000002600000025000000180000002700000026000000180000002800000027000000180000002900000028000000180000002a00000029000000180000002b0000002a000000180000002c0000002b000000180000002d0000002c000000180000002e0000002d000000180000002f0000002e00000018000000240000002f000000300000003d0000003c000000300000003e0000003d000000300000003f0000003e00000030000000400000003f000000300000004100000040000000300000004200000041000000300000004300000042000000300000004400000043000000300000004500000044000000300000004600000045000000300000004700000046000000300000003c00000047000000480000005500000054000000480000005600000055000000480000005700000056000000480000005800000057000000480000005900000058000000480000005a00000059000000480000005b0000005a000000480000005c0000005b000000480000005d0000005c000000480000005e0000005d000000480000005f0000005e00000048000000540000005f000000600000006d0000006c000000600000006e0000006d000000600000006f0000006e00000060000000700000006f000000600000007100000070000000600000007200000071000000600000007300000072000000600000007400000073000000600000007500000074000000600000007600000075000000600000007700000076000000600000006c00000077000000780000008500000084000000780000008600000085000000780000008700000086000000780000008800000087000000780000008900000088000000780000008a00000089000000780000008b0000008a000000780000008c0000008b000000780000008d0000008c000000780000008e0000008d000000780000008f0000008e00000078000000840000008f000000900000009d0000009c000000900000009e0000009d000000900000009f0000009e00000090000000a00000009f00000090000000a1000000a000000090000000a2000000a100000090000000a3000000a200000090000000a4000000a300000090000000a5000000a400000090000000a6000000a500000090000000a7000000a6000000900000009c000000a7000000a8000000b5000000b4000000a8000000b6000000b5000000a8000000b7000000b6000000a8000000b8000000b7000000a8000000b9000000b8000000a8000000ba000000b9000000a8000000bb000000ba000000a8000000bc000000bb000000a8000000bd000000bc000000a8000000be000000bd000000a8000000bf000000be000000a8000000b4000000bf000000c0000000cd000000cc000000c0000000ce000000cd000000c0000000cf000000ce000000c0000000d0000000cf000000c0000000d1000000d0000000c0000000d2000000d1000000c0000000d3000000d2000000c0000000d4000000d3000000c0000000d5000000d4000000c0000000d6000000d5000000c0000000d7000000d6000000c0000000cc000000d7000000d8000000e5000000e4000000d8000000e6000000e5000000d8000000e7000000e6000000d8000000e8000000e7000000d8000000e9000000e8000000d8000000ea000000e9000000d8000000eb000000ea000000d8000000ec000000eb000000d8000000ed000000ec000000d8000000ee000000ed000000d8000000ef000000ee000000d8000000e4000000ef000000
+  myLastLocalToWorld:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: -0.93
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  myTransformChanged: 1
+  myShowDisplayOptions: 1
+  myShowPointNumbers: 0
+  myShowPointGroup: 0
+  mySelectedPointGroup: 
+  myShowPrimitiveGroup: 0
+  mySelectedPrimitiveGroup: 
+  myShowIntermediateResultControls: 0
+  myShowInfo: 0
+  myGeoControl: {fileID: 1659500931}
+--- !u!4 &1722892072
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1722892068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1659500932}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1727218631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd2db8917335237438c5919ad082f019, type: 3}
+  m_Name: Tree1_UndoInfo
+  m_EditorClassIdentifier: 
+  isGeoVisible: 1
+  showPinnedInstances: 1
+  showOnlyVertexColours: 0
+  generateUVs: 0
+  generateLightmapUV2s: 0
+  generateTangents: 1
+  enableCooking: 1
+  cookingTriggersDownCooks: 1
+  playmodePerFrameCooking: 0
+  pushUnityTransformToHoudini: 1
+  transformChangeTriggersCooks: 0
+  importTemplatedGeos: 0
+  splitGeosByGroupOverride: 0
+  splitGeosByGroup: 1
+  splitPointsGeosByGroupOverride: 0
+  splitPointsByVertexAttribute: 1
+  splitPointsByVertexAttributeOverride: 0
+  omitPartNameEnumeration: 0
+  bakeStartTime: 0
+  bakeEndTime: 1
+  bakeSamplesPerSecond: 30
+--- !u!1 &1768543793
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1768543797}
+  - component: {fileID: 1768543796}
+  - component: {fileID: 1768543795}
+  - component: {fileID: 1768543794}
+  m_Layer: 0
+  m_Name: Ungrouped_0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &1768543794
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1768543793}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 1921029427}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1768543795
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1768543793}
+  m_Mesh: {fileID: 939086525}
+--- !u!114 &1768543796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1768543793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c5421560b7d6a6409dc540526667811, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAssetId: 5
+  myNodeId: -1
+  myObjectNodeId: 6
+  myAsset: {fileID: 1555827815}
+  myObjectId: 6
+  myObjectName: tube_object1
+  myObjectVisible: 1
+  myObjectInfo:
+    hasTransformChanged: 0
+    haveGeosChanged: 0
+    isVisible: 0
+    isInstancer: 0
+    isInstanced: 0
+    geoCount: 0
+    nodeId: -1
+    objectToInstanceId: 0
+  myGeos: []
+  myGeoId: 7
+  myGeoName: mountain1
+  myGeoType: 0
+  myIsEditable: 0
+  myIsDisplay: 1
+  myObjectControl: {fileID: 240296980}
+  myGeoAttributeManager: {fileID: 0}
+  myParts: []
+  myPartId: 0
+  myPartName: Ungrouped_0
+  myPartType: 0
+  myMaterialId: -1
+  myVertexList: 000000000d0000000c000000000000000e0000000d000000000000000f0000000e00000000000000100000000f000000000000001100000010000000000000001200000011000000000000001300000012000000000000001400000013000000000000001500000014000000000000001600000015000000000000001700000016000000000000000c00000017000000180000002500000024000000180000002600000025000000180000002700000026000000180000002800000027000000180000002900000028000000180000002a00000029000000180000002b0000002a000000180000002c0000002b000000180000002d0000002c000000180000002e0000002d000000180000002f0000002e00000018000000240000002f000000300000003d0000003c000000300000003e0000003d000000300000003f0000003e00000030000000400000003f000000300000004100000040000000300000004200000041000000300000004300000042000000300000004400000043000000300000004500000044000000300000004600000045000000300000004700000046000000300000003c00000047000000480000005500000054000000480000005600000055000000480000005700000056000000480000005800000057000000480000005900000058000000480000005a00000059000000480000005b0000005a000000480000005c0000005b000000480000005d0000005c000000480000005e0000005d000000480000005f0000005e00000048000000540000005f000000600000006d0000006c000000600000006e0000006d000000600000006f0000006e00000060000000700000006f000000600000007100000070000000600000007200000071000000600000007300000072000000600000007400000073000000600000007500000074000000600000007600000075000000600000007700000076000000600000006c00000077000000
+  myLastLocalToWorld:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 3.69
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  myTransformChanged: 1
+  myShowDisplayOptions: 1
+  myShowPointNumbers: 0
+  myShowPointGroup: 0
+  mySelectedPointGroup: 
+  myShowPrimitiveGroup: 0
+  mySelectedPrimitiveGroup: 
+  myShowIntermediateResultControls: 0
+  myShowInfo: 0
+  myGeoControl: {fileID: 1213316540}
+--- !u!4 &1768543797
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1768543793}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1213316541}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!43 &1775544103
+Mesh:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: CONTROL/Tree1/tube_object1/mountain1/Ungrouped_0/Mesh
+  serializedVersion: 8
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 360
+    topology: 0
+    firstVertex: 0
+    vertexCount: 240
+    localAABB:
+      m_Center: {x: -0.023710608, y: 3.3886447, z: -0.004105091}
+      m_Extent: {x: 1.0852268, y: 3.4309769, z: 1.117081}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexBuffer: 00000d000c0000000e000d0000000f000e00000010000f0000001100100000001200110000001300120000001400130000001500140000001600150000001700160000000c00170018002500240018002600250018002700260018002800270018002900280018002a00290018002b002a0018002c002b0018002d002c0018002e002d0018002f002e00180024002f0030003d003c0030003e003d0030003f003e00300040003f0030004100400030004200410030004300420030004400430030004500440030004600450030004700460030003c00470048005500540048005600550048005700560048005800570048005900580048005a00590048005b005a0048005c005b0048005d005c0048005e005d0048005f005e00480054005f0060006d006c0060006e006d0060006f006e00600070006f0060007100700060007200710060007300720060007400730060007500740060007600750060007700760060006c00770078008500840078008600850078008700860078008800870078008900880078008a00890078008b008a0078008c008b0078008d008c0078008e008d0078008f008e00780084008f0090009d009c0090009e009d0090009f009e009000a0009f009000a100a0009000a200a1009000a300a2009000a400a3009000a500a4009000a600a5009000a700a60090009c00a700a800b500b400a800b600b500a800b700b600a800b800b700a800b900b800a800ba00b900a800bb00ba00a800bc00bb00a800bd00bc00a800be00bd00a800bf00be00a800b400bf00c000cd00cc00c000ce00cd00c000cf00ce00c000d000cf00c000d100d000c000d200d100c000d300d200c000d400d300c000d500d400c000d600d500c000d700d600c000cc00d700d800e500e400d800e600e500d800e700e600d800e800e700d800e900e800d800ea00e900d800eb00ea00d800ec00eb00d800ed00ec00d800ee00ed00d800ef00ee00d800e400ef00
+  m_Skin: []
+  m_VertexData:
+    m_CurrentChannels: 143
+    m_VertexCount: 240
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 24
+      format: 2
+      dimension: 4
+    - stream: 0
+      offset: 28
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 36
+      format: 0
+      dimension: 4
+    m_DataSize: 12480
+    _typelessdata: 35fb63ad423e803f81bb552e6fe62f3b84ff7f3f5fd133bbffffffff0000000000000000c5ff7fbf9ce62f3b000000000000803f000000800000803f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000800000803f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000800000803f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000800000803f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000800000803f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000800000803f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000800000803f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000800000803f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000800000803f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000800000803f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000800000803f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803fa9f18dbf5c12213ca9d678b05a9d2abfa9b63e3f5251ed3cffffffff000000000000000029cb3ebfb1af2abf000000000000803fe1a578bf3817c23c968e0fbf69380fbf0ce4403f0cd4b0beffffffff0000000000000000c1894dbf649c18bf000000000000803fa1fd0bbf73e2e3bb9b7872bf6861adbe502b3c3f706016bfffffffff0000000000000000eb8268bfdd3cd6be000000000000803f23a253338ce9be3c07838fbf832eb7bccbd1403f084c28bfffffffff000000000000000025e37fbfdc18f3bc000000000000803f8c3f0e3f52e84b3c916176bfce91a53e15303f3fdfc214bfffffffff000000000000000030ec6abfaf71cb3e000000000000803f9f717a3fca8a053d059810bfd443183f36e2413f3bfe89beffffffff00000000000000007b5549bfb01d1e3f000000000000803fc3df873f99642dbdfb59c3335f61333f7559363f64c9253dffffffff0000000000000000bf7f36bf0a87333f000000000000803ff541733fca0048bbe7710c3f43f1223fd8a13b3f93ec753effffffff0000000000000000064a41bfe2da273f000000000000803f211e133f33625e3dbcd07e3f92a9ab3ee37b453fda730a3fffffffff000000000000000099c86abfc315cc3e000000000000803fcd5a61b2aedb693cff758e3fee0128bdcf513f3fa8c5293fffffffff0000000000000000849d7fbf0b7860bd000000000000803fdddb0ebfe4f1903c5870773f6665b1beb4f93f3f5a45103fffffffff0000000000000000ef6468bfd3bed6be000000000000803f1f8b73bfcc31d6ba1b9c0c3f68ac16bf89ff3c3ff7ada83effffffff0000000000000000652c48bf25951fbf000000000000803f024fdd2f3719cb3f024f5daf221dae3c32f07f3f64f2b4bbffffffff000000000000000032f17fbfd01dae3c000000000000803f00000080cdcccc3f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080cdcccc3f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080cdcccc3f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080cdcccc3f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080cdcccc3f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080cdcccc3f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080cdcccc3f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080cdcccc3f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080cdcccc3f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080cdcccc3f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080cdcccc3f00000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f63e670bf8b6de93e9539bd3140c542bf2f15223f36db113effffffff00000000000000009ec023bfe3c644bf000000000000803f485971bf92b8163fc0570bbfd9e522bfed933b3fde0e77beffffffff0000000000000000ae4941bf47db27bf000000000000803f668903bf8cab083f0cd463bfffd579be4e57313f08bd2dbfffffffff00000000000000003d7671bf9415aabe000000000000803f65c03833a91dfc3e3b487bbfe58fec3d31cb293fe84a3dbfffffffff00000000000000000000000074913e3f1af02a3f0000803ff59bef3ec21ae73ef4814fbf1ec4cc3e84d2223f0ff228bfffffffff000000000000000067b758bf9245083f000000000000803f14c3563fb82ef63e62fcf7be256d233ff59f283f9ce5cbbeffffffff0000000000000000afd437bfdd29323f000000000000803fe39b743fa51af03ec904b0339294423fe855263fc2ea28bcffffffff00000000000000002c5826bf3897423f000000000000803ffb8c583f77e6f93e240dfa3ec5852c3f26d6293fad76a63effffffff0000000000000000f69733bf166f363f000000000000803f51c1ff3e6c15023f937d5d3f2fedd33e15b32d3fc55b1b3fffffffff0000000000000000638b5abf0252053f000000000000803fb8d14ab22b1f073f31ad823f18df093d6795313f8a30383fffffffff000000000000000000000000464b38bf2daf313f0000803f1a6003bf3861083f868c633feaa6d3bea53a323fc23c163fffffffff0000000000000000181f5cbf40b302bf000000000000803f46e756bfec79f63e2026f83eac7633bf33d1273fbdc08f3effffffff0000000000000000b3d92ebf20fc3abf000000000000803f0000008092bd0a40ad0995af6b7f373d4db27f3fb70f9cbcffffffff00000000000000002dbe7fbff187373d000000000000803f00000080a4700d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a4700d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a4700d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a4700d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a4700d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a4700d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a4700d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a4700d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a4700d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a4700d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a4700d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803fb67b61bf78137e3f7b541f3096224cbf76fa183fbb0aac3dffffffff0000000000000000628519bff6db4cbf000000000000803f0d9454bf0b65863fdd76f5be69712fbf5163263f0b2da8beffffffff0000000000000000902930bfd5bf39bf000000000000803ffe59edbe6168833f6f8d4dbf4c4b88bebde91f3f87ef3bbfffffffff00000000000000000000000077f8423f25e6253f0000803f08971433981f783f3f6659bfbe51443e9040113f7c024dbfffffffff0000000000000000000000006ee2503f5fff133f0000803f39a8c73e020f6b3f7ae82cbf16aef33ec14a073fd2f633bfffffffff0000000000000000b53a3ebfa0502b3f000000000000803ffb5c323f6db26f3fc4f4cdbed862323fe9cd0b3f8411eebeffffffff0000000000000000d8e91dbf287e493f000000000000803f6584513fb851723faa9295338019543f65230e3f18e994bdffffffff0000000000000000f6830ebf99a9543f000000000000803fd8423e3f44d0793fd9b1db3e64743c3f5835153fdc27b03effffffff0000000000000000ece81ebf39b5483f000000000000803f2eeede3e3e327c3f3c10413f49c7f13e2f47173f1671273fffffffff000000000000000000fd47bf84d01f3f000000000000803f8c8936b297fd823ff5376c3f7c37843da258203f70e0463fffffffff000000000000000000000000de4a47bf71ae203f0000803f60feebbe65e8823f65604c3f8b56d9be6266203f2954273fffffffff0000000000000000bff053bf4b960fbf000000000000803f6d5945bf27d77f3f15e1e33ee4ba36bf26ee1a3f4d78b43effffffff0000000000000000468e25bf1a4343bf000000000000803f0000008012c931405238d8b0e999993cab7b7f3fd09178bdffffffff00000000000000006ff47fbf85e2993c000000000000803f000000801a2f354000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000801a2f354000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000801a2f354000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000801a2f354000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000801a2f354000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000801a2f354000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000801a2f354000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000801a2f354000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000801a2f354000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000801a2f354000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000801a2f354000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803fbc3749bf3cc6be3f4cee6930edbd55bf7e7d023f488454beffffffff0000000000000000016505bfcb7f5abf000000000000803f858624bf6e63bb3f46fabdbe974d35bf21dbfa3e7e2002bfffffffff0000000000000000c0a511bfa48752bf000000000000803fe750b9bef0fbb93f087d20bf109ac9bee92af53e7dde48bfffffffff000000000000000000000000ad855a3f5e5b053f0000803f19f00733c7a6b83f62e434bf77ad42bc1e75ef3e894162bfffffffff0000000000000000000000009f45623f7179ef3e0000803f4a6ebb3e069fba3fe05122bf3b97cd3ecc25f83e24ef46bfffffffff0000000000000000000000000f37593fbb79073f0000803f4cdf223f37d0ba3f9711bcbe6c7e443f4927f93efb9ad5beffffffff00000000000000006f1309bf6d35583f000000000000803fb975373fcc6cb93f20404133c1745f3f0df1f03e4d1204beffffffff000000000000000091f8f2be9156613f000000000000803f156b383fd64ec23faff2d43ebdce4a3f2f4e0b3f96688d3effffffff000000000000000075f110bfed03533f000000000000803fba59d53ee36dc23f5ac4383fa989e33e763d0d3f19ad343fffffffff0000000000000000ce5d47bff196203f000000000000803f984824b2d048c43f52825b3f3eb68d3cd63a113f8ac5523fffffffff0000000000000000000000009ecd52bf6740113f0000803fdbe0d8bef27dc33f7cd23b3f60a5b8bead4f0f3f8dfb3e3fffffffff00000000000000000000000003c34cbfa5a6193f0000803f0f6249bf8035c83f7789e83e3a073bbf02e9183feb68a93effffffff0000000000000000840922bf123146bf000000000000803f283548afb6325d4031aba2af7f82e3bcb5737f3f658472bdffffffff0000000000000000a2e67fbfdae8e3bc000000000000803f00000080d0b35d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080d0b35d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080d0b35d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080d0b35d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080d0b35d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080d0b35d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080d0b35d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080d0b35d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080d0b35d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080d0b35d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080d0b35d4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f600829bfd01ffc3f59472232c47061bf8e46c83eece488beffffffff0000000000000000aad7cfbe46f569bf000000000000803f308904bfb02ef83f0d0a99bee59f3cbf3f35ba3ecee711bfffffffff0000000000000000169ee2befd8e65bf000000000000803f4eb694beaa1df73fdac900bfdf6908bf4da5b53e2cab44bfffffffff000000000000000000000000f669683f16a9d63e0000803ff7bb0f33b546fb3f849725bf56fe36be7240c83e871f67bfffffffff0000000000000000000000008ae76a3f2887cb3e0000803ffbbab23eb283fe3ff9c81abfc149be3eb306db3e7ded52bfffffffff000000000000000000000000bd33633fe9eceb3e0000803fab151d3f3d2bff3fc062b5be5720403f93dcde3e539cfebeffffffff00000000000000000d7000bfff725d3f000000000000803f58fe3c3fa18500406ab08f33fd65623f99d8e63e4a85f7bdffffffff0000000000000000008de8befb11643f000000000000803f9d8c313f1e7f02402e04cd3e8cb8493f8f3cfb3ef16abe3effffffff0000000000000000485307bf064f593f000000000000803fdf2dcb3e2945024057f52f3f5d80d43e309ff93ef8a4443fffffffff000000000000000000000000c32358bf452f093f0000803fefda13b220e101401e02483ffddbf6bc9ac9f53ed170603fffffffff000000000000000000000000eb8a60bf30e6f53e0000803f791fc5be19860140a9b62a3faa45dbbec766f23e410b453fffffffff0000000000000000000000007e0d5abf841f063f0000803f48a82fbf323a0240ddd4ca3e59c552bf3d6bf63ee4069a3effffffff0000000000000000b53101bf3f025dbf000000000000803f7f8b1bb0af3284405e6e423012fa88bc3fe97f3f13cda63cffffffff0000000000000000d5f67fbf580189bc000000000000803f000000804c89834000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804c89834000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804c89834000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804c89834000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804c89834000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804c89834000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804c89834000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804c89834000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804c89834000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804c89834000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804c89834000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f768220bf016b1f4048ec19b1c77c6ebf5852b63e918c95bdffffffff000000000000000048cfb6be34206fbf000000000000803f02b20abfc3611f40ce26a0befeaf57bf52f1b53e7042cfbeffffffff000000000000000061f9c6beb5e06bbf000000000000803fa1e8acbe0dab20404cbe15bfe1aa13bf570fc33e4efb38bfffffffff000000000000000000000000e173623f55caee3e0000803f6993043301ee2140a66b39bfd81b3fbd21ced23e0dfd68bfffffffff000000000000000000000000133e693ff608d33e0000803f3493b53ebe8a2140a23f1dbf3e16e63e3bb8ce3e1a014cbfffffffff000000000000000000000000bb5c643fdb66e73e0000803fdd24223fa71c2240503abbbe679c493f390dd53eebbbe8beffffffff0000000000000000f430efbecb58623f000000000000803fbf8d353f328a2140484691330c9b683fea49cd3e284cef3dffffffff000000000000000062b4cebebf356a3f000000000000803f92540f3fe9eb1f40f480a53e41ef3f3fc188bb3ea5150d3fffffffff0000000000000000adbee0beb204663f000000000000803f9ef5a23e3daa1f4087200d3f0870e73ebd97b93ee3a5503fffffffff000000000000000000000000bee869bf0510d03e0000803fd71105b295a41f4087bd223f5445343b775db93ee8a16e3fffffffff00000000000000000000000025a26ebfa65db93e0000803f2a6ea3be65b61f40ec880d3fcd69d4bee6d7b93ea897553fffffffff00000000000000000000000066bf6abf0d40cc3e0000803f06c715bf11ac2040b0f2ac3ed3ce4ebf79f7c43e5ea0e43effffffff0000000000000000d721dcbe7f2167bf000000000000803f3c68fdb0c3c99740a28a8e309711303965bf7f3f23d5353dffffffff0000000000000000000080bf123e3039000000000000803f00000080a1b0984000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a1b0984000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a1b0984000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a1b0984000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a1b0984000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a1b0984000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a1b0984000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a1b0984000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a1b0984000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a1b0984000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080a1b0984000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f98af0fbff7813f40946a76313fb273bf79399c3eec74da3cffffffff0000000000000000b3479cbe70c873bf000000000000803f51f8f8be2b833f402ebe8fbe84a45cbf51d89b3e8ba9cfbeffffffff00000000000000009f7faabe8b6371bf000000000000803fb1a89cbef1934040b1ab07bf9dcd07bf2ef3a93e7eae47bfffffffff000000000000000000000000d18e6b3f007cc83e0000803f8ecaec320870404064f51abf73e7aa3ca37ca83ec4ae71bfffffffff0000000000000000000000003dbc713f0886a83e0000803f672b993e404a404011a604bfd51cee3ec294a63e4bc552bfffffffff00000000000000000000000099156e3f142bbc3e0000803f927e073fa58f40409a749cbeae0b583f98dda93e01d7d7beffffffff00000000000000000753bbbe2f406e3f000000000000803f0a08103f43893f4044844e33154e6f3f44d1993e2514423effffffff000000000000000028a89cbef6b8733f000000000000803f05cedb3e8f1f3e400ecf7d3eb0223d3f20f3873ee7901e3fffffffff0000000000000000db2aadbed3e9703f000000000000803fc6a26f3ee6893d40e287cf3e2274d73e18bf813e36fc5e3fffffffff000000000000000000000000ffce75bfc9068f3e0000803f8386efb1fd573d40bde8ea3e98f4d239d5ee7e3e8cf0773fffffffff0000000000000000000000008ef077bfd7ee7e3e0000803f96bd6fbe018b3d401a9fcf3e53d3aebe1684803ef4df673fffffffff000000000000000000000000c2b376bfe6bb883e0000803f21e5f1bee72c3f4078a88b3ef3b83bbf8fcd953e341e1d3fffffffff000000000000000014bebdbe98c56dbf000000000000803f9c9034325516aa4088fe1db2a345163c06f97f3f48df393cffffffff00000000000000003ffd7fbf1e48163c000000000000803f00000080e45bae4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080e45bae4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080e45bae4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080e45bae4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080e45bae4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080e45bae4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080e45bae4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080e45bae4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080e45bae4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080e45bae4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f00000080e45bae4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f58150fbf0f91604001ba06b2030874bf9a03973e7cae863dffffffff0000000000000000775797be878f74bf000000000000803f87c8f3beb668604095bf8cbe50a748bfb65f943e819b0cbfffffffff0000000000000000928db1be301d70bf000000000000803f6c6982be1bb65f4042e1e1be4584e8bedbf4893ef46559bfffffffff0000000000000000000000000703743f4bd89a3e0000803f6349c8321c166040c5f707bf23267ebdea998f3ef93575bfffffffff0000000000000000000000002baf753fe4e08f3e0000803ff6aa8b3e0a56604066e9f1beca53f73e2ec3933ed59f53bfffffffff000000000000000000000000c2b1713f1ac2a83e0000803f7534ea3e28096040e23787be1d7e623fcc168e3efeb9bfbeffffffff0000000000000000143d99bee543743f000000000000803fbef7f43e1e2d5f4063f63133aa96763f3a13813e7428be3dffffffff000000000000000098a281be8ea8773f000000000000803f4a48d33e7a245f40cef7733e2a9a5b3f19ff803eb65ae53effffffff0000000000000000534890beff9f753f000000000000803f9427803e1a8f5f4068f8dd3e58be053f217d873eec814f3fffffffff0000000000000000000000000b5c73bfd7e59e3e0000803faa92d7b12a955f406481003f7cf4a7bc5efb873e10c0763fffffffff00000000000000000000000057cd76bfaf02883e0000803fa2937abe935d5f407f01d93eacdeefbebf96843ea13b583fffffffff00000000000000000000000059c174bffd13963e0000803f59b1e2be37be5f408ce1823e38a044bf5787893e7fd0143fffffffff00000000000000000505a9be11a671bf000000000000803f5f879d326c6ebe40000000008174cf3c86e97f3f37c2dabbffffffff0000000000000000fcea7fbfb075cf3c000000000000803f000000804898c44000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804898c44000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804898c44000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804898c44000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804898c44000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804898c44000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804898c44000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804898c44000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804898c44000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804898c44000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804898c44000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803fa2a017bff2d6804032f2a0b2679b74bf5f8b963ef1f0c3bcffffffff0000000000000000669696be51ad74bf000000000000803fb297f3be4489804064a38cbeae9138bfa842893ed99523bfffffffff0000000000000000ef71b2bed8f26fbf000000000000803f2e2373be780280402e90d2be3b3aa8be078e6e3ef5506abfffffffff0000000000000000000000001a17783ff5937c3e0000803fcb4a933287ae7f40dfe9e6bee512643d41b8653e471179bfffffffff0000000000000000000000005974793fa113663e0000803fde6b643ee99c7f4095d1c5be1369e43e4758633ec9f35dbfffffffff0000000000000000000000007cff773ffa057e3e0000803f67d4d23e8e038040f87173be35a5563f0f83723e304cfbbeffffffff00000000000000002d2c8bbe6b5c763f000000000000803f8eeae53e7ba77f40fd5547334046793f06de643ef286323dffffffff0000000000000000c21565bef582793f000000000000803fdcc7c83e17b57f4079d7673e931a5e3f34b6663e06f9e23effffffff000000000000000034b180be04c8773f000000000000803f1023733e770280401790d23e4dce0c3fc083713e6d184d3fffffffff0000000000000000000000004b9475bffa97903e0000803fff03c2b14c238040066dfc3eff44713d95f77a3ee0bb773fffffffff0000000000000000000000002f2a78bf54677b3e0000803f56de81be233d80405bf0e03ef0e0c0beb961803e7e49643fffffffff0000000000000000000000005d7176bf8c978a3e0000803fbe35fabe45a480406e75903ed44a41bfe9448e3e6308183fffffffff000000000000000061d4b0be563f70bf000000000000803f122398b0573ada409b34e4b1caa353bb76fd7f3f723006bcffffffff0000000000000000aaff7fbf9ca553bb000000000000803f000000804e74db4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804e74db4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804e74db4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804e74db4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804e74db4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804e74db4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804e74db4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804e74db4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804e74db4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804e74db4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803f000000804e74db4000000000000000000000000000000000ffffffff0000000000000000000000800000803f000000000000803fa06ed8bee7fa8f40dee031aff16e7bbf5c3b373e0db86cbdffffffff0000000000000000e48937beb4da7bbf000000000000803fe0d7b8be3ff28f404a7055bede234cbf3c12343e57c513bfffffffff0000000000000000b0845cbe53fe79bf000000000000803fdde440bed6b68f40170da7bebdf5d7be4103233ed28164bfffffffff000000000000000000000000f8057c3febc9333e0000803f9d1c8132f9bb8f40cdabc2be85afe1bd600e243e101d7bbfffffffff000000000000000000000000fca67c3fbb0f253e0000803f0eb65a3e7e019040ce68bdbee6a0a93e5990363ed5306dbfffffffff00000000000000000000000066637b3fd97d413e0000803f9096ce3edb3a9040258c6ebe38ba543f00214a3efb2605bfffffffff0000000000000000fea86cbebb11793f000000000000803f9e88e33e011b9040db003b335a7a7a3f1e39403e00a0b03dffffffff000000000000000025f140be276a7b3f000000000000803f6f50bb3e7ffa8f40ba4a583e3ed9533f5d37373e723a083fffffffff00000000000000006c6658bee0377a3f000000000000803fd3b8573ed9f88f401dd2ba3ef810033f15e3363e1719573fffffffff000000000000000000000000cf677abf40e8543e0000803f329daeb12e0b90409e0fde3e6806b93de2893b3ee99a7a3fffffffff00000000000000000000000057a27bbf054f3c3e0000803ff10a6fbe493c90406304cf3e09b9f0be259e4a3e6e305c3fffffffff000000000000000000000000c17b79bf0393653e0000803f145ac5be031c9040d6e1633e2e1564bffe7e403efba4d33effffffff0000000000000000336753be317c7abf000000000000803f
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: -0.023710608, y: 3.4078076, z: -0.004105091}
+    m_Extent: {x: 1.0852268, y: 3.4501398, z: 1.117081}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshOptimized: 0
+--- !u!21 &1921029427
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Houdini/SpecularVertexColor
+  m_Shader: {fileID: 4800000, guid: 371e49b649506284e86ccddef0ce5393, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Shininess: 0.078125
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+--- !u!114 &2133753061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb61dda6b88a5d4e895b869b3254b40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parmNames:
+  - xOrd
+  - rOrd
+  - t
+  - r
+  - s
+  - p
+  - scale
+  - pre_xform
+  - keeppos
+  - childcomp
+  - constraints_on
+  - constraints_path
+  - lookatpath
+  - lookupobjpath
+  - lookup
+  - pathobjpath
+  - roll
+  - pos
+  - uparmtype
+  - pathorient
+  - up
+  - bank
+  - label1
+  - label2
+  - label3
+  - label4
+  - tdisplay
+  - display
+  - outputobj
+  - visibleobjects
+  - picking
+  - pickscript
+  - caching
+  - use_dcolor
+  - dcolor
+  - TreeSections
+  - TreeRoughnessScale
+  - TreeRoughness
+  - s2
+  - t2
+  parmIndices: 0000000001000000000000000300000006000000090000000c0000000200000003000000040000000500000000000000010000000200000003000000040000000d0000000e00000006000000070000000f00000012000000050000000600000007000000080000000800000009000000090000000a0000000a0000000b0000000b0000000c000000130000000d0000001600000017000000180000001b000000
+  parmIntValues: 0000000000000000000000000000000000000000000000000100000001000000000000000100000001000000010000000100000005000000
+  parmFloatValues:
+  - 0
+  - 0
+  - 3.67
+  - 0
+  - -0
+  - 0
+  - 1
+  - 1
+  - 1
+  - 0
+  - 0
+  - 0
+  - 1
+  - 0
+  - 0
+  - 0
+  - 1
+  - 0
+  - 0
+  - 1
+  - 1
+  - 1
+  - 0.5
+  - 1.4528571
+  - 0.9
+  - 1.1
+  - 0.9
+  - 0
+  - 0.5
+  - 0
+  parmStringValues:
+  - 
+  - 
+  - 
+  - on
+  - 
+  - 'Sub-Network Input #1'
+  - 'Sub-Network Input #2'
+  - 'Sub-Network Input #3'
+  - 'Sub-Network Input #4'
+  - _input1_obj_
+  - '*'
+  - 
