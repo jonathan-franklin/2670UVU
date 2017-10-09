@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - PLASMA
+  - Bad
+  - Good
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - UI
   - 
   - 
-  - Player/Trigger
+  - Player/Player
   - 
   - 
   - 
@@ -33,9 +35,9 @@ TagManager:
   - Weapons
   - 
   - 
-  - 
-  - 
-  - 
+  - PowerUps/Health
+  - PowerUps/Death
+  - PowerUps/Satan
   - 
   - 
   m_SortingLayers:

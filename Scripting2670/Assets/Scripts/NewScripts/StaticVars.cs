@@ -2,6 +2,7 @@ public class StaticVars {
     public static bool weaponsEnabled = true;
 
 
+    public static float health = 1.0f;
     public static float speed;
     public static float dragSpeed;
     public static float boostSpeed;
