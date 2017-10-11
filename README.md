@@ -1,0 +1,1 @@
+Current repositories can be found at https://gitlab.com/jonathan-franklin/Game-Fall2017 for the game project and https://gitlab.com/jonathan-franklin/Animation-Fall2017 for the animation. This repository will only be used for holding scripts and anything else that may need to be shared. 
