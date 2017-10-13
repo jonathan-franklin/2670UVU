@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 CurrentProcessId = 9492
 ServerProcessID = 17400
 ServerSessionID = 1132989216
+=======
+CurrentProcessId = 5784
+ServerProcessID = 35960
+ServerSessionID = 1081039120
+>>>>>>> LearningAssets
 HoudiniSceneExists = true
