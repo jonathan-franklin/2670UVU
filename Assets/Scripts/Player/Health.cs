@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
     public static Text healthText;
 
     private static GameObject player;
-    private static Vector3 startingPos;
+    public static Vector3 checkPoint;
 
 	// Use this for initialization
 	void Start () 
@@ -18,7 +18,7 @@ public class Health : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         health = int.Parse(healthText.text); // health equals the text value of the UI health label.
 
-        startingPos = player.transform.position;
+        checkPoint = player.transform.position;
 	}
 
     public static void TakeDamage (int dm)
@@ -30,7 +30,7 @@ public class Health : MonoBehaviour
 
         if (health <= 0)
         {
-            player.transform.position = startingPos;
+            player.transform.position = checkPoint;
             health = 100;
             healthText.text = System.Convert.ToString(health);
             print("DEAD");

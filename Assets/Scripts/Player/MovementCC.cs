@@ -39,6 +39,15 @@ public class MovementCC : MonoBehaviour
 	public void Move (float input)
     {
         moveValue.x = input * speed * Time.deltaTime; // Handles left and right movement.
+        
+        if (Math.Sign(input) > 0)
+        {
+            transform.eulerAngles = Vector3.zero;
+        }
+        if (Math.Sign(input) < 0)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
 
         // If you use up arrow, jump only if the player is grounded or 
         // hasn't already used their second jump.
@@ -80,25 +89,6 @@ public class MovementCC : MonoBehaviour
         GameObject respawnTwo = GameObject.Find("RespawnTwo");
         transform.position = respawnTwo.transform.position;
     }
-
-    public void ResetOne()
-    {
-        GameObject respawnOne = GameObject.Find("RespawnOne");
-        transform.position = respawnOne.transform.position;
-    }
-
-    public void ResetThree()
-    {
-        GameObject respawnThree = GameObject.Find("RespawnThree");
-        transform.position = respawnThree.transform.position;
-    }
-
-    public void ResetFour()
-    {
-        GameObject respawnFour = GameObject.Find("RespawnFour");
-        transform.position = respawnFour.transform.position;
-    }
-
 
     public void Stop ()
     {

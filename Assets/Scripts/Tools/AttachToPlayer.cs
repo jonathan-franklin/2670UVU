@@ -7,6 +7,10 @@ public class AttachToPlayer : MonoBehaviour
     Transform attachObject;
     GameObject player;
 
+    public float locationX = 0.9f;
+    public float locationY = 1.0f;
+    public float locationZ = 0.0f;
+
     // Use this for initialization
     void Awake()
     {
@@ -22,7 +26,7 @@ public class AttachToPlayer : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         transform.parent = attachObject;
-        transform.position = new Vector3(attachObject.transform.position.x + 0.9f, attachObject.transform.position.y + 1.0f, attachObject.transform.position.z);
+        transform.position = new Vector3(attachObject.transform.position.x + locationX, attachObject.transform.position.y + locationY, attachObject.transform.position.z + locationZ);
         transform.Rotate(0, 0, 270);
         player.layer = 13;
     }

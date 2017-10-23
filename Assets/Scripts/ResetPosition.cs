@@ -13,6 +13,6 @@ public class ResetPosition : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        player.GetComponent<MovementCC>().ResetOne();
+        player.GetComponent<MovementCC>().ResetTwo();
     }
 }
