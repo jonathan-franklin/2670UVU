@@ -1,6 +1,6 @@
 //Maya ASCII 2017ff05 scene
 //Name: Jon_Other_Final_Scene.ma
-//Last modified: Sat, Dec 09, 2017 03:27:46 AM
+//Last modified: Sun, Dec 10, 2017 03:52:32 PM
 //Codeset: 1252
 file -rdi 1 -ns "SwampTallTreeNoLeaves_JonathanFranklin1" -dr 1 -rfn "SwampTallTreeNoLeaves_JonathanFranklinRN1"
 		 -typ "mayaAscii" "C:/Users/jonat/Git Repos/2670UVU//assets/ma/environmentalMeshes/plants/trees/SwampTallTreeNoLeaves_JonathanFranklin.ma";
@@ -24,8 +24,7 @@ file -r -ns "Sam_Final_Updated_Scene" -dr 1 -rfn "Sam_Final_Updated_SceneRN" -op
 		 "v=0;" -typ "mayaAscii" "C:/Users/jonat/Git Repos/2670UVU//scenes/film/sets/Sam_Final_Updated_Scene.ma";
 requires maya "2017ff05";
 requires -nodeType "simpleSelector" -nodeType "renderSetupLayer" -nodeType "renderSetup"
-		 -nodeType "collection" -nodeType "materialOverride" -nodeType "applyConnectionOverride"
-		 "renderSetup.py" "1.0";
+		 -nodeType "collection" -nodeType "materialOverride" "renderSetup.py" "1.0";
 requires "stereoCamera" "10.0";
 requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
@@ -38,17 +37,17 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "7A3CA50D-4481-BD48-9921-6F83931EEA17";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 19.228193438963139 12.706440481149823 52.08205085181195 ;
-	setAttr ".r" -type "double3" -6.3383527300232645 387.00000000143916 -2.2310124808018677e-016 ;
+	setAttr ".t" -type "double3" 3.2065771614015004 46.287926805876857 84.120466812519354 ;
+	setAttr ".r" -type "double3" -33.338352730051085 356.20000000117386 1.9922266493700561e-016 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "EF122E88-4AEC-CA02-2043-8DB3C49F4E67";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 32.594986578723272;
+	setAttr ".coi" 74.620365560331351;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 8.0498314273200169 4.8728222413763858 35.166364339843433 ;
+	setAttr ".tp" -type "double3" 39.239335717919403 3.8348073231077064 60.813363133111636 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "C5EDDAF8-4232-A122-1C7D-119AF3F45772";
@@ -108,8 +107,8 @@ createNode transform -n "NONReferencedPalms";
 	rename -uid "B6680612-4A56-9B64-AFAF-AAB9141954E8";
 createNode transform -n "camera1";
 	rename -uid "155BB160-4756-7619-8583-02A251C7FBB2";
-	setAttr ".t" -type "double3" 39.271688493590595 3.6230637932205556 60.851823209981283 ;
-	setAttr ".r" -type "double3" 1.8292266288034307 40.0706854657778 1.2988202871949399e-016 ;
+	setAttr ".t" -type "double3" 12.499106177596133 3.598538373578982 31.195484664249015 ;
+	setAttr ".r" -type "double3" 1.8292266288032428 40.070685465777885 -1.2988202871949414e-016 ;
 createNode camera -n "cameraShape1" -p "camera1";
 	rename -uid "5052B921-488A-E1E3-5C42-179EA9585685";
 	setAttr -k off ".v";
@@ -124,6 +123,140 @@ createNode camera -n "cameraShape1" -p "camera1";
 	setAttr ".man" -type "string" "camera1_mask";
 	setAttr ".tp" -type "double3" -0.31472539901733398 6.1655929088592529 1.324333667755127 ;
 	setAttr ".dr" yes;
+createNode transform -n "YB_Projection_Rig" -p "camera1";
+	rename -uid "C92589B6-444A-6407-CE61-3E8CE87C570C";
+	setAttr ".rlio[0]" 4 yes 0;
+	setAttr ".t" -type "double3" -0.87308017650777647 -5.5247353263640537 -25.364440569838919 ;
+	setAttr ".r" -type "double3" 1.5790104405482372 0.7686237544704827 -0.53591633447704234 ;
+	setAttr ".s" -type "double3" 0.88220732208778962 0.88220732208778974 0.88239540299033681 ;
+createNode nurbsCurve -n "YB_Projection_RigShape" -p "YB_Projection_Rig";
+	rename -uid "6A88E389-4C7B-7DC8-2827-688039FD1DFF";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		3.5805425138412099 2.1924499643933241e-016 -3.5805425138412041
+		-5.7770212223899138e-016 3.1005924744694505e-016 -5.06365178372769
+		-3.5805425138412064 2.1924499643933256e-016 -3.5805425138412064
+		-5.06365178372769 8.9847412840218631e-032 -1.4673196043589695e-015
+		-3.5805425138412073 -2.1924499643933249e-016 3.5805425138412055
+		-1.5257771052646282e-015 -3.100592474469451e-016 5.0636517837276909
+		3.5805425138412041 -2.1924499643933258e-016 3.5805425138412068
+		5.06365178372769 -1.6653342664701472e-031 2.7196972508802012e-015
+		3.5805425138412099 2.1924499643933241e-016 -3.5805425138412041
+		-5.7770212223899138e-016 3.1005924744694505e-016 -5.06365178372769
+		-3.5805425138412064 2.1924499643933256e-016 -3.5805425138412064
+		;
+createNode transform -n "YB_Front2" -p "YB_Projection_Rig";
+	rename -uid "0C16D5D7-46A0-472E-EA69-00A06706E4B8";
+	setAttr ".s" -type "double3" 1 1 0.19415297062519715 ;
+createNode mesh -n "YB_FrontShape2" -p "YB_Front2";
+	rename -uid "D6F6698F-45DE-21B0-7296-9599DFCDF3D7";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.5 0.99915283529157062 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 4 ".uvst[0].uvsp[0:3]" -type "float2" 0 0 1 0 0 0.99915284
+		 1 0.99915284;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 4 ".pt[0:3]" -type "float3"  -4.7683716e-007 0.14876404 
+		-4.3024354 0 0.148764 -4.3024349 0 10.948764 6.4975657 4.7683716e-007 10.948761 6.4975643;
+	setAttr -s 4 ".vt[0:3]"  -9.60000038 -1.1990409e-015 5.4000001 9.60000038 -1.1990409e-015 5.4000001
+		 -9.60000038 1.1990409e-015 -5.4000001 9.60000038 1.1990409e-015 -5.4000001;
+	setAttr -s 4 ".ed[0:3]"  0 1 0 0 2 0 1 3 0 2 3 0;
+	setAttr -ch 4 ".fc[0]" -type "polyFaces" 
+		f 4 0 2 -4 -2
+		mu 0 4 0 1 3 2;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "YB_Mid1" -p "YB_Projection_Rig";
+	rename -uid "61E96518-4AA2-C5FF-89B3-A78D87523699";
+	setAttr ".s" -type "double3" 1 1 0.19415297062519715 ;
+createNode mesh -n "YB_MidShape1" -p "YB_Mid1";
+	rename -uid "C8A5EEBC-4F0B-A8F8-9314-BF816E4DA7DC";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.5 0.99915283529157062 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 4 ".uvst[0].uvsp[0:3]" -type "float2" 0 0 1 0 0 0.99915284
+		 1 0.99915284;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 4 ".pt[0:3]" -type "float3"  0 0.148764 -5.4187274 -4.7683716e-007 
+		0.14876398 -5.4187274 -4.7683716e-007 10.948768 5.3812728 0 10.948762 5.3812771;
+	setAttr -s 4 ".vt[0:3]"  -9.60000038 -1.1990409e-015 5.4000001 9.60000038 -1.1990409e-015 5.4000001
+		 -9.60000038 1.1990409e-015 -5.4000001 9.60000038 1.1990409e-015 -5.4000001;
+	setAttr -s 4 ".ed[0:3]"  0 1 0 0 2 0 1 3 0 2 3 0;
+	setAttr -ch 4 ".fc[0]" -type "polyFaces" 
+		f 4 0 2 -4 -2
+		mu 0 4 0 1 3 2;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "YB_SuperFront1" -p "YB_Projection_Rig";
+	rename -uid "A76BE5D2-4851-729D-2CE7-FEB34FA43FCF";
+	setAttr ".s" -type "double3" 1 1 0.19415297062519715 ;
+createNode mesh -n "YB_SuperFrontShape1" -p "YB_SuperFront1";
+	rename -uid "F0CC8EDA-4BE3-310A-7530-9FB5EE3485A5";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.5 0.99915283529157062 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 4 ".uvst[0].uvsp[0:3]" -type "float2" 0 0 1 0 0 0.99915284
+		 1 0.99915284;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 4 ".pt[0:3]" -type "float3"  0 0 -1.1920929e-007 4.7683716e-007 
+		-1.4551915e-011 1.1920929e-007 4.7683716e-007 -7.4505806e-009 -1.1920929e-007 -4.7683716e-007 
+		1.8626451e-009 1.1920929e-007;
+	setAttr -s 4 ".vt[0:3]"  -9.60000038 0.14876413 1.93725872 9.60000038 0.14876413 1.93725872
+		 -9.60000038 10.9487648 1.93725872 9.60000038 10.9487648 1.93725872;
+	setAttr -s 4 ".ed[0:3]"  0 1 0 0 2 0 1 3 0 2 3 0;
+	setAttr -ch 4 ".fc[0]" -type "polyFaces" 
+		f 4 0 2 -4 -2
+		mu 0 4 0 1 3 2;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode parentConstraint -n "YB_Projection_Rig_parentConstraint1" -p "YB_Projection_Rig";
+	rename -uid "354F8028-4E3E-4FBB-F2B6-B5A9A672D4C6";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "camera1W0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tpm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".tg[0].tt" -type "double3" 23.026825948633501 1.4983739018578017 23.850344016326048 ;
+	setAttr ".tg[0].tot" -type "double3" 2.1927757707367528 -5.6959452411791363 -24.703882722396699 ;
+	setAttr ".tg[0].tr" -type "double3" 3.9260512709096771 56.470685465780456 0 ;
+	setAttr ".tg[0].tor" -type "double3" -4.0986926203295617 6.3814495221942558 4.0004805009279737e-016 ;
+	setAttr ".cpim" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".lr" -type "double3" 0.65282434004315892 62.834049104814532 0.95505394510243213 ;
+	setAttr ".rst" -type "double3" 15.790430444805652 4.9257004631252128 14.252263963011842 ;
+	setAttr ".rsrr" -type "double3" -4.0986926203295617 48.85213498797328 -3.021022714523731e-016 ;
 createNode transform -n "BigTree1";
 	rename -uid "F3318390-43AD-8378-C5A1-A8A22D76E95C";
 	setAttr ".t" -type "double3" -28.745321384455401 -0.89195230786866009 0 ;
@@ -3590,197 +3723,6 @@ createNode transform -n "SmallBush1";
 	rename -uid "5A55F525-4750-5658-7551-FDBD49A92E6B";
 	setAttr ".t" -type "double3" -37.680204859729791 0 16.629710555728025 ;
 	setAttr ".s" -type "double3" 2.0366977186400597 2.0366977186400597 2.0366977186400597 ;
-createNode transform -n "YB_Projection_Rig";
-	rename -uid "C92589B6-444A-6407-CE61-3E8CE87C570C";
-	setAttr ".v" no;
-	setAttr ".t" -type "double3" 2.6102319495193735 -8.2692128301501526 17.869317107334602 ;
-	setAttr ".r" -type "double3" 4.0434832607584603 56.192238383372768 0.73985452044574718 ;
-	setAttr ".s" -type "double3" 3.4494989063355339 3.4494989063355339 3.4502343172206973 ;
-createNode nurbsCurve -n "YB_Projection_RigShape" -p "YB_Projection_Rig";
-	rename -uid "6A88E389-4C7B-7DC8-2827-688039FD1DFF";
-	setAttr -k off ".v";
-	setAttr ".cc" -type "nurbsCurve" 
-		3 8 2 no 3
-		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
-		11
-		3.5805425138412099 2.1924499643933241e-016 -3.5805425138412041
-		-5.7770212223899138e-016 3.1005924744694505e-016 -5.06365178372769
-		-3.5805425138412064 2.1924499643933256e-016 -3.5805425138412064
-		-5.06365178372769 8.9847412840218631e-032 -1.4673196043589695e-015
-		-3.5805425138412073 -2.1924499643933249e-016 3.5805425138412055
-		-1.5257771052646282e-015 -3.100592474469451e-016 5.0636517837276909
-		3.5805425138412041 -2.1924499643933258e-016 3.5805425138412068
-		5.06365178372769 -1.6653342664701472e-031 2.7196972508802012e-015
-		3.5805425138412099 2.1924499643933241e-016 -3.5805425138412041
-		-5.7770212223899138e-016 3.1005924744694505e-016 -5.06365178372769
-		-3.5805425138412064 2.1924499643933256e-016 -3.5805425138412064
-		;
-createNode transform -n "YB_Front2" -p "YB_Projection_Rig";
-	rename -uid "0C16D5D7-46A0-472E-EA69-00A06706E4B8";
-	setAttr ".s" -type "double3" 1 1 0.19415297062519715 ;
-createNode mesh -n "YB_FrontShape2" -p "YB_Front2";
-	rename -uid "D6F6698F-45DE-21B0-7296-9599DFCDF3D7";
-	setAttr -k off ".v";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.5 0.99915283529157062 ;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr -s 4 ".uvst[0].uvsp[0:3]" -type "float2" 0 0 1 0 0 0.99915284
-		 1 0.99915284;
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 4 ".pt[0:3]" -type "float3"  -4.7683716e-007 0.14876404 
-		-4.3024354 0 0.148764 -4.3024349 0 10.948764 6.4975657 4.7683716e-007 10.948761 6.4975643;
-	setAttr -s 4 ".vt[0:3]"  -9.60000038 -1.1990409e-015 5.4000001 9.60000038 -1.1990409e-015 5.4000001
-		 -9.60000038 1.1990409e-015 -5.4000001 9.60000038 1.1990409e-015 -5.4000001;
-	setAttr -s 4 ".ed[0:3]"  0 1 0 0 2 0 1 3 0 2 3 0;
-	setAttr -ch 4 ".fc[0]" -type "polyFaces" 
-		f 4 0 2 -4 -2
-		mu 0 4 0 1 3 2;
-	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
-	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
-	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
-	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "Halp_" -p "YB_Projection_Rig";
-	rename -uid "BAF1C334-47CF-D2D2-9437-98809248A0C7";
-	setAttr ".s" -type "double3" 1 1 0.19415297062519715 ;
-createNode mesh -n "Halp_Shape" -p "Halp_";
-	rename -uid "E45DF20E-411C-CB0B-4C82-8294B0BE514F";
-	setAttr -k off ".v";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.5 0.99915283529157062 ;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr -s 4 ".uvst[0].uvsp[0:3]" -type "float2" 0 0 1 0 0 0.99915284
-		 1 0.99915284;
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 4 ".pt[0:3]" -type "float3"  4.7683716e-007 0.148764 -6.4387178 
-		0 0.14876395 -6.4387169 4.7683716e-007 10.948766 4.3612819 0 10.948768 4.3612843;
-	setAttr -s 4 ".vt[0:3]"  -9.60000038 -1.1990409e-015 5.4000001 9.60000038 -1.1990409e-015 5.4000001
-		 -9.60000038 1.1990409e-015 -5.4000001 9.60000038 1.1990409e-015 -5.4000001;
-	setAttr -s 4 ".ed[0:3]"  0 1 0 0 2 0 1 3 0 2 3 0;
-	setAttr -ch 4 ".fc[0]" -type "polyFaces" 
-		f 4 0 2 -4 -2
-		mu 0 4 0 1 3 2;
-	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
-	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
-	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
-	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "YB_Mid1" -p "YB_Projection_Rig";
-	rename -uid "61E96518-4AA2-C5FF-89B3-A78D87523699";
-	setAttr ".s" -type "double3" 1 1 0.19415297062519715 ;
-createNode mesh -n "YB_MidShape1" -p "YB_Mid1";
-	rename -uid "C8A5EEBC-4F0B-A8F8-9314-BF816E4DA7DC";
-	setAttr -k off ".v";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.5 0.99915283529157062 ;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr -s 4 ".uvst[0].uvsp[0:3]" -type "float2" 0 0 1 0 0 0.99915284
-		 1 0.99915284;
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 4 ".pt[0:3]" -type "float3"  0 0.148764 -5.4187274 -4.7683716e-007 
-		0.14876398 -5.4187274 -4.7683716e-007 10.948768 5.3812728 0 10.948762 5.3812771;
-	setAttr -s 4 ".vt[0:3]"  -9.60000038 -1.1990409e-015 5.4000001 9.60000038 -1.1990409e-015 5.4000001
-		 -9.60000038 1.1990409e-015 -5.4000001 9.60000038 1.1990409e-015 -5.4000001;
-	setAttr -s 4 ".ed[0:3]"  0 1 0 0 2 0 1 3 0 2 3 0;
-	setAttr -ch 4 ".fc[0]" -type "polyFaces" 
-		f 4 0 2 -4 -2
-		mu 0 4 0 1 3 2;
-	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
-	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
-	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
-	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "YB_SuperFront1" -p "YB_Projection_Rig";
-	rename -uid "A76BE5D2-4851-729D-2CE7-FEB34FA43FCF";
-	setAttr ".s" -type "double3" 1 1 0.19415297062519715 ;
-createNode mesh -n "YB_SuperFrontShape1" -p "YB_SuperFront1";
-	rename -uid "F0CC8EDA-4BE3-310A-7530-9FB5EE3485A5";
-	setAttr -k off ".v";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.5 0.99915283529157062 ;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr -s 4 ".uvst[0].uvsp[0:3]" -type "float2" 0 0 1 0 0 0.99915284
-		 1 0.99915284;
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 4 ".pt[0:3]" -type "float3"  0 0 -1.1920929e-007 4.7683716e-007 
-		-1.4551915e-011 1.1920929e-007 4.7683716e-007 -7.4505806e-009 -1.1920929e-007 -4.7683716e-007 
-		1.8626451e-009 1.1920929e-007;
-	setAttr -s 4 ".vt[0:3]"  -9.60000038 0.14876413 1.93725872 9.60000038 0.14876413 1.93725872
-		 -9.60000038 10.9487648 1.93725872 9.60000038 10.9487648 1.93725872;
-	setAttr -s 4 ".ed[0:3]"  0 1 0 0 2 0 1 3 0 2 3 0;
-	setAttr -ch 4 ".fc[0]" -type "polyFaces" 
-		f 4 0 2 -4 -2
-		mu 0 4 0 1 3 2;
-	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
-	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
-	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
-	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "YB_SuperBack1" -p "YB_Projection_Rig";
-	rename -uid "BFAF445E-46EC-70F5-5DE0-FC8A61611965";
-	setAttr ".s" -type "double3" 1 1 0.19415297062519715 ;
-createNode mesh -n "YB_SuperBack1Shape" -p "YB_SuperBack1";
-	rename -uid "A6049336-4A8E-9794-9D03-21859A3B13A8";
-	setAttr -k off ".v";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.5 0.99915283529157062 ;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr -s 4 ".uvst[0].uvsp[0:3]" -type "float2" 0 0 1 0 0 0.99915284
-		 1 0.99915284;
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 4 ".pt[0:3]" -type "float3"  -4.7683716e-007 0.14876401 
-		-7.4322863 0 0.14876395 -7.4322872 0 10.948765 3.3677137 4.7683716e-007 10.948763 
-		3.3677135;
-	setAttr -s 4 ".vt[0:3]"  -9.60000038 -1.1990409e-015 5.4000001 9.60000038 -1.1990409e-015 5.4000001
-		 -9.60000038 1.1990409e-015 -5.4000001 9.60000038 1.1990409e-015 -5.4000001;
-	setAttr -s 4 ".ed[0:3]"  0 1 0 0 2 0 1 3 0 2 3 0;
-	setAttr -ch 4 ".fc[0]" -type "polyFaces" 
-		f 4 0 2 -4 -2
-		mu 0 4 0 1 3 2;
-	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
-	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
-	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
-	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode parentConstraint -n "YB_Projection_Rig_parentConstraint1" -p "YB_Projection_Rig";
-	rename -uid "354F8028-4E3E-4FBB-F2B6-B5A9A672D4C6";
-	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "camera1W0" -dv 1 -min 0 -at "double";
-	setAttr -k on ".nds";
-	setAttr -k off ".v";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr ".erp" yes;
-	setAttr ".tg[0].tpm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".tg[0].tt" -type "double3" 23.026825948633501 1.4983739018578017 23.850344016326048 ;
-	setAttr ".tg[0].tot" -type "double3" 2.1927757707367528 -5.6959452411791363 -24.703882722396699 ;
-	setAttr ".tg[0].tr" -type "double3" 3.9260512709096771 56.470685465780456 0 ;
-	setAttr ".tg[0].tor" -type "double3" -4.0986926203295617 6.3814495221942558 4.0004805009279737e-016 ;
-	setAttr ".cpim" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".lr" -type "double3" 0.65282434004315892 62.834049104814532 0.95505394510243213 ;
-	setAttr ".rst" -type "double3" 15.790430444805652 4.9257004631252128 14.252263963011842 ;
-	setAttr ".rsrr" -type "double3" -4.0986926203295617 48.85213498797328 -3.021022714523731e-016 ;
 createNode fosterParent -n "ImageProjectionRigRNfosterParent1";
 	rename -uid "667A26F1-415C-8D3B-1650-2DBDBE5120D6";
 createNode parentConstraint -n "YB_Projection_Rig_parentConstraint1" -p "ImageProjectionRigRNfosterParent1";
@@ -4137,20 +4079,19 @@ createNode place3dTexture -n "place3dTexture1";
 	setAttr ".r" -type "double3" -90 0 45.672451388762582 ;
 	setAttr ".s" -type "double3" 0.0045333332586632562 0.12041666225163204 0.0022879165827810097 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "296452D5-49A6-306C-E639-7DB56D01A68F";
+	rename -uid "A61E57E8-4FE3-9434-5D79-4CAB6CB24C2C";
 	setAttr -s 370 ".lnk";
 	setAttr -s 373 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "C97FC518-4D26-6AAE-723A-7A947800CDDB";
+	rename -uid "246FF3BA-4E56-749F-4E8F-FA9C076BCD13";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "4C0EADF6-4A5B-BA8E-4976-259BFB9A73C9";
+	rename -uid "D6839932-4275-DD48-723C-26BC7AAE85A1";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "B496AFA9-481A-DDF2-D38D-BB815D68E06D";
+	rename -uid "BCB8106E-477F-B176-71A6-6D809F6EB050";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "7AD78F0E-42DB-A3DD-DFAB-67B857332F73";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "CD677098-44AC-A998-720F-4AAD9A82A1A6";
-	setAttr ".crl" 4;
+	rename -uid "A5021477-4931-FD23-6D6A-E19963809E98";
 	setAttr -s 5 ".rlmi[1:4]"  1 2 3 4;
 	setAttr -s 2 ".rlmi";
 createNode renderLayer -n "defaultRenderLayer";
@@ -4159,7 +4100,7 @@ createNode renderLayer -n "defaultRenderLayer";
 createNode script -n "uiConfigurationScriptNode";
 	rename -uid "11437D4D-4FFF-70A4-766A-378B84FBD07E";
 	setAttr ".b" -type "string" (
-		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"camera1\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n"
+		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"cameraShape1\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n"
 		+ "            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n"
 		+ "            -colorResolution 4 4 \n            -bumpResolution 4 4 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 0\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n"
 		+ "            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n"
@@ -4365,7 +4306,7 @@ createNode materialInfo -n "materialInfo1";
 	rename -uid "20BA0D62-464C-E063-9B6B-0CBF62A3E190";
 createNode file -n "file1";
 	rename -uid "FAEBD54A-4F55-B041-BC9D-6280EBDA4BBF";
-	setAttr ".ftn" -type "string" "C:/Users/jonat/Git Repos/2670UVU//sourceimages/ToonBoom/Jonathan Franklin (Bear Leaving)/Torso/final-1.png";
+	setAttr ".ftn" -type "string" "C:/Users/jonat/Git Repos/2670UVU//sourceimages/ToonBoom/Jonathan Franklin (Bear Sniffing)/VFX/final-1.png";
 	setAttr ".ufe" yes;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "place2dTexture1";
@@ -4384,7 +4325,7 @@ createNode materialInfo -n "materialInfo2";
 	rename -uid "E8EEBFDF-470D-7AFA-E4A3-65B9E63F6223";
 createNode file -n "file2";
 	rename -uid "EBFCB489-4CBB-9697-F4AF-B5A3650497CE";
-	setAttr ".ftn" -type "string" "C:/Users/jonat/Git Repos/2670UVU//sourceimages/ToonBoom/Jonathan Franklin (Bear Leaving)/Right Legs/final-1.png";
+	setAttr ".ftn" -type "string" "C:/Users/jonat/Git Repos/2670UVU//sourceimages/ToonBoom/Jonathan Franklin (Bear Sniffing)/Bear/final-1.png";
 	setAttr ".ufe" yes;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "place2dTexture2";
@@ -4403,7 +4344,7 @@ createNode materialInfo -n "materialInfo3";
 	rename -uid "725FD13A-4191-8C4E-D446-70B7DF48B62E";
 createNode file -n "file3";
 	rename -uid "3FCCBE22-4510-F20F-E023-2582A41D4E02";
-	setAttr ".ftn" -type "string" "C:/Users/jonat/Git Repos/2670UVU//sourceimages/ToonBoom/Jonathan Franklin (Bear Leaving)/Head/final-1.png";
+	setAttr ".ftn" -type "string" "C:/Users/jonat/Git Repos/2670UVU//sourceimages/ToonBoom/Jonathan Franklin (Bear Sniffing)/Boy/final-1.png";
 	setAttr ".ufe" yes;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "place2dTexture3";
@@ -5236,14 +5177,1041 @@ createNode aiAOVDriver -s -n "defaultArnoldDisplayDriver";
 	rename -uid "3068E5C2-48B2-8860-0322-9A8472E4DDC8";
 createNode reference -n "Sam_Final_Updated_SceneRN";
 	rename -uid "3ECD78AA-45C7-1D89-E640-9CA4863F9246";
-	setAttr -s 3 ".phl";
+	setAttr -s 1030 ".phl";
 	setAttr ".phl[1]" 0;
 	setAttr ".phl[2]" 0;
 	setAttr ".phl[3]" 0;
+	setAttr ".phl[4]" 0;
+	setAttr ".phl[5]" 0;
+	setAttr ".phl[6]" 0;
+	setAttr ".phl[7]" 0;
+	setAttr ".phl[8]" 0;
+	setAttr ".phl[9]" 0;
+	setAttr ".phl[10]" 0;
+	setAttr ".phl[11]" 0;
+	setAttr ".phl[12]" 0;
+	setAttr ".phl[13]" 0;
+	setAttr ".phl[14]" 0;
+	setAttr ".phl[15]" 0;
+	setAttr ".phl[16]" 0;
+	setAttr ".phl[17]" 0;
+	setAttr ".phl[18]" 0;
+	setAttr ".phl[19]" 0;
+	setAttr ".phl[20]" 0;
+	setAttr ".phl[21]" 0;
+	setAttr ".phl[22]" 0;
+	setAttr ".phl[23]" 0;
+	setAttr ".phl[24]" 0;
+	setAttr ".phl[25]" 0;
+	setAttr ".phl[26]" 0;
+	setAttr ".phl[27]" 0;
+	setAttr ".phl[28]" 0;
+	setAttr ".phl[29]" 0;
+	setAttr ".phl[30]" 0;
+	setAttr ".phl[31]" 0;
+	setAttr ".phl[32]" 0;
+	setAttr ".phl[33]" 0;
+	setAttr ".phl[34]" 0;
+	setAttr ".phl[35]" 0;
+	setAttr ".phl[36]" 0;
+	setAttr ".phl[37]" 0;
+	setAttr ".phl[38]" 0;
+	setAttr ".phl[39]" 0;
+	setAttr ".phl[40]" 0;
+	setAttr ".phl[41]" 0;
+	setAttr ".phl[42]" 0;
+	setAttr ".phl[43]" 0;
+	setAttr ".phl[44]" 0;
+	setAttr ".phl[45]" 0;
+	setAttr ".phl[46]" 0;
+	setAttr ".phl[47]" 0;
+	setAttr ".phl[48]" 0;
+	setAttr ".phl[49]" 0;
+	setAttr ".phl[50]" 0;
+	setAttr ".phl[51]" 0;
+	setAttr ".phl[52]" 0;
+	setAttr ".phl[53]" 0;
+	setAttr ".phl[54]" 0;
+	setAttr ".phl[55]" 0;
+	setAttr ".phl[56]" 0;
+	setAttr ".phl[57]" 0;
+	setAttr ".phl[58]" 0;
+	setAttr ".phl[59]" 0;
+	setAttr ".phl[60]" 0;
+	setAttr ".phl[61]" 0;
+	setAttr ".phl[62]" 0;
+	setAttr ".phl[63]" 0;
+	setAttr ".phl[64]" 0;
+	setAttr ".phl[65]" 0;
+	setAttr ".phl[66]" 0;
+	setAttr ".phl[67]" 0;
+	setAttr ".phl[68]" 0;
+	setAttr ".phl[69]" 0;
+	setAttr ".phl[70]" 0;
+	setAttr ".phl[71]" 0;
+	setAttr ".phl[72]" 0;
+	setAttr ".phl[73]" 0;
+	setAttr ".phl[74]" 0;
+	setAttr ".phl[75]" 0;
+	setAttr ".phl[76]" 0;
+	setAttr ".phl[77]" 0;
+	setAttr ".phl[78]" 0;
+	setAttr ".phl[79]" 0;
+	setAttr ".phl[80]" 0;
+	setAttr ".phl[81]" 0;
+	setAttr ".phl[82]" 0;
+	setAttr ".phl[83]" 0;
+	setAttr ".phl[84]" 0;
+	setAttr ".phl[85]" 0;
+	setAttr ".phl[86]" 0;
+	setAttr ".phl[87]" 0;
+	setAttr ".phl[88]" 0;
+	setAttr ".phl[89]" 0;
+	setAttr ".phl[90]" 0;
+	setAttr ".phl[91]" 0;
+	setAttr ".phl[92]" 0;
+	setAttr ".phl[93]" 0;
+	setAttr ".phl[94]" 0;
+	setAttr ".phl[95]" 0;
+	setAttr ".phl[96]" 0;
+	setAttr ".phl[97]" 0;
+	setAttr ".phl[98]" 0;
+	setAttr ".phl[99]" 0;
+	setAttr ".phl[100]" 0;
+	setAttr ".phl[101]" 0;
+	setAttr ".phl[102]" 0;
+	setAttr ".phl[103]" 0;
+	setAttr ".phl[104]" 0;
+	setAttr ".phl[105]" 0;
+	setAttr ".phl[106]" 0;
+	setAttr ".phl[107]" 0;
+	setAttr ".phl[108]" 0;
+	setAttr ".phl[109]" 0;
+	setAttr ".phl[110]" 0;
+	setAttr ".phl[111]" 0;
+	setAttr ".phl[112]" 0;
+	setAttr ".phl[113]" 0;
+	setAttr ".phl[114]" 0;
+	setAttr ".phl[115]" 0;
+	setAttr ".phl[116]" 0;
+	setAttr ".phl[117]" 0;
+	setAttr ".phl[118]" 0;
+	setAttr ".phl[119]" 0;
+	setAttr ".phl[120]" 0;
+	setAttr ".phl[121]" 0;
+	setAttr ".phl[122]" 0;
+	setAttr ".phl[123]" 0;
+	setAttr ".phl[124]" 0;
+	setAttr ".phl[125]" 0;
+	setAttr ".phl[126]" 0;
+	setAttr ".phl[127]" 0;
+	setAttr ".phl[128]" 0;
+	setAttr ".phl[129]" 0;
+	setAttr ".phl[130]" 0;
+	setAttr ".phl[131]" 0;
+	setAttr ".phl[132]" 0;
+	setAttr ".phl[133]" 0;
+	setAttr ".phl[134]" 0;
+	setAttr ".phl[135]" 0;
+	setAttr ".phl[136]" 0;
+	setAttr ".phl[137]" 0;
+	setAttr ".phl[138]" 0;
+	setAttr ".phl[139]" 0;
+	setAttr ".phl[140]" 0;
+	setAttr ".phl[141]" 0;
+	setAttr ".phl[142]" 0;
+	setAttr ".phl[143]" 0;
+	setAttr ".phl[144]" 0;
+	setAttr ".phl[145]" 0;
+	setAttr ".phl[146]" 0;
+	setAttr ".phl[147]" 0;
+	setAttr ".phl[148]" 0;
+	setAttr ".phl[149]" 0;
+	setAttr ".phl[150]" 0;
+	setAttr ".phl[151]" 0;
+	setAttr ".phl[152]" 0;
+	setAttr ".phl[153]" 0;
+	setAttr ".phl[154]" 0;
+	setAttr ".phl[155]" 0;
+	setAttr ".phl[156]" 0;
+	setAttr ".phl[157]" 0;
+	setAttr ".phl[158]" 0;
+	setAttr ".phl[159]" 0;
+	setAttr ".phl[160]" 0;
+	setAttr ".phl[161]" 0;
+	setAttr ".phl[162]" 0;
+	setAttr ".phl[163]" 0;
+	setAttr ".phl[164]" 0;
+	setAttr ".phl[165]" 0;
+	setAttr ".phl[166]" 0;
+	setAttr ".phl[167]" 0;
+	setAttr ".phl[168]" 0;
+	setAttr ".phl[169]" 0;
+	setAttr ".phl[170]" 0;
+	setAttr ".phl[171]" 0;
+	setAttr ".phl[172]" 0;
+	setAttr ".phl[173]" 0;
+	setAttr ".phl[174]" 0;
+	setAttr ".phl[175]" 0;
+	setAttr ".phl[176]" 0;
+	setAttr ".phl[177]" 0;
+	setAttr ".phl[178]" 0;
+	setAttr ".phl[179]" 0;
+	setAttr ".phl[180]" 0;
+	setAttr ".phl[181]" 0;
+	setAttr ".phl[182]" 0;
+	setAttr ".phl[183]" 0;
+	setAttr ".phl[184]" 0;
+	setAttr ".phl[185]" 0;
+	setAttr ".phl[186]" 0;
+	setAttr ".phl[187]" 0;
+	setAttr ".phl[188]" 0;
+	setAttr ".phl[189]" 0;
+	setAttr ".phl[190]" 0;
+	setAttr ".phl[191]" 0;
+	setAttr ".phl[192]" 0;
+	setAttr ".phl[193]" 0;
+	setAttr ".phl[194]" 0;
+	setAttr ".phl[195]" 0;
+	setAttr ".phl[196]" 0;
+	setAttr ".phl[197]" 0;
+	setAttr ".phl[198]" 0;
+	setAttr ".phl[199]" 0;
+	setAttr ".phl[200]" 0;
+	setAttr ".phl[201]" 0;
+	setAttr ".phl[202]" 0;
+	setAttr ".phl[203]" 0;
+	setAttr ".phl[204]" 0;
+	setAttr ".phl[205]" 0;
+	setAttr ".phl[206]" 0;
+	setAttr ".phl[207]" 0;
+	setAttr ".phl[208]" 0;
+	setAttr ".phl[209]" 0;
+	setAttr ".phl[210]" 0;
+	setAttr ".phl[211]" 0;
+	setAttr ".phl[212]" 0;
+	setAttr ".phl[213]" 0;
+	setAttr ".phl[214]" 0;
+	setAttr ".phl[215]" 0;
+	setAttr ".phl[216]" 0;
+	setAttr ".phl[217]" 0;
+	setAttr ".phl[218]" 0;
+	setAttr ".phl[219]" 0;
+	setAttr ".phl[220]" 0;
+	setAttr ".phl[221]" 0;
+	setAttr ".phl[222]" 0;
+	setAttr ".phl[223]" 0;
+	setAttr ".phl[224]" 0;
+	setAttr ".phl[225]" 0;
+	setAttr ".phl[226]" 0;
+	setAttr ".phl[227]" 0;
+	setAttr ".phl[228]" 0;
+	setAttr ".phl[229]" 0;
+	setAttr ".phl[230]" 0;
+	setAttr ".phl[231]" 0;
+	setAttr ".phl[232]" 0;
+	setAttr ".phl[233]" 0;
+	setAttr ".phl[234]" 0;
+	setAttr ".phl[235]" 0;
+	setAttr ".phl[236]" 0;
+	setAttr ".phl[237]" 0;
+	setAttr ".phl[238]" 0;
+	setAttr ".phl[239]" 0;
+	setAttr ".phl[240]" 0;
+	setAttr ".phl[241]" 0;
+	setAttr ".phl[242]" 0;
+	setAttr ".phl[243]" 0;
+	setAttr ".phl[244]" 0;
+	setAttr ".phl[245]" 0;
+	setAttr ".phl[246]" 0;
+	setAttr ".phl[247]" 0;
+	setAttr ".phl[248]" 0;
+	setAttr ".phl[249]" 0;
+	setAttr ".phl[250]" 0;
+	setAttr ".phl[251]" 0;
+	setAttr ".phl[252]" 0;
+	setAttr ".phl[253]" 0;
+	setAttr ".phl[254]" 0;
+	setAttr ".phl[255]" 0;
+	setAttr ".phl[256]" 0;
+	setAttr ".phl[257]" 0;
+	setAttr ".phl[258]" 0;
+	setAttr ".phl[259]" 0;
+	setAttr ".phl[260]" 0;
+	setAttr ".phl[261]" 0;
+	setAttr ".phl[262]" 0;
+	setAttr ".phl[263]" 0;
+	setAttr ".phl[264]" 0;
+	setAttr ".phl[265]" 0;
+	setAttr ".phl[266]" 0;
+	setAttr ".phl[267]" 0;
+	setAttr ".phl[268]" 0;
+	setAttr ".phl[269]" 0;
+	setAttr ".phl[270]" 0;
+	setAttr ".phl[271]" 0;
+	setAttr ".phl[272]" 0;
+	setAttr ".phl[273]" 0;
+	setAttr ".phl[274]" 0;
+	setAttr ".phl[275]" 0;
+	setAttr ".phl[276]" 0;
+	setAttr ".phl[277]" 0;
+	setAttr ".phl[278]" 0;
+	setAttr ".phl[279]" 0;
+	setAttr ".phl[280]" 0;
+	setAttr ".phl[281]" 0;
+	setAttr ".phl[282]" 0;
+	setAttr ".phl[283]" 0;
+	setAttr ".phl[284]" 0;
+	setAttr ".phl[285]" 0;
+	setAttr ".phl[286]" 0;
+	setAttr ".phl[287]" 0;
+	setAttr ".phl[288]" 0;
+	setAttr ".phl[289]" 0;
+	setAttr ".phl[290]" 0;
+	setAttr ".phl[291]" 0;
+	setAttr ".phl[292]" 0;
+	setAttr ".phl[293]" 0;
+	setAttr ".phl[294]" 0;
+	setAttr ".phl[295]" 0;
+	setAttr ".phl[296]" 0;
+	setAttr ".phl[297]" 0;
+	setAttr ".phl[298]" 0;
+	setAttr ".phl[299]" 0;
+	setAttr ".phl[300]" 0;
+	setAttr ".phl[301]" 0;
+	setAttr ".phl[302]" 0;
+	setAttr ".phl[303]" 0;
+	setAttr ".phl[304]" 0;
+	setAttr ".phl[305]" 0;
+	setAttr ".phl[306]" 0;
+	setAttr ".phl[307]" 0;
+	setAttr ".phl[308]" 0;
+	setAttr ".phl[309]" 0;
+	setAttr ".phl[310]" 0;
+	setAttr ".phl[311]" 0;
+	setAttr ".phl[312]" 0;
+	setAttr ".phl[313]" 0;
+	setAttr ".phl[314]" 0;
+	setAttr ".phl[315]" 0;
+	setAttr ".phl[316]" 0;
+	setAttr ".phl[317]" 0;
+	setAttr ".phl[318]" 0;
+	setAttr ".phl[319]" 0;
+	setAttr ".phl[320]" 0;
+	setAttr ".phl[321]" 0;
+	setAttr ".phl[322]" 0;
+	setAttr ".phl[323]" 0;
+	setAttr ".phl[324]" 0;
+	setAttr ".phl[325]" 0;
+	setAttr ".phl[326]" 0;
+	setAttr ".phl[327]" 0;
+	setAttr ".phl[328]" 0;
+	setAttr ".phl[329]" 0;
+	setAttr ".phl[330]" 0;
+	setAttr ".phl[331]" 0;
+	setAttr ".phl[332]" 0;
+	setAttr ".phl[333]" 0;
+	setAttr ".phl[334]" 0;
+	setAttr ".phl[335]" 0;
+	setAttr ".phl[336]" 0;
+	setAttr ".phl[337]" 0;
+	setAttr ".phl[338]" 0;
+	setAttr ".phl[339]" 0;
+	setAttr ".phl[340]" 0;
+	setAttr ".phl[341]" 0;
+	setAttr ".phl[342]" 0;
+	setAttr ".phl[343]" 0;
+	setAttr ".phl[344]" 0;
+	setAttr ".phl[345]" 0;
+	setAttr ".phl[346]" 0;
+	setAttr ".phl[347]" 0;
+	setAttr ".phl[348]" 0;
+	setAttr ".phl[349]" 0;
+	setAttr ".phl[350]" 0;
+	setAttr ".phl[351]" 0;
+	setAttr ".phl[352]" 0;
+	setAttr ".phl[353]" 0;
+	setAttr ".phl[354]" 0;
+	setAttr ".phl[355]" 0;
+	setAttr ".phl[356]" 0;
+	setAttr ".phl[357]" 0;
+	setAttr ".phl[358]" 0;
+	setAttr ".phl[359]" 0;
+	setAttr ".phl[360]" 0;
+	setAttr ".phl[361]" 0;
+	setAttr ".phl[362]" 0;
+	setAttr ".phl[363]" 0;
+	setAttr ".phl[364]" 0;
+	setAttr ".phl[365]" 0;
+	setAttr ".phl[366]" 0;
+	setAttr ".phl[367]" 0;
+	setAttr ".phl[368]" 0;
+	setAttr ".phl[369]" 0;
+	setAttr ".phl[370]" 0;
+	setAttr ".phl[371]" 0;
+	setAttr ".phl[372]" 0;
+	setAttr ".phl[373]" 0;
+	setAttr ".phl[374]" 0;
+	setAttr ".phl[375]" 0;
+	setAttr ".phl[376]" 0;
+	setAttr ".phl[377]" 0;
+	setAttr ".phl[378]" 0;
+	setAttr ".phl[379]" 0;
+	setAttr ".phl[380]" 0;
+	setAttr ".phl[381]" 0;
+	setAttr ".phl[382]" 0;
+	setAttr ".phl[383]" 0;
+	setAttr ".phl[384]" 0;
+	setAttr ".phl[385]" 0;
+	setAttr ".phl[386]" 0;
+	setAttr ".phl[387]" 0;
+	setAttr ".phl[388]" 0;
+	setAttr ".phl[389]" 0;
+	setAttr ".phl[390]" 0;
+	setAttr ".phl[391]" 0;
+	setAttr ".phl[392]" 0;
+	setAttr ".phl[393]" 0;
+	setAttr ".phl[394]" 0;
+	setAttr ".phl[395]" 0;
+	setAttr ".phl[396]" 0;
+	setAttr ".phl[397]" 0;
+	setAttr ".phl[398]" 0;
+	setAttr ".phl[399]" 0;
+	setAttr ".phl[400]" 0;
+	setAttr ".phl[401]" 0;
+	setAttr ".phl[402]" 0;
+	setAttr ".phl[403]" 0;
+	setAttr ".phl[404]" 0;
+	setAttr ".phl[405]" 0;
+	setAttr ".phl[406]" 0;
+	setAttr ".phl[407]" 0;
+	setAttr ".phl[408]" 0;
+	setAttr ".phl[409]" 0;
+	setAttr ".phl[410]" 0;
+	setAttr ".phl[411]" 0;
+	setAttr ".phl[412]" 0;
+	setAttr ".phl[413]" 0;
+	setAttr ".phl[414]" 0;
+	setAttr ".phl[415]" 0;
+	setAttr ".phl[416]" 0;
+	setAttr ".phl[417]" 0;
+	setAttr ".phl[418]" 0;
+	setAttr ".phl[419]" 0;
+	setAttr ".phl[420]" 0;
+	setAttr ".phl[421]" 0;
+	setAttr ".phl[422]" 0;
+	setAttr ".phl[423]" 0;
+	setAttr ".phl[424]" 0;
+	setAttr ".phl[425]" 0;
+	setAttr ".phl[426]" 0;
+	setAttr ".phl[427]" 0;
+	setAttr ".phl[428]" 0;
+	setAttr ".phl[429]" 0;
+	setAttr ".phl[430]" 0;
+	setAttr ".phl[431]" 0;
+	setAttr ".phl[432]" 0;
+	setAttr ".phl[433]" 0;
+	setAttr ".phl[434]" 0;
+	setAttr ".phl[435]" 0;
+	setAttr ".phl[436]" 0;
+	setAttr ".phl[437]" 0;
+	setAttr ".phl[438]" 0;
+	setAttr ".phl[439]" 0;
+	setAttr ".phl[440]" 0;
+	setAttr ".phl[441]" 0;
+	setAttr ".phl[442]" 0;
+	setAttr ".phl[443]" 0;
+	setAttr ".phl[444]" 0;
+	setAttr ".phl[445]" 0;
+	setAttr ".phl[446]" 0;
+	setAttr ".phl[447]" 0;
+	setAttr ".phl[448]" 0;
+	setAttr ".phl[449]" 0;
+	setAttr ".phl[450]" 0;
+	setAttr ".phl[451]" 0;
+	setAttr ".phl[452]" 0;
+	setAttr ".phl[453]" 0;
+	setAttr ".phl[454]" 0;
+	setAttr ".phl[455]" 0;
+	setAttr ".phl[456]" 0;
+	setAttr ".phl[457]" 0;
+	setAttr ".phl[458]" 0;
+	setAttr ".phl[459]" 0;
+	setAttr ".phl[460]" 0;
+	setAttr ".phl[461]" 0;
+	setAttr ".phl[462]" 0;
+	setAttr ".phl[463]" 0;
+	setAttr ".phl[464]" 0;
+	setAttr ".phl[465]" 0;
+	setAttr ".phl[466]" 0;
+	setAttr ".phl[467]" 0;
+	setAttr ".phl[468]" 0;
+	setAttr ".phl[469]" 0;
+	setAttr ".phl[470]" 0;
+	setAttr ".phl[471]" 0;
+	setAttr ".phl[472]" 0;
+	setAttr ".phl[473]" 0;
+	setAttr ".phl[474]" 0;
+	setAttr ".phl[475]" 0;
+	setAttr ".phl[476]" 0;
+	setAttr ".phl[477]" 0;
+	setAttr ".phl[478]" 0;
+	setAttr ".phl[479]" 0;
+	setAttr ".phl[480]" 0;
+	setAttr ".phl[481]" 0;
+	setAttr ".phl[482]" 0;
+	setAttr ".phl[483]" 0;
+	setAttr ".phl[484]" 0;
+	setAttr ".phl[485]" 0;
+	setAttr ".phl[486]" 0;
+	setAttr ".phl[487]" 0;
+	setAttr ".phl[488]" 0;
+	setAttr ".phl[489]" 0;
+	setAttr ".phl[490]" 0;
+	setAttr ".phl[491]" 0;
+	setAttr ".phl[492]" 0;
+	setAttr ".phl[493]" 0;
+	setAttr ".phl[494]" 0;
+	setAttr ".phl[495]" 0;
+	setAttr ".phl[496]" 0;
+	setAttr ".phl[497]" 0;
+	setAttr ".phl[498]" 0;
+	setAttr ".phl[499]" 0;
+	setAttr ".phl[500]" 0;
+	setAttr ".phl[501]" 0;
+	setAttr ".phl[502]" 0;
+	setAttr ".phl[503]" 0;
+	setAttr ".phl[504]" 0;
+	setAttr ".phl[505]" 0;
+	setAttr ".phl[506]" 0;
+	setAttr ".phl[507]" 0;
+	setAttr ".phl[508]" 0;
+	setAttr ".phl[509]" 0;
+	setAttr ".phl[510]" 0;
+	setAttr ".phl[511]" 0;
+	setAttr ".phl[512]" 0;
+	setAttr ".phl[513]" 0;
+	setAttr ".phl[514]" 0;
+	setAttr ".phl[515]" 0;
+	setAttr ".phl[516]" 0;
+	setAttr ".phl[517]" 0;
+	setAttr ".phl[518]" 0;
+	setAttr ".phl[519]" 0;
+	setAttr ".phl[520]" 0;
+	setAttr ".phl[521]" 0;
+	setAttr ".phl[522]" 0;
+	setAttr ".phl[523]" 0;
+	setAttr ".phl[524]" 0;
+	setAttr ".phl[525]" 0;
+	setAttr ".phl[526]" 0;
+	setAttr ".phl[527]" 0;
+	setAttr ".phl[528]" 0;
+	setAttr ".phl[529]" 0;
+	setAttr ".phl[530]" 0;
+	setAttr ".phl[531]" 0;
+	setAttr ".phl[532]" 0;
+	setAttr ".phl[533]" 0;
+	setAttr ".phl[534]" 0;
+	setAttr ".phl[535]" 0;
+	setAttr ".phl[536]" 0;
+	setAttr ".phl[537]" 0;
+	setAttr ".phl[538]" 0;
+	setAttr ".phl[539]" 0;
+	setAttr ".phl[540]" 0;
+	setAttr ".phl[541]" 0;
+	setAttr ".phl[542]" 0;
+	setAttr ".phl[543]" 0;
+	setAttr ".phl[544]" 0;
+	setAttr ".phl[545]" 0;
+	setAttr ".phl[546]" 0;
+	setAttr ".phl[547]" 0;
+	setAttr ".phl[548]" 0;
+	setAttr ".phl[549]" 0;
+	setAttr ".phl[550]" 0;
+	setAttr ".phl[551]" 0;
+	setAttr ".phl[552]" 0;
+	setAttr ".phl[553]" 0;
+	setAttr ".phl[554]" 0;
+	setAttr ".phl[555]" 0;
+	setAttr ".phl[556]" 0;
+	setAttr ".phl[557]" 0;
+	setAttr ".phl[558]" 0;
+	setAttr ".phl[559]" 0;
+	setAttr ".phl[560]" 0;
+	setAttr ".phl[561]" 0;
+	setAttr ".phl[562]" 0;
+	setAttr ".phl[563]" 0;
+	setAttr ".phl[564]" 0;
+	setAttr ".phl[565]" 0;
+	setAttr ".phl[566]" 0;
+	setAttr ".phl[567]" 0;
+	setAttr ".phl[568]" 0;
+	setAttr ".phl[569]" 0;
+	setAttr ".phl[570]" 0;
+	setAttr ".phl[571]" 0;
+	setAttr ".phl[572]" 0;
+	setAttr ".phl[573]" 0;
+	setAttr ".phl[574]" 0;
+	setAttr ".phl[575]" 0;
+	setAttr ".phl[576]" 0;
+	setAttr ".phl[577]" 0;
+	setAttr ".phl[578]" 0;
+	setAttr ".phl[579]" 0;
+	setAttr ".phl[580]" 0;
+	setAttr ".phl[581]" 0;
+	setAttr ".phl[582]" 0;
+	setAttr ".phl[583]" 0;
+	setAttr ".phl[584]" 0;
+	setAttr ".phl[585]" 0;
+	setAttr ".phl[586]" 0;
+	setAttr ".phl[587]" 0;
+	setAttr ".phl[588]" 0;
+	setAttr ".phl[589]" 0;
+	setAttr ".phl[590]" 0;
+	setAttr ".phl[591]" 0;
+	setAttr ".phl[592]" 0;
+	setAttr ".phl[593]" 0;
+	setAttr ".phl[594]" 0;
+	setAttr ".phl[595]" 0;
+	setAttr ".phl[596]" 0;
+	setAttr ".phl[597]" 0;
+	setAttr ".phl[598]" 0;
+	setAttr ".phl[599]" 0;
+	setAttr ".phl[600]" 0;
+	setAttr ".phl[601]" 0;
+	setAttr ".phl[602]" 0;
+	setAttr ".phl[603]" 0;
+	setAttr ".phl[604]" 0;
+	setAttr ".phl[605]" 0;
+	setAttr ".phl[606]" 0;
+	setAttr ".phl[607]" 0;
+	setAttr ".phl[608]" 0;
+	setAttr ".phl[609]" 0;
+	setAttr ".phl[610]" 0;
+	setAttr ".phl[611]" 0;
+	setAttr ".phl[612]" 0;
+	setAttr ".phl[613]" 0;
+	setAttr ".phl[614]" 0;
+	setAttr ".phl[615]" 0;
+	setAttr ".phl[616]" 0;
+	setAttr ".phl[617]" 0;
+	setAttr ".phl[618]" 0;
+	setAttr ".phl[619]" 0;
+	setAttr ".phl[620]" 0;
+	setAttr ".phl[621]" 0;
+	setAttr ".phl[622]" 0;
+	setAttr ".phl[623]" 0;
+	setAttr ".phl[624]" 0;
+	setAttr ".phl[625]" 0;
+	setAttr ".phl[626]" 0;
+	setAttr ".phl[627]" 0;
+	setAttr ".phl[628]" 0;
+	setAttr ".phl[629]" 0;
+	setAttr ".phl[630]" 0;
+	setAttr ".phl[631]" 0;
+	setAttr ".phl[632]" 0;
+	setAttr ".phl[633]" 0;
+	setAttr ".phl[634]" 0;
+	setAttr ".phl[635]" 0;
+	setAttr ".phl[636]" 0;
+	setAttr ".phl[637]" 0;
+	setAttr ".phl[638]" 0;
+	setAttr ".phl[639]" 0;
+	setAttr ".phl[640]" 0;
+	setAttr ".phl[641]" 0;
+	setAttr ".phl[642]" 0;
+	setAttr ".phl[643]" 0;
+	setAttr ".phl[644]" 0;
+	setAttr ".phl[645]" 0;
+	setAttr ".phl[646]" 0;
+	setAttr ".phl[647]" 0;
+	setAttr ".phl[648]" 0;
+	setAttr ".phl[649]" 0;
+	setAttr ".phl[650]" 0;
+	setAttr ".phl[651]" 0;
+	setAttr ".phl[652]" 0;
+	setAttr ".phl[653]" 0;
+	setAttr ".phl[654]" 0;
+	setAttr ".phl[655]" 0;
+	setAttr ".phl[656]" 0;
+	setAttr ".phl[657]" 0;
+	setAttr ".phl[658]" 0;
+	setAttr ".phl[659]" 0;
+	setAttr ".phl[660]" 0;
+	setAttr ".phl[661]" 0;
+	setAttr ".phl[662]" 0;
+	setAttr ".phl[663]" 0;
+	setAttr ".phl[664]" 0;
+	setAttr ".phl[665]" 0;
+	setAttr ".phl[666]" 0;
+	setAttr ".phl[667]" 0;
+	setAttr ".phl[668]" 0;
+	setAttr ".phl[669]" 0;
+	setAttr ".phl[670]" 0;
+	setAttr ".phl[671]" 0;
+	setAttr ".phl[672]" 0;
+	setAttr ".phl[673]" 0;
+	setAttr ".phl[674]" 0;
+	setAttr ".phl[675]" 0;
+	setAttr ".phl[676]" 0;
+	setAttr ".phl[677]" 0;
+	setAttr ".phl[678]" 0;
+	setAttr ".phl[679]" 0;
+	setAttr ".phl[680]" 0;
+	setAttr ".phl[681]" 0;
+	setAttr ".phl[682]" 0;
+	setAttr ".phl[683]" 0;
+	setAttr ".phl[684]" 0;
+	setAttr ".phl[685]" 0;
+	setAttr ".phl[686]" 0;
+	setAttr ".phl[687]" 0;
+	setAttr ".phl[688]" 0;
+	setAttr ".phl[689]" 0;
+	setAttr ".phl[690]" 0;
+	setAttr ".phl[691]" 0;
+	setAttr ".phl[692]" 0;
+	setAttr ".phl[693]" 0;
+	setAttr ".phl[694]" 0;
+	setAttr ".phl[695]" 0;
+	setAttr ".phl[696]" 0;
+	setAttr ".phl[697]" 0;
+	setAttr ".phl[698]" 0;
+	setAttr ".phl[699]" 0;
+	setAttr ".phl[700]" 0;
+	setAttr ".phl[701]" 0;
+	setAttr ".phl[702]" 0;
+	setAttr ".phl[703]" 0;
+	setAttr ".phl[704]" 0;
+	setAttr ".phl[705]" 0;
+	setAttr ".phl[706]" 0;
+	setAttr ".phl[707]" 0;
+	setAttr ".phl[708]" 0;
+	setAttr ".phl[709]" 0;
+	setAttr ".phl[710]" 0;
+	setAttr ".phl[711]" 0;
+	setAttr ".phl[712]" 0;
+	setAttr ".phl[713]" 0;
+	setAttr ".phl[714]" 0;
+	setAttr ".phl[715]" 0;
+	setAttr ".phl[716]" 0;
+	setAttr ".phl[717]" 0;
+	setAttr ".phl[718]" 0;
+	setAttr ".phl[719]" 0;
+	setAttr ".phl[720]" 0;
+	setAttr ".phl[721]" 0;
+	setAttr ".phl[722]" 0;
+	setAttr ".phl[723]" 0;
+	setAttr ".phl[724]" 0;
+	setAttr ".phl[725]" 0;
+	setAttr ".phl[726]" 0;
+	setAttr ".phl[727]" 0;
+	setAttr ".phl[728]" 0;
+	setAttr ".phl[729]" 0;
+	setAttr ".phl[730]" 0;
+	setAttr ".phl[731]" 0;
+	setAttr ".phl[732]" 0;
+	setAttr ".phl[733]" 0;
+	setAttr ".phl[734]" 0;
+	setAttr ".phl[735]" 0;
+	setAttr ".phl[736]" 0;
+	setAttr ".phl[737]" 0;
+	setAttr ".phl[738]" 0;
+	setAttr ".phl[739]" 0;
+	setAttr ".phl[740]" 0;
+	setAttr ".phl[741]" 0;
+	setAttr ".phl[742]" 0;
+	setAttr ".phl[743]" 0;
+	setAttr ".phl[744]" 0;
+	setAttr ".phl[745]" 0;
+	setAttr ".phl[746]" 0;
+	setAttr ".phl[747]" 0;
+	setAttr ".phl[748]" 0;
+	setAttr ".phl[749]" 0;
+	setAttr ".phl[750]" 0;
+	setAttr ".phl[751]" 0;
+	setAttr ".phl[752]" 0;
+	setAttr ".phl[753]" 0;
+	setAttr ".phl[754]" 0;
+	setAttr ".phl[755]" 0;
+	setAttr ".phl[756]" 0;
+	setAttr ".phl[757]" 0;
+	setAttr ".phl[758]" 0;
+	setAttr ".phl[759]" 0;
+	setAttr ".phl[760]" 0;
+	setAttr ".phl[761]" 0;
+	setAttr ".phl[762]" 0;
+	setAttr ".phl[763]" 0;
+	setAttr ".phl[764]" 0;
+	setAttr ".phl[765]" 0;
+	setAttr ".phl[766]" 0;
+	setAttr ".phl[767]" 0;
+	setAttr ".phl[768]" 0;
+	setAttr ".phl[769]" 0;
+	setAttr ".phl[770]" 0;
+	setAttr ".phl[771]" 0;
+	setAttr ".phl[772]" 0;
+	setAttr ".phl[773]" 0;
+	setAttr ".phl[774]" 0;
+	setAttr ".phl[775]" 0;
+	setAttr ".phl[776]" 0;
+	setAttr ".phl[777]" 0;
+	setAttr ".phl[778]" 0;
+	setAttr ".phl[779]" 0;
+	setAttr ".phl[780]" 0;
+	setAttr ".phl[781]" 0;
+	setAttr ".phl[782]" 0;
+	setAttr ".phl[783]" 0;
+	setAttr ".phl[784]" 0;
+	setAttr ".phl[785]" 0;
+	setAttr ".phl[786]" 0;
+	setAttr ".phl[787]" 0;
+	setAttr ".phl[788]" 0;
+	setAttr ".phl[789]" 0;
+	setAttr ".phl[790]" 0;
+	setAttr ".phl[791]" 0;
+	setAttr ".phl[792]" 0;
+	setAttr ".phl[793]" 0;
+	setAttr ".phl[794]" 0;
+	setAttr ".phl[795]" 0;
+	setAttr ".phl[796]" 0;
+	setAttr ".phl[797]" 0;
+	setAttr ".phl[798]" 0;
+	setAttr ".phl[799]" 0;
+	setAttr ".phl[800]" 0;
+	setAttr ".phl[801]" 0;
+	setAttr ".phl[802]" 0;
+	setAttr ".phl[803]" 0;
+	setAttr ".phl[804]" 0;
+	setAttr ".phl[805]" 0;
+	setAttr ".phl[806]" 0;
+	setAttr ".phl[807]" 0;
+	setAttr ".phl[808]" 0;
+	setAttr ".phl[809]" 0;
+	setAttr ".phl[810]" 0;
+	setAttr ".phl[811]" 0;
+	setAttr ".phl[812]" 0;
+	setAttr ".phl[813]" 0;
+	setAttr ".phl[814]" 0;
+	setAttr ".phl[815]" 0;
+	setAttr ".phl[816]" 0;
+	setAttr ".phl[817]" 0;
+	setAttr ".phl[818]" 0;
+	setAttr ".phl[819]" 0;
+	setAttr ".phl[820]" 0;
+	setAttr ".phl[821]" 0;
+	setAttr ".phl[822]" 0;
+	setAttr ".phl[823]" 0;
+	setAttr ".phl[824]" 0;
+	setAttr ".phl[825]" 0;
+	setAttr ".phl[826]" 0;
+	setAttr ".phl[827]" 0;
+	setAttr ".phl[828]" 0;
+	setAttr ".phl[829]" 0;
+	setAttr ".phl[830]" 0;
+	setAttr ".phl[831]" 0;
+	setAttr ".phl[832]" 0;
+	setAttr ".phl[833]" 0;
+	setAttr ".phl[834]" 0;
+	setAttr ".phl[835]" 0;
+	setAttr ".phl[836]" 0;
+	setAttr ".phl[837]" 0;
+	setAttr ".phl[838]" 0;
+	setAttr ".phl[839]" 0;
+	setAttr ".phl[840]" 0;
+	setAttr ".phl[841]" 0;
+	setAttr ".phl[842]" 0;
+	setAttr ".phl[843]" 0;
+	setAttr ".phl[844]" 0;
+	setAttr ".phl[845]" 0;
+	setAttr ".phl[846]" 0;
+	setAttr ".phl[847]" 0;
+	setAttr ".phl[848]" 0;
+	setAttr ".phl[849]" 0;
+	setAttr ".phl[850]" 0;
+	setAttr ".phl[851]" 0;
+	setAttr ".phl[852]" 0;
+	setAttr ".phl[853]" 0;
+	setAttr ".phl[854]" 0;
+	setAttr ".phl[855]" 0;
+	setAttr ".phl[856]" 0;
+	setAttr ".phl[857]" 0;
+	setAttr ".phl[858]" 0;
+	setAttr ".phl[859]" 0;
+	setAttr ".phl[860]" 0;
+	setAttr ".phl[861]" 0;
+	setAttr ".phl[862]" 0;
+	setAttr ".phl[863]" 0;
+	setAttr ".phl[864]" 0;
+	setAttr ".phl[865]" 0;
+	setAttr ".phl[866]" 0;
+	setAttr ".phl[867]" 0;
+	setAttr ".phl[868]" 0;
+	setAttr ".phl[869]" 0;
+	setAttr ".phl[870]" 0;
+	setAttr ".phl[871]" 0;
+	setAttr ".phl[872]" 0;
+	setAttr ".phl[873]" 0;
+	setAttr ".phl[874]" 0;
+	setAttr ".phl[875]" 0;
+	setAttr ".phl[876]" 0;
+	setAttr ".phl[877]" 0;
+	setAttr ".phl[878]" 0;
+	setAttr ".phl[879]" 0;
+	setAttr ".phl[880]" 0;
+	setAttr ".phl[881]" 0;
+	setAttr ".phl[882]" 0;
+	setAttr ".phl[883]" 0;
+	setAttr ".phl[884]" 0;
+	setAttr ".phl[885]" 0;
+	setAttr ".phl[886]" 0;
+	setAttr ".phl[887]" 0;
+	setAttr ".phl[888]" 0;
+	setAttr ".phl[889]" 0;
+	setAttr ".phl[890]" 0;
+	setAttr ".phl[891]" 0;
+	setAttr ".phl[892]" 0;
+	setAttr ".phl[893]" 0;
+	setAttr ".phl[894]" 0;
+	setAttr ".phl[895]" 0;
+	setAttr ".phl[896]" 0;
+	setAttr ".phl[897]" 0;
+	setAttr ".phl[898]" 0;
+	setAttr ".phl[899]" 0;
+	setAttr ".phl[900]" 0;
+	setAttr ".phl[901]" 0;
+	setAttr ".phl[902]" 0;
+	setAttr ".phl[903]" 0;
+	setAttr ".phl[904]" 0;
+	setAttr ".phl[905]" 0;
+	setAttr ".phl[906]" 0;
+	setAttr ".phl[907]" 0;
+	setAttr ".phl[908]" 0;
+	setAttr ".phl[909]" 0;
+	setAttr ".phl[910]" 0;
+	setAttr ".phl[911]" 0;
+	setAttr ".phl[912]" 0;
+	setAttr ".phl[913]" 0;
+	setAttr ".phl[914]" 0;
+	setAttr ".phl[915]" 0;
+	setAttr ".phl[916]" 0;
+	setAttr ".phl[917]" 0;
+	setAttr ".phl[918]" 0;
+	setAttr ".phl[919]" 0;
+	setAttr ".phl[920]" 0;
+	setAttr ".phl[921]" 0;
+	setAttr ".phl[922]" 0;
+	setAttr ".phl[923]" 0;
+	setAttr ".phl[924]" 0;
+	setAttr ".phl[925]" 0;
+	setAttr ".phl[926]" 0;
+	setAttr ".phl[927]" 0;
+	setAttr ".phl[928]" 0;
+	setAttr ".phl[929]" 0;
+	setAttr ".phl[930]" 0;
+	setAttr ".phl[931]" 0;
+	setAttr ".phl[932]" 0;
+	setAttr ".phl[933]" 0;
+	setAttr ".phl[934]" 0;
+	setAttr ".phl[935]" 0;
+	setAttr ".phl[936]" 0;
+	setAttr ".phl[937]" 0;
+	setAttr ".phl[938]" 0;
+	setAttr ".phl[939]" 0;
+	setAttr ".phl[940]" 0;
+	setAttr ".phl[941]" 0;
+	setAttr ".phl[942]" 0;
+	setAttr ".phl[943]" 0;
+	setAttr ".phl[944]" 0;
+	setAttr ".phl[945]" 0;
+	setAttr ".phl[946]" 0;
+	setAttr ".phl[947]" 0;
+	setAttr ".phl[948]" 0;
+	setAttr ".phl[949]" 0;
+	setAttr ".phl[950]" 0;
+	setAttr ".phl[951]" 0;
+	setAttr ".phl[952]" 0;
+	setAttr ".phl[953]" 0;
+	setAttr ".phl[954]" 0;
+	setAttr ".phl[955]" 0;
+	setAttr ".phl[956]" 0;
+	setAttr ".phl[957]" 0;
+	setAttr ".phl[958]" 0;
+	setAttr ".phl[959]" 0;
+	setAttr ".phl[960]" 0;
+	setAttr ".phl[961]" 0;
+	setAttr ".phl[962]" 0;
+	setAttr ".phl[963]" 0;
+	setAttr ".phl[964]" 0;
+	setAttr ".phl[965]" 0;
+	setAttr ".phl[966]" 0;
+	setAttr ".phl[967]" 0;
+	setAttr ".phl[968]" 0;
+	setAttr ".phl[969]" 0;
+	setAttr ".phl[970]" 0;
+	setAttr ".phl[971]" 0;
+	setAttr ".phl[972]" 0;
+	setAttr ".phl[973]" 0;
+	setAttr ".phl[974]" 0;
+	setAttr ".phl[975]" 0;
+	setAttr ".phl[976]" 0;
+	setAttr ".phl[977]" 0;
+	setAttr ".phl[978]" 0;
+	setAttr ".phl[979]" 0;
+	setAttr ".phl[980]" 0;
+	setAttr ".phl[981]" 0;
+	setAttr ".phl[982]" 0;
+	setAttr ".phl[983]" 0;
+	setAttr ".phl[984]" 0;
+	setAttr ".phl[985]" 0;
+	setAttr ".phl[986]" 0;
+	setAttr ".phl[987]" 0;
+	setAttr ".phl[988]" 0;
+	setAttr ".phl[989]" 0;
+	setAttr ".phl[990]" 0;
+	setAttr ".phl[991]" 0;
+	setAttr ".phl[992]" 0;
+	setAttr ".phl[993]" 0;
+	setAttr ".phl[994]" 0;
+	setAttr ".phl[995]" 0;
+	setAttr ".phl[996]" 0;
+	setAttr ".phl[997]" 0;
+	setAttr ".phl[998]" 0;
+	setAttr ".phl[999]" 0;
+	setAttr ".phl[1000]" 0;
+	setAttr ".phl[1001]" 0;
+	setAttr ".phl[1002]" 0;
+	setAttr ".phl[1003]" 0;
+	setAttr ".phl[1004]" 0;
+	setAttr ".phl[1005]" 0;
+	setAttr ".phl[1006]" 0;
+	setAttr ".phl[1007]" 0;
+	setAttr ".phl[1008]" 0;
+	setAttr ".phl[1009]" 0;
+	setAttr ".phl[1010]" 0;
+	setAttr ".phl[1011]" 0;
+	setAttr ".phl[1012]" 0;
+	setAttr ".phl[1013]" 0;
+	setAttr ".phl[1014]" 0;
+	setAttr ".phl[1015]" 0;
+	setAttr ".phl[1016]" 0;
+	setAttr ".phl[1017]" 0;
+	setAttr ".phl[1018]" 0;
+	setAttr ".phl[1019]" 0;
+	setAttr ".phl[1020]" 0;
+	setAttr ".phl[1021]" 0;
+	setAttr ".phl[1022]" 0;
+	setAttr ".phl[1023]" 0;
+	setAttr ".phl[1024]" 0;
+	setAttr ".phl[1025]" 0;
+	setAttr ".phl[1026]" 0;
+	setAttr ".phl[1027]" 0;
+	setAttr ".phl[1028]" 0;
+	setAttr ".phl[1029]" 0;
+	setAttr ".phl[1030]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Sam_Final_Updated_SceneRN"
 		"Sam_Final_Updated_SceneRN" 0
-		"Sam_Final_Updated_SceneRN" 52
+		"Sam_Final_Updated_SceneRN" 570
 		1 |Sam_Final_Updated_Scene:GodRays1 "expandedState" "expandedState" " -ci 1 -min 0 -max 1 -at \"bool\""
 		
 		1 |Sam_Final_Updated_Scene:GodRays1|Sam_Final_Updated_Scene:GodRaysShape1 
@@ -5269,18 +6237,23 @@ createNode reference -n "Sam_Final_Updated_SceneRN";
 		1 |Sam_Final_Updated_Scene:ambientLight1|Sam_Final_Updated_Scene:ambientLightShape1 
 		"childIndex" "childIndex" " -ci 1 -dv -1 -at \"long\""
 		2 "|Sam_Final_Updated_Scene:LOCATION_FOR_YOUNG_BOY" "visibility" " 0"
-		2 "|Sam_Final_Updated_Scene:CAMERA_TO_USE" "translate" " -type \"double3\" 6.5210318578377366 2.408859435536348 26.537613695421403"
+		2 "|Sam_Final_Updated_Scene:CAMERA_TO_USE" "translate" " -type \"double3\" 24.929117126291992 6.8078104249586788 30.599418587142303"
 		
 		2 "|Sam_Final_Updated_Scene:CAMERA_TO_USE" "translateX" " -av"
 		2 "|Sam_Final_Updated_Scene:CAMERA_TO_USE" "translateY" " -av"
 		2 "|Sam_Final_Updated_Scene:CAMERA_TO_USE" "translateZ" " -av"
+		2 "|Sam_Final_Updated_Scene:CAMERA_TO_USE" "rotate" " -type \"double3\" 5.7585411756793379 418.54948601967561 4.1569990215842463"
+		
+		2 "|Sam_Final_Updated_Scene:CAMERA_TO_USE" "rotateX" " -av"
+		2 "|Sam_Final_Updated_Scene:CAMERA_TO_USE" "rotateY" " -av"
+		2 "|Sam_Final_Updated_Scene:CAMERA_TO_USE" "rotateZ" " -av"
 		2 "|Sam_Final_Updated_Scene:GodRays1" "expandedState" " 0"
 		2 "|Sam_Final_Updated_Scene:GodRays1|Sam_Final_Updated_Scene:GodRaysShape1" 
 		"isolate" " 0"
 		2 "|Sam_Final_Updated_Scene:GodRays1|Sam_Final_Updated_Scene:GodRaysShape1" 
 		"wasEnabled" " 1"
 		2 "|Sam_Final_Updated_Scene:GodRays1|Sam_Final_Updated_Scene:GodRaysShape1" 
-		"childIndex" " 6"
+		"childIndex" " 7"
 		2 "|Sam_Final_Updated_Scene:GodRays1|Sam_Final_Updated_Scene:coneShape1" 
 		"visibleFraction" " 0"
 		2 "|Sam_Final_Updated_Scene:GodRays2" "expandedState" " 0"
@@ -5289,16 +6262,16 @@ createNode reference -n "Sam_Final_Updated_SceneRN";
 		2 "|Sam_Final_Updated_Scene:GodRays2|Sam_Final_Updated_Scene:GodRaysShape2" 
 		"wasEnabled" " 1"
 		2 "|Sam_Final_Updated_Scene:GodRays2|Sam_Final_Updated_Scene:GodRaysShape2" 
-		"childIndex" " 2"
+		"childIndex" " 3"
 		2 "|Sam_Final_Updated_Scene:GodRays2|Sam_Final_Updated_Scene:coneShape2" 
 		"visibleFraction" " 0"
 		2 "|Sam_Final_Updated_Scene:MainDirectionalLight" "expandedState" " 0"
 		2 "|Sam_Final_Updated_Scene:MainDirectionalLight|Sam_Final_Updated_Scene:MainDirectionalLightShape" 
-		"childIndex" " 3"
+		"childIndex" " 4"
 		2 "|Sam_Final_Updated_Scene:SecondaryDirectionalLight" "expandedState" " 0"
 		
 		2 "|Sam_Final_Updated_Scene:SecondaryDirectionalLight|Sam_Final_Updated_Scene:SecondaryDirectionalLightShape" 
-		"childIndex" " 7"
+		"childIndex" " 2"
 		2 "|Sam_Final_Updated_Scene:ambientLight1" "expandedState" " 0"
 		2 "|Sam_Final_Updated_Scene:ambientLight1|Sam_Final_Updated_Scene:ambientLightShape1" 
 		"centerOfIllumination" " 5"
@@ -5307,7 +6280,7 @@ createNode reference -n "Sam_Final_Updated_SceneRN";
 		2 "|Sam_Final_Updated_Scene:ambientLight1|Sam_Final_Updated_Scene:ambientLightShape1" 
 		"wasEnabled" " 1"
 		2 "|Sam_Final_Updated_Scene:ambientLight1|Sam_Final_Updated_Scene:ambientLightShape1" 
-		"childIndex" " 5"
+		"childIndex" " 6"
 		2 "|Sam_Final_Updated_Scene:Leaves_to_shine_on_boys|Sam_Final_Updated_Scene:Sam_WithBoys:spotLight1" 
 		"translate" " -type \"double3\" 5.7174085116694933 18.537293250708565 33.103360833480579"
 		
@@ -5329,7 +6302,7 @@ createNode reference -n "Sam_Final_Updated_SceneRN";
 		2 "|Sam_Final_Updated_Scene:Shine_on_ground|Sam_Final_Updated_Scene:Sam_WithBoys:spotLight4" 
 		"expandedState" " 0"
 		2 "|Sam_Final_Updated_Scene:Shine_on_ground|Sam_Final_Updated_Scene:Sam_WithBoys:spotLight4|Sam_Final_Updated_Scene:Sam_WithBoys:spotLightShape4" 
-		"childIndex" " 4"
+		"childIndex" " 5"
 		2 "|Sam_Final_Updated_Scene:Shine_on_ground|Sam_Final_Updated_Scene:Sam_WithBoys:spotLight4|Sam_Final_Updated_Scene:Sam_WithBoys:coneShape1" 
 		"visibleFraction" " 0"
 		2 "|Sam_Final_Updated_Scene:Fog|Sam_Final_Updated_Scene:Fog1|Sam_Final_Updated_Scene:FogShape1" 
@@ -5343,7 +6316,1582 @@ createNode reference -n "Sam_Final_Updated_SceneRN";
 		5 3 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:GodRays2.instObjGroups" 
 		"Sam_Final_Updated_SceneRN.placeHolderList[2]" ""
 		5 3 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ambientLight1.instObjGroups" 
-		"Sam_Final_Updated_SceneRN.placeHolderList[3]" "";
+		"Sam_Final_Updated_SceneRN.placeHolderList[3]" ""
+		5 3 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:TallSwampTrees|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:LeafBundle7|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:LeafBundle7Shape.instObjGroups" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[4]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush8|Sam_Final_Updated_Scene:Bush8Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[5]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[6]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush17|Sam_Final_Updated_Scene:Bush17Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[7]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[8]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush36|Sam_Final_Updated_Scene:Bush36Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[9]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[10]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush3|Sam_Final_Updated_Scene:Bush3Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[11]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[12]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush21|Sam_Final_Updated_Scene:Bush21Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[13]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[14]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush16|Sam_Final_Updated_Scene:Bush16Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[15]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[16]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush2|Sam_Final_Updated_Scene:Bush2Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[17]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[18]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush10|Sam_Final_Updated_Scene:Bush10Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[19]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[20]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush47|Sam_Final_Updated_Scene:Bush47Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[21]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[22]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush33|Sam_Final_Updated_Scene:Bush33Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[23]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[24]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush14|Sam_Final_Updated_Scene:Bush14Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[25]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[26]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush25|Sam_Final_Updated_Scene:Bush25Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[27]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[28]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush22|Sam_Final_Updated_Scene:Bush22Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[29]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[30]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush38|Sam_Final_Updated_Scene:Bush38Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[31]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[32]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush7|Sam_Final_Updated_Scene:Bush7Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[33]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[34]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush29|Sam_Final_Updated_Scene:Bush29Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[35]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[36]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush19|Sam_Final_Updated_Scene:Bush19Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[37]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[38]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush26|Sam_Final_Updated_Scene:Bush26Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[39]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[40]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush37|Sam_Final_Updated_Scene:Bush37Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[41]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[42]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush31|Sam_Final_Updated_Scene:Bush31Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[43]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[44]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush32|Sam_Final_Updated_Scene:Bush32Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[45]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[46]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush13|Sam_Final_Updated_Scene:Bush13Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[47]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[48]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush27|Sam_Final_Updated_Scene:Bush27Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[49]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[50]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush5|Sam_Final_Updated_Scene:Bush5Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[51]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[52]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush41|Sam_Final_Updated_Scene:Bush41Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[53]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[54]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush1|Sam_Final_Updated_Scene:Bush1Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[55]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[56]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush43|Sam_Final_Updated_Scene:Bush43Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[57]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[58]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush6|Sam_Final_Updated_Scene:Bush6Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[59]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[60]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush15|Sam_Final_Updated_Scene:Bush15Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[61]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[62]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush34|Sam_Final_Updated_Scene:Bush34Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[63]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[64]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush45|Sam_Final_Updated_Scene:Bush45Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[65]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[66]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush11|Sam_Final_Updated_Scene:Bush11Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[67]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[68]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush40|Sam_Final_Updated_Scene:Bush40Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[69]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[70]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush12|Sam_Final_Updated_Scene:Bush12Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[71]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[72]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush28|Sam_Final_Updated_Scene:Bush28Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[73]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[74]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush44|Sam_Final_Updated_Scene:Bush44Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[75]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[76]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush23|Sam_Final_Updated_Scene:Bush23Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[77]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[78]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush24|Sam_Final_Updated_Scene:Bush24Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[79]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[80]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush18|Sam_Final_Updated_Scene:Bush18Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[81]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[82]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush|Sam_Final_Updated_Scene:BushShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[83]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[84]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush42|Sam_Final_Updated_Scene:Bush42Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[85]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[86]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush9|Sam_Final_Updated_Scene:Bush9Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[87]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[88]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush39|Sam_Final_Updated_Scene:Bush39Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[89]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[90]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush35|Sam_Final_Updated_Scene:Bush35Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[91]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[92]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush46|Sam_Final_Updated_Scene:Bush46Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[93]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[94]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush20|Sam_Final_Updated_Scene:Bush20Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[95]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[96]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush48|Sam_Final_Updated_Scene:Bush48Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[97]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[98]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush4|Sam_Final_Updated_Scene:Bush4Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[99]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[100]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush30|Sam_Final_Updated_Scene:Bush30Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[101]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[102]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:Trunk|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TrunkShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader3SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[103]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[104]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch12|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape12.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader3SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[105]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[106]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trunk|Sam_Final_Updated_Scene:TrunkShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader3SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[107]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[108]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader3SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[109]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[110]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch32|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape32.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader3SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[111]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[112]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:trunk|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:trunkShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader3SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[113]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[114]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Short_Palms|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:grid4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:grid4Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader4SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[115]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[116]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Short_Palms|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:grid1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:grid1Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader4SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[117]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[118]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Short_Palms|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:grid3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:grid3Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader4SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[119]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[120]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Short_Palms|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:grid2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:grid2Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader4SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[121]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[122]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BananaTrees|Sam_Final_Updated_Scene:BananaTree|Sam_Final_Updated_Scene:BananaTreeShape.instObjGroups.objectGroups[0]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader5SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[123]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[124]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BananaTrees|Sam_Final_Updated_Scene:BananaTree|Sam_Final_Updated_Scene:BananaTreeShape.instObjGroups.objectGroups[2]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader6SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[125]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[126]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BananaTrees|Sam_Final_Updated_Scene:BananaTree|Sam_Final_Updated_Scene:BananaTreeShape.instObjGroups.objectGroups[1]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader7SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[127]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[128]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BananaTrees|Sam_Final_Updated_Scene:BananaTree|Sam_Final_Updated_Scene:BananaTreeShape.instObjGroups.objectGroups[3]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader8SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[129]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[130]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape3.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[131]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[132]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Bamboo3|Sam_Final_Updated_Scene:BambooShape3.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[133]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[134]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Bamboo11|Sam_Final_Updated_Scene:BambooShape11.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[135]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[136]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Bamboo8|Sam_Final_Updated_Scene:BambooShape8.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[137]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[138]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced8|Sam_Final_Updated_Scene:Bamboo12|Sam_Final_Updated_Scene:BambooShape12.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[139]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[140]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo7|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape7.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[141]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[142]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo6|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape6.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[143]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[144]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo8|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape8.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[145]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[146]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo2|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[147]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[148]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo7|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape7.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[149]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[150]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced6|Sam_Final_Updated_Scene:Bamboo7|Sam_Final_Updated_Scene:BambooShape7.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[151]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[152]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo7|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape7.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[153]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[154]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Bamboo3|Sam_Final_Updated_Scene:BambooShape3.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[155]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[156]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced8|Sam_Final_Updated_Scene:Bamboo8|Sam_Final_Updated_Scene:BambooShape8.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[157]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[158]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo4|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape4.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[159]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[160]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Bamboo5|Sam_Final_Updated_Scene:BambooShape5.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[161]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[162]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[163]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[164]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced7|Sam_Final_Updated_Scene:Bamboo7|Sam_Final_Updated_Scene:BambooShape7.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[165]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[166]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[167]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[168]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[169]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[170]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced8|Sam_Final_Updated_Scene:Bamboo4|Sam_Final_Updated_Scene:BambooShape4.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[171]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[172]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo2|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[173]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[174]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Bamboo12|Sam_Final_Updated_Scene:BambooShape12.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[175]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[176]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo13|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape13.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[177]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[178]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo9|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape9.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[179]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[180]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo12|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape12.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[181]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[182]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Bamboo3|Sam_Final_Updated_Scene:BambooShape3.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[183]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[184]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced8|Sam_Final_Updated_Scene:Bamboo9|Sam_Final_Updated_Scene:BambooShape9.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[185]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[186]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo5|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape5.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[187]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[188]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo2|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[189]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[190]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced8|Sam_Final_Updated_Scene:Bamboo3|Sam_Final_Updated_Scene:BambooShape3.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[191]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[192]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced9|Sam_Final_Updated_Scene:Bamboo9|Sam_Final_Updated_Scene:BambooShape9.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[193]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[194]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Bamboo11|Sam_Final_Updated_Scene:BambooShape11.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[195]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[196]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo11|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape11.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[197]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[198]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Bamboo10|Sam_Final_Updated_Scene:BambooShape10.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[199]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[200]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo11|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape11.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[201]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[202]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Bamboo11|Sam_Final_Updated_Scene:BambooShape11.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[203]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[204]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo10|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape10.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[205]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[206]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Bamboo1|Sam_Final_Updated_Scene:BambooShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[207]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[208]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape5.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[209]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[210]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[211]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[212]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo9|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape9.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[213]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[214]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Bamboo4|Sam_Final_Updated_Scene:BambooShape4.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[215]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[216]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Bamboo2|Sam_Final_Updated_Scene:BambooShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[217]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[218]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo6|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape6.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[219]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[220]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced6|Sam_Final_Updated_Scene:Bamboo2|Sam_Final_Updated_Scene:BambooShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[221]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[222]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Bamboo1|Sam_Final_Updated_Scene:BambooShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[223]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[224]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape3.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[225]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[226]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape5.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[227]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[228]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Bamboo12|Sam_Final_Updated_Scene:BambooShape12.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[229]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[230]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Bamboo9|Sam_Final_Updated_Scene:BambooShape9.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[231]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[232]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo10|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape10.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[233]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[234]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Bamboo3|Sam_Final_Updated_Scene:BambooShape3.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[235]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[236]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo8|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape8.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[237]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[238]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Bamboo8|Sam_Final_Updated_Scene:BambooShape8.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[239]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[240]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Bamboo8|Sam_Final_Updated_Scene:BambooShape8.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[241]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[242]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo12|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape12.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[243]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[244]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced6|Sam_Final_Updated_Scene:Bamboo5|Sam_Final_Updated_Scene:BambooShape5.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[245]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[246]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo4|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape4.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[247]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[248]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo12|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape12.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[249]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[250]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[251]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[252]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[253]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[254]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Bamboo7|Sam_Final_Updated_Scene:BambooShape7.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[255]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[256]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo12|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape12.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[257]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[258]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo3|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape3.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[259]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[260]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo12|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape12.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[261]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[262]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[263]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[264]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo1|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[265]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[266]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[267]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[268]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo6|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape6.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[269]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[270]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Bamboo13|Sam_Final_Updated_Scene:BambooShape13.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[271]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[272]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo8|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape8.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[273]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[274]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo1|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[275]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[276]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape4.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[277]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[278]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Bamboo4|Sam_Final_Updated_Scene:BambooShape4.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[279]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[280]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced9|Sam_Final_Updated_Scene:Bamboo13|Sam_Final_Updated_Scene:BambooShape13.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[281]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[282]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape5.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[283]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[284]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo5|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape5.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[285]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[286]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Bamboo9|Sam_Final_Updated_Scene:BambooShape9.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[287]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[288]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Bamboo7|Sam_Final_Updated_Scene:BambooShape7.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[289]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[290]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Bamboo8|Sam_Final_Updated_Scene:BambooShape8.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[291]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[292]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo10|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape10.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[293]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[294]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Bamboo10|Sam_Final_Updated_Scene:BambooShape10.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[295]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[296]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo8|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape8.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[297]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[298]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo1|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[299]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[300]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Bamboo5|Sam_Final_Updated_Scene:BambooShape5.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[301]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[302]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo13|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape13.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[303]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[304]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo8|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape8.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[305]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[306]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced8|Sam_Final_Updated_Scene:Bamboo5|Sam_Final_Updated_Scene:BambooShape5.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[307]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[308]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Bamboo13|Sam_Final_Updated_Scene:BambooShape13.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[309]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[310]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo9|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape9.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[311]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[312]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo7|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape7.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[313]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[314]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo11|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape11.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[315]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[316]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo5|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape5.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[317]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[318]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[319]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[320]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo9|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape9.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[321]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[322]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced9|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[323]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[324]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced7|Sam_Final_Updated_Scene:Bamboo5|Sam_Final_Updated_Scene:BambooShape5.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[325]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[326]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced9|Sam_Final_Updated_Scene:Bamboo3|Sam_Final_Updated_Scene:BambooShape3.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[327]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[328]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo7|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape7.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[329]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[330]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo2|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[331]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[332]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo8|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape8.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[333]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[334]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced6|Sam_Final_Updated_Scene:Bamboo8|Sam_Final_Updated_Scene:BambooShape8.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[335]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[336]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo11|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape11.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[337]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[338]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced8|Sam_Final_Updated_Scene:Bamboo13|Sam_Final_Updated_Scene:BambooShape13.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[339]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[340]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Bamboo11|Sam_Final_Updated_Scene:BambooShape11.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[341]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[342]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Bamboo6|Sam_Final_Updated_Scene:BambooShape6.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[343]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[344]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Bamboo13|Sam_Final_Updated_Scene:BambooShape13.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[345]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[346]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced8|Sam_Final_Updated_Scene:Bamboo6|Sam_Final_Updated_Scene:BambooShape6.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[347]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[348]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo1|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[349]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[350]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[351]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[352]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo6|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape6.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[353]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[354]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo6|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape6.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[355]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[356]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Bamboo10|Sam_Final_Updated_Scene:BambooShape10.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[357]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[358]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[359]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[360]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[361]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[362]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced6|Sam_Final_Updated_Scene:Bamboo6|Sam_Final_Updated_Scene:BambooShape6.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[363]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[364]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo10|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape10.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[365]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[366]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[367]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[368]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Bamboo4|Sam_Final_Updated_Scene:BambooShape4.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[369]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[370]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape5.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[371]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[372]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Bamboo6|Sam_Final_Updated_Scene:BambooShape6.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[373]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[374]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced7|Sam_Final_Updated_Scene:Bamboo12|Sam_Final_Updated_Scene:BambooShape12.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[375]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[376]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Bamboo7|Sam_Final_Updated_Scene:BambooShape7.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[377]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[378]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Bamboo1|Sam_Final_Updated_Scene:BambooShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[379]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[380]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[381]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[382]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo10|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape10.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[383]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[384]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[385]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[386]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Bamboo6|Sam_Final_Updated_Scene:BambooShape6.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[387]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[388]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Bamboo8|Sam_Final_Updated_Scene:BambooShape8.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[389]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[390]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced7|Sam_Final_Updated_Scene:Bamboo9|Sam_Final_Updated_Scene:BambooShape9.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[391]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[392]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Bamboo1|Sam_Final_Updated_Scene:BambooShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[393]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[394]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Bamboo5|Sam_Final_Updated_Scene:BambooShape5.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[395]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[396]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced9|Sam_Final_Updated_Scene:Bamboo2|Sam_Final_Updated_Scene:BambooShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[397]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[398]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo3|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape3.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[399]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[400]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Bamboo9|Sam_Final_Updated_Scene:BambooShape9.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[401]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[402]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo6|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape6.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[403]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[404]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo13|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape13.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[405]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[406]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo9|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape9.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[407]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[408]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced8|Sam_Final_Updated_Scene:Bamboo1|Sam_Final_Updated_Scene:BambooShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[409]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[410]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo9|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape9.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[411]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[412]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Bamboo3|Sam_Final_Updated_Scene:BambooShape3.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[413]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[414]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Bamboo10|Sam_Final_Updated_Scene:BambooShape10.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[415]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[416]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo13|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape13.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[417]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[418]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Bamboo7|Sam_Final_Updated_Scene:BambooShape7.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[419]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[420]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Bamboo7|Sam_Final_Updated_Scene:BambooShape7.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[421]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[422]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Bamboo2|Sam_Final_Updated_Scene:BambooShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[423]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[424]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Bamboo7|Sam_Final_Updated_Scene:BambooShape7.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[425]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[426]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced6|Sam_Final_Updated_Scene:Bamboo12|Sam_Final_Updated_Scene:BambooShape12.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[427]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[428]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Bamboo13|Sam_Final_Updated_Scene:BambooShape13.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[429]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[430]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[431]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[432]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo9|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape9.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[433]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[434]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo13|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape13.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[435]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[436]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced9|Sam_Final_Updated_Scene:Bamboo12|Sam_Final_Updated_Scene:BambooShape12.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[437]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[438]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo7|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape7.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[439]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[440]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Bamboo5|Sam_Final_Updated_Scene:BambooShape5.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[441]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[442]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo4|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape4.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[443]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[444]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo2|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[445]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[446]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo8|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape8.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[447]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[448]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Bamboo13|Sam_Final_Updated_Scene:BambooShape13.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[449]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[450]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo10|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape10.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[451]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[452]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo3|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape3.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[453]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[454]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced6|Sam_Final_Updated_Scene:Bamboo4|Sam_Final_Updated_Scene:BambooShape4.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[455]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[456]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo11|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape11.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[457]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[458]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo10|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape10.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[459]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[460]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo6|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape6.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[461]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[462]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo13|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape13.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[463]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[464]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape4.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[465]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[466]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape5.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[467]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[468]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced8|Sam_Final_Updated_Scene:Bamboo10|Sam_Final_Updated_Scene:BambooShape10.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[469]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[470]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[471]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[472]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Bamboo3|Sam_Final_Updated_Scene:BambooShape3.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[473]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[474]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape4.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[475]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[476]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Bamboo1|Sam_Final_Updated_Scene:BambooShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[477]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[478]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced6|Sam_Final_Updated_Scene:Bamboo10|Sam_Final_Updated_Scene:BambooShape10.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[479]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[480]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo7|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape7.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[481]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[482]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo13|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape13.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[483]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[484]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Bamboo10|Sam_Final_Updated_Scene:BambooShape10.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[485]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[486]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo12|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape12.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[487]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[488]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo6|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape6.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[489]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[490]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Bamboo4|Sam_Final_Updated_Scene:BambooShape4.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[491]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[492]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape3.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[493]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[494]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo10|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape10.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[495]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[496]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Bamboo6|Sam_Final_Updated_Scene:BambooShape6.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[497]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[498]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo7|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape7.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[499]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[500]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced6|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[501]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[502]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo3|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape3.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[503]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[504]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape3.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[505]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[506]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced7|Sam_Final_Updated_Scene:Bamboo11|Sam_Final_Updated_Scene:BambooShape11.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[507]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[508]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo5|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape5.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[509]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[510]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo11|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape11.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[511]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[512]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[513]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[514]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced9|Sam_Final_Updated_Scene:Bamboo8|Sam_Final_Updated_Scene:BambooShape8.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[515]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[516]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced9|Sam_Final_Updated_Scene:Bamboo4|Sam_Final_Updated_Scene:BambooShape4.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[517]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[518]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Bamboo2|Sam_Final_Updated_Scene:BambooShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[519]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[520]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced7|Sam_Final_Updated_Scene:Bamboo6|Sam_Final_Updated_Scene:BambooShape6.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[521]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[522]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo7|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape7.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[523]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[524]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo13|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape13.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[525]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[526]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo6|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape6.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[527]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[528]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced9|Sam_Final_Updated_Scene:Bamboo5|Sam_Final_Updated_Scene:BambooShape5.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[529]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[530]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Bamboo5|Sam_Final_Updated_Scene:BambooShape5.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[531]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[532]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced6|Sam_Final_Updated_Scene:Bamboo13|Sam_Final_Updated_Scene:BambooShape13.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[533]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[534]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Bamboo6|Sam_Final_Updated_Scene:BambooShape6.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[535]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[536]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[537]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[538]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Bamboo9|Sam_Final_Updated_Scene:BambooShape9.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[539]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[540]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Bamboo12|Sam_Final_Updated_Scene:BambooShape12.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[541]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[542]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[543]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[544]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced8|Sam_Final_Updated_Scene:Bamboo7|Sam_Final_Updated_Scene:BambooShape7.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[545]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[546]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Bamboo11|Sam_Final_Updated_Scene:BambooShape11.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[547]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[548]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced7|Sam_Final_Updated_Scene:Bamboo10|Sam_Final_Updated_Scene:BambooShape10.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[549]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[550]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape3.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[551]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[552]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo12|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape12.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[553]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[554]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape3.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[555]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[556]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[557]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[558]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[559]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[560]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape5.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[561]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[562]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced8|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[563]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[564]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape4.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[565]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[566]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced7|Sam_Final_Updated_Scene:Bamboo1|Sam_Final_Updated_Scene:BambooShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[567]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[568]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo8|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape8.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[569]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[570]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Bamboo2|Sam_Final_Updated_Scene:BambooShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[571]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[572]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo11|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape11.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[573]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[574]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo10|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape10.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[575]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[576]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo9|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape9.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[577]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[578]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo10|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape10.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[579]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[580]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[581]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[582]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced6|Sam_Final_Updated_Scene:Bamboo11|Sam_Final_Updated_Scene:BambooShape11.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[583]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[584]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo7|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape7.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[585]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[586]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[587]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[588]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced7|Sam_Final_Updated_Scene:Bamboo2|Sam_Final_Updated_Scene:BambooShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[589]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[590]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo3|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape3.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[591]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[592]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Bamboo11|Sam_Final_Updated_Scene:BambooShape11.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[593]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[594]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[595]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[596]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo10|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape10.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[597]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[598]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced9|Sam_Final_Updated_Scene:Bamboo1|Sam_Final_Updated_Scene:BambooShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[599]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[600]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo12|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape12.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[601]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[602]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Bamboo9|Sam_Final_Updated_Scene:BambooShape9.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[603]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[604]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo11|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape11.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[605]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[606]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape4.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[607]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[608]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced7|Sam_Final_Updated_Scene:Bamboo4|Sam_Final_Updated_Scene:BambooShape4.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[609]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[610]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced9|Sam_Final_Updated_Scene:Bamboo7|Sam_Final_Updated_Scene:BambooShape7.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[611]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[612]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced6|Sam_Final_Updated_Scene:Bamboo1|Sam_Final_Updated_Scene:BambooShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[613]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[614]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced9|Sam_Final_Updated_Scene:Bamboo10|Sam_Final_Updated_Scene:BambooShape10.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[615]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[616]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo6|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape6.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[617]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[618]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo8|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape8.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[619]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[620]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Bamboo4|Sam_Final_Updated_Scene:BambooShape4.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[621]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[622]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo8|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape8.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[623]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[624]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo11|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape11.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[625]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[626]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Bamboo5|Sam_Final_Updated_Scene:BambooShape5.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[627]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[628]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced6|Sam_Final_Updated_Scene:Bamboo9|Sam_Final_Updated_Scene:BambooShape9.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[629]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[630]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Bamboo2|Sam_Final_Updated_Scene:BambooShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[631]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[632]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Bamboo2|Sam_Final_Updated_Scene:BambooShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[633]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[634]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced9|Sam_Final_Updated_Scene:Bamboo6|Sam_Final_Updated_Scene:BambooShape6.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[635]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[636]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo13|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape13.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[637]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[638]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo9|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape9.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[639]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[640]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo5|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape5.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[641]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[642]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Bamboo10|Sam_Final_Updated_Scene:BambooShape10.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[643]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[644]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo4|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape4.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[645]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[646]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo12|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape12.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[647]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[648]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo4|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape4.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[649]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[650]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced7|Sam_Final_Updated_Scene:Bamboo8|Sam_Final_Updated_Scene:BambooShape8.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[651]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[652]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo9|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape9.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[653]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[654]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced7|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[655]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[656]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced8|Sam_Final_Updated_Scene:Bamboo2|Sam_Final_Updated_Scene:BambooShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[657]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[658]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo9|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape9.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[659]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[660]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced9|Sam_Final_Updated_Scene:Bamboo11|Sam_Final_Updated_Scene:BambooShape11.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[661]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[662]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo8|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape8.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[663]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[664]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[665]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[666]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Bamboo12|Sam_Final_Updated_Scene:BambooShape12.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[667]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[668]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Bamboo13|Sam_Final_Updated_Scene:BambooShape13.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[669]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[670]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[671]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[672]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Bamboo1|Sam_Final_Updated_Scene:BambooShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[673]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[674]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Bamboo4|Sam_Final_Updated_Scene:BambooShape4.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[675]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[676]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo7|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape7.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[677]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[678]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced7|Sam_Final_Updated_Scene:Bamboo3|Sam_Final_Updated_Scene:BambooShape3.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[679]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[680]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo13|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape13.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[681]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[682]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Bamboo6|Sam_Final_Updated_Scene:BambooShape6.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[683]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[684]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Bamboo12|Sam_Final_Updated_Scene:BambooShape12.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[685]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[686]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo13|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape13.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[687]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[688]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo12|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape12.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[689]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[690]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape4.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[691]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[692]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[693]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[694]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Bamboo9|Sam_Final_Updated_Scene:BambooShape9.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[695]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[696]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[697]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[698]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Bamboo12|Sam_Final_Updated_Scene:BambooShape12.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[699]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[700]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo11|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape11.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[701]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[702]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo6|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape6.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[703]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[704]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo12|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape12.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[705]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[706]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced7|Sam_Final_Updated_Scene:Bamboo13|Sam_Final_Updated_Scene:BambooShape13.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[707]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[708]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo1|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[709]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[710]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo11|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape11.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[711]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[712]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Bamboo8|Sam_Final_Updated_Scene:BambooShape8.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[713]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[714]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced8|Sam_Final_Updated_Scene:Bamboo11|Sam_Final_Updated_Scene:BambooShape11.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[715]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[716]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced6|Sam_Final_Updated_Scene:Bamboo3|Sam_Final_Updated_Scene:BambooShape3.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[717]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[718]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Logan_sTrees|Sam_Final_Updated_Scene:JungleTreeByLS1|Sam_Final_Updated_Scene:JungleTreeByLS1Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader14SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[719]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[720]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Logan_sTrees|Sam_Final_Updated_Scene:JungleTreeByLS|Sam_Final_Updated_Scene:JungleTreeByLSShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader14SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[721]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[722]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Logan_sTrees|Sam_Final_Updated_Scene:JungleTreeByLS2|Sam_Final_Updated_Scene:JungleTreeByLS2Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader14SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[723]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[724]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:pCube6|Sam_Final_Updated_Scene:pCubeShape6.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader15SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[725]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[726]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:pCube2|Sam_Final_Updated_Scene:pCubeShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader15SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[727]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[728]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:Sam_WithBoys:pCube1|Sam_Final_Updated_Scene:Sam_WithBoys:pCubeShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader15SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[729]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[730]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:pCube4|Sam_Final_Updated_Scene:pCubeShape4.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader15SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[731]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[732]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:Sam_WithBoys:Mesh|Sam_Final_Updated_Scene:Sam_WithBoys:MeshShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader15SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[733]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[734]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:pCube1|Sam_Final_Updated_Scene:pCubeShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader15SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[735]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[736]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:pCube3|Sam_Final_Updated_Scene:pCubeShape3.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader15SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[737]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[738]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:Sam_WithBoys:pCube2|Sam_Final_Updated_Scene:Sam_WithBoys:pCubeShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader15SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[739]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[740]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:Mesh|Sam_Final_Updated_Scene:MeshShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:rampShader15SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[741]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[742]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Shine_on_ground|Sam_Final_Updated_Scene:Sam_WithBoys:pPlane1|Sam_Final_Updated_Scene:Sam_WithBoys:pPlaneShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:lambert2SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[743]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[744]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Leaves_to_shine_on_boys|Sam_Final_Updated_Scene:Sam_WithBoys:pPlane1|Sam_Final_Updated_Scene:Sam_WithBoys:pPlaneShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:lambert2SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[745]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[746]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Fog|Sam_Final_Updated_Scene:Fog1|Sam_Final_Updated_Scene:FogShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:cubeFogSG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[747]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[748]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Fog|Sam_Final_Updated_Scene:Fog2|Sam_Final_Updated_Scene:FogShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:cubeFogSG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[749]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[750]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Shine_on_ground|Sam_Final_Updated_Scene:Sam_WithBoys:spotLight4|Sam_Final_Updated_Scene:Sam_WithBoys:coneShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:lightFogSE.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[751]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[752]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch6|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape6.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[753]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[754]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch1|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[755]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[756]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch29|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape29.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[757]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[758]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch15|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape15.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[759]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[760]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch13|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape13.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[761]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[762]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch17|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape17.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[763]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[764]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch26|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape26.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[765]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[766]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch20|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape20.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[767]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[768]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Treesbranch|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_TreesbranchShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[769]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[770]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch33|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape33.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[771]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[772]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch4|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape4.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[773]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[774]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch14|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape14.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[775]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[776]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch21|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape21.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[777]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[778]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch28|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape28.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[779]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[780]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch5|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape5.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[781]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[782]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch18|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape18.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[783]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[784]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:pSphere40|Sam_Final_Updated_Scene:pSphereShape40.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[785]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[786]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:pSphere36|Sam_Final_Updated_Scene:pSphereShape36.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[787]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[788]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:pSphere37|Sam_Final_Updated_Scene:pSphereShape37.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[789]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[790]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:pSphere39|Sam_Final_Updated_Scene:pSphereShape39.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[791]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[792]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere18|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape18.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[793]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[794]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere12|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape12.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[795]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[796]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:pSphere42|Sam_Final_Updated_Scene:pSphereShape42.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[797]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[798]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:pSphere41|Sam_Final_Updated_Scene:pSphereShape41.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[799]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[800]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere5|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape5.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[801]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[802]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:pSphere43|Sam_Final_Updated_Scene:pSphereShape43.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[803]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[804]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere1|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[805]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[806]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere14|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape14.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[807]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[808]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:pSphere38|Sam_Final_Updated_Scene:pSphereShape38.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[809]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[810]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:pSphere12|Sam_Final_Updated_Scene:pSphereShape12.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[811]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[812]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere7|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape7.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[813]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[814]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere16|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape16.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[815]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[816]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere17|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape17.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[817]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[818]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere4|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape4.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[819]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[820]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere10|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape10.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[821]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[822]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:pSphere8|Sam_Final_Updated_Scene:pSphereShape8.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[823]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[824]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:pSphere6|Sam_Final_Updated_Scene:pSphereShape6.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[825]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[826]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere6|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape6.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[827]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[828]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere2|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[829]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[830]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere13|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape13.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[831]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[832]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere8|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape8.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[833]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[834]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere11|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape11.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[835]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[836]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere15|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape15.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[837]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[838]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere20|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape20.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[839]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[840]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere19|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape19.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[841]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[842]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere21|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape21.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[843]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[844]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere9|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape9.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[845]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[846]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere9|Sam_Final_Updated_Scene:pSphereShape9.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[847]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[848]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere27|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape27.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[849]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[850]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere32|Sam_Final_Updated_Scene:pSphereShape32.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[851]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[852]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere30|Sam_Final_Updated_Scene:pSphereShape30.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[853]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[854]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere35|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape35.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[855]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[856]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere28|Sam_Final_Updated_Scene:pSphereShape28.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[857]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[858]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere30|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape30.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[859]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[860]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere35|Sam_Final_Updated_Scene:pSphereShape35.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[861]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[862]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere27|Sam_Final_Updated_Scene:pSphereShape27.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[863]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[864]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere23|Sam_Final_Updated_Scene:pSphereShape23.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[865]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[866]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere33|Sam_Final_Updated_Scene:pSphereShape33.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[867]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[868]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere24|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape24.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[869]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[870]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere28|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape28.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[871]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[872]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere33|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape33.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[873]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[874]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere32|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape32.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[875]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[876]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere24|Sam_Final_Updated_Scene:pSphereShape24.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[877]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[878]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere23|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape23.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[879]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[880]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere26|Sam_Final_Updated_Scene:pSphereShape26.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:blinn1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[881]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[882]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere34|Sam_Final_Updated_Scene:pSphereShape34.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:blinn1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[883]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[884]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere22|Sam_Final_Updated_Scene:pSphereShape22.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:blinn1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[885]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[886]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere25|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape25.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:blinn1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[887]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[888]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere31|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape31.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:blinn1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[889]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[890]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere29|Sam_Final_Updated_Scene:pSphereShape29.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:blinn1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[891]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[892]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere34|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape34.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:blinn1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[893]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[894]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere29|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape29.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:blinn1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[895]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[896]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere26|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape26.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:blinn1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[897]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[898]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere31|Sam_Final_Updated_Scene:pSphereShape31.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:blinn1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[899]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[900]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere22|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape22.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:blinn1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[901]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[902]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere25|Sam_Final_Updated_Scene:pSphereShape25.instObjGroups" 
+		"Sam_Final_Updated_Scene:Trees_withLeaves_BJ:blinn1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[903]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[904]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:CAMERA_TO_USE|Sam_Final_Updated_Scene:LayerRig|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:YB_SuperFront1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:YB_SuperFrontShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:lambert3SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[905]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[906]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:CAMERA_TO_USE|Sam_Final_Updated_Scene:LayerRig|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:YB_Front2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:YB_FrontShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:lambert4SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[907]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[908]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:CAMERA_TO_USE|Sam_Final_Updated_Scene:LayerRig|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:YB_Mid1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:YB_MidShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:lambert5SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[909]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[910]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:CAMERA_TO_USE|Sam_Final_Updated_Scene:LayerRig|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:YB_Back|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:YB_BackShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:lambert6SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[911]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[912]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:CAMERA_TO_USE|Sam_Final_Updated_Scene:LayerRig|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:YB_SuperBack1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:YB_SuperBack1Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:lambert7SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[913]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[914]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:CAMERA_TO_USE|Sam_Final_Updated_Scene:LayerRig|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:OB_SuperFront3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:OB_SuperFrontShape3.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:lambert8SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[915]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[916]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:CAMERA_TO_USE|Sam_Final_Updated_Scene:LayerRig|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:OB_Front3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:OB_FrontShape3.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:lambert9SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[917]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[918]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:CAMERA_TO_USE|Sam_Final_Updated_Scene:LayerRig|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:OB_Mid2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:OB_MidShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:lambert10SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[919]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[920]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:CAMERA_TO_USE|Sam_Final_Updated_Scene:LayerRig|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:OB_Back2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:OB_Back2Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:lambert11SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[921]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[922]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:CAMERA_TO_USE|Sam_Final_Updated_Scene:LayerRig|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:OB_SuperBack2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:OB_SuperBack2Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:lambert12SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[923]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[924]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:THE_Tree|Sam_Final_Updated_Scene:THE_TreeShape.instObjGroups.objectGroups[0]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:THEtree_SC:rampShader1SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[925]" "Sam_Final_Updated_SceneRN.placeHolderList[926]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BigTree1|Sam_Final_Updated_Scene:BigTree1Shape.instObjGroups.objectGroups[0]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:THEtree_SC:rampShader1SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[927]" "Sam_Final_Updated_SceneRN.placeHolderList[928]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BigTree2|Sam_Final_Updated_Scene:BigTree2Shape.instObjGroups.objectGroups[0]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:THEtree_SC:rampShader1SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[929]" "Sam_Final_Updated_SceneRN.placeHolderList[930]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:THE_Tree|Sam_Final_Updated_Scene:THE_TreeShape.instObjGroups.objectGroups[1]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:THEtree_SC:rampShader2SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[931]" "Sam_Final_Updated_SceneRN.placeHolderList[932]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BigTree1|Sam_Final_Updated_Scene:BigTree1Shape.instObjGroups.objectGroups[1]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:THEtree_SC:rampShader2SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[933]" "Sam_Final_Updated_SceneRN.placeHolderList[934]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BigTree2|Sam_Final_Updated_Scene:BigTree2Shape.instObjGroups.objectGroups[1]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:THEtree_SC:rampShader2SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[935]" "Sam_Final_Updated_SceneRN.placeHolderList[936]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BananaTrees|Sam_Final_Updated_Scene:bananatree1|Sam_Final_Updated_Scene:bananatreeShape1.instObjGroups.objectGroups[2]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BananaTree_SC2:rampShader1SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[937]" "Sam_Final_Updated_SceneRN.placeHolderList[938]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BananaTrees|Sam_Final_Updated_Scene:bananatree1|Sam_Final_Updated_Scene:bananatreeShape1.instObjGroups.objectGroups[0]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BananaTree_SC2:rampShader2SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[939]" "Sam_Final_Updated_SceneRN.placeHolderList[940]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BananaTrees|Sam_Final_Updated_Scene:bananatree1|Sam_Final_Updated_Scene:bananatreeShape1.instObjGroups.objectGroups[1]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BananaTree_SC2:rampShader3SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[941]" "Sam_Final_Updated_SceneRN.placeHolderList[942]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Palms|Sam_Final_Updated_Scene:Palm|Sam_Final_Updated_Scene:PalmShape.instObjGroups.objectGroups[1]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:PalmTree_SC:rampShader1SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[943]" "Sam_Final_Updated_SceneRN.placeHolderList[944]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Palms|Sam_Final_Updated_Scene:Palm1|Sam_Final_Updated_Scene:Palm1Shape.instObjGroups.objectGroups[1]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:PalmTree_SC:rampShader1SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[945]" "Sam_Final_Updated_SceneRN.placeHolderList[946]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Palms|Sam_Final_Updated_Scene:Palm|Sam_Final_Updated_Scene:PalmShape.instObjGroups.objectGroups[0]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:PalmTree_SC:rampShader3SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[947]" "Sam_Final_Updated_SceneRN.placeHolderList[948]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Palms|Sam_Final_Updated_Scene:Palm1|Sam_Final_Updated_Scene:Palm1Shape.instObjGroups.objectGroups[0]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:PalmTree_SC:rampShader3SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[949]" "Sam_Final_Updated_SceneRN.placeHolderList[950]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Palms|Sam_Final_Updated_Scene:Palm|Sam_Final_Updated_Scene:PalmShape.instObjGroups.objectGroups[2]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:PalmTree_SC:rampShader4SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[951]" "Sam_Final_Updated_SceneRN.placeHolderList[952]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Palms|Sam_Final_Updated_Scene:Palm1|Sam_Final_Updated_Scene:Palm1Shape.instObjGroups.objectGroups[2]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:PalmTree_SC:rampShader4SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[953]" "Sam_Final_Updated_SceneRN.placeHolderList[954]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:bush|Sam_Final_Updated_Scene:bushShape.instObjGroups.objectGroups[0]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:SmallBush_SC:rampShader1SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[955]" "Sam_Final_Updated_SceneRN.placeHolderList[956]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:Rock|Sam_Final_Updated_Scene:RockShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:AnotherRock_JonathanFranklin:rampShader1SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[957]" "Sam_Final_Updated_SceneRN.placeHolderList[958]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:Rock1|Sam_Final_Updated_Scene:RockShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Rock_JonathanFranklin:rampShader2SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[959]" "Sam_Final_Updated_SceneRN.placeHolderList[960]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:Rock2|Sam_Final_Updated_Scene:RockShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:SmallRock_JonathanFranklin:rampShader1SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[961]" "Sam_Final_Updated_SceneRN.placeHolderList[962]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BananaTrees|Sam_Final_Updated_Scene:bananatree|Sam_Final_Updated_Scene:bananatreeShape.instObjGroups.objectGroups[2]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BananaTree_SC1:rampShader1SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[963]" "Sam_Final_Updated_SceneRN.placeHolderList[964]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BananaTrees|Sam_Final_Updated_Scene:bananatree|Sam_Final_Updated_Scene:bananatreeShape.instObjGroups.objectGroups[0]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BananaTree_SC1:rampShader2SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[965]" "Sam_Final_Updated_SceneRN.placeHolderList[966]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BananaTrees|Sam_Final_Updated_Scene:bananatree|Sam_Final_Updated_Scene:bananatreeShape.instObjGroups.objectGroups[1]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BananaTree_SC1:rampShader3SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[967]" "Sam_Final_Updated_SceneRN.placeHolderList[968]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Palms|Sam_Final_Updated_Scene:palm|Sam_Final_Updated_Scene:palmShape.instObjGroups.objectGroups[1]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:PalmTree_SC1:rampShader1SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[969]" "Sam_Final_Updated_SceneRN.placeHolderList[970]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Palms|Sam_Final_Updated_Scene:palm|Sam_Final_Updated_Scene:palmShape.instObjGroups.objectGroups[2]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:PalmTree_SC1:rampShader3SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[971]" "Sam_Final_Updated_SceneRN.placeHolderList[972]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Palms|Sam_Final_Updated_Scene:palm|Sam_Final_Updated_Scene:palmShape.instObjGroups.objectGroups[0]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:PalmTree_SC1:rampShader4SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[973]" "Sam_Final_Updated_SceneRN.placeHolderList[974]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:Rock3|Sam_Final_Updated_Scene:Rock3Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:AnotherRock_JonathanFranklin1:rampShader1SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[975]" "Sam_Final_Updated_SceneRN.placeHolderList[976]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:Rock5|Sam_Final_Updated_Scene:Rock5Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:AnotherRock_JonathanFranklin1:rampShader1SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[977]" "Sam_Final_Updated_SceneRN.placeHolderList[978]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:Rock4|Sam_Final_Updated_Scene:Rock4Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:AnotherRock_JonathanFranklin1:rampShader1SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[979]" "Sam_Final_Updated_SceneRN.placeHolderList[980]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Palms|Sam_Final_Updated_Scene:palm1|Sam_Final_Updated_Scene:palmShape1.instObjGroups.objectGroups[1]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:PalmTree_SC2:rampShader1SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[981]" "Sam_Final_Updated_SceneRN.placeHolderList[982]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Palms|Sam_Final_Updated_Scene:palm1|Sam_Final_Updated_Scene:palmShape1.instObjGroups.objectGroups[0]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:PalmTree_SC2:rampShader3SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[983]" "Sam_Final_Updated_SceneRN.placeHolderList[984]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Palms|Sam_Final_Updated_Scene:palm1|Sam_Final_Updated_Scene:palmShape1.instObjGroups.objectGroups[2]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:PalmTree_SC2:rampShader4SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[985]" "Sam_Final_Updated_SceneRN.placeHolderList[986]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BananaTrees|Sam_Final_Updated_Scene:banana|Sam_Final_Updated_Scene:bananaShape.instObjGroups.objectGroups[2]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BananaTree_SC3:rampShader1SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[987]" "Sam_Final_Updated_SceneRN.placeHolderList[988]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BananaTrees|Sam_Final_Updated_Scene:banana|Sam_Final_Updated_Scene:bananaShape.instObjGroups.objectGroups[0]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BananaTree_SC3:rampShader2SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[989]" "Sam_Final_Updated_SceneRN.placeHolderList[990]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BananaTrees|Sam_Final_Updated_Scene:banana|Sam_Final_Updated_Scene:bananaShape.instObjGroups.objectGroups[1]" 
+		"Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BananaTree_SC3:rampShader3SG.dagSetMembers" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[991]" "Sam_Final_Updated_SceneRN.placeHolderList[992]" 
+		""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Ground|Sam_Final_Updated_Scene:GroundShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:lambert2SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[993]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[994]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:TallSwampTrees|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:SwampTallTreeNoLeaves_JonathanFranklin:pCylinder1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:SwampTallTreeNoLeaves_JonathanFranklin:pCylinderShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[995]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[996]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:TallSwampTrees|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:SwampTallTreeNoLeaves_JonathanFranklin2:pCylinder1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:SwampTallTreeNoLeaves_JonathanFranklin2:pCylinderShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[997]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[998]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:TallSwampTrees|Sam_Final_Updated_Scene:pCylinder1|Sam_Final_Updated_Scene:pCylinderShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[999]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[1000]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:TallSwampTrees|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:SwampTallTreeNoLeaves_JonathanFranklin1:pCylinder1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:SwampTallTreeNoLeaves_JonathanFranklin1:pCylinderShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[1001]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[1002]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:TallSwampTrees|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:SwampTallTreeNoLeaves_JonathanFranklin3:pCylinder1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:SwampTallTreeNoLeaves_JonathanFranklin3:pCylinderShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[1003]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[1004]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:TwistyTree1|Sam_Final_Updated_Scene:TwistyTree1Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:rampShader2SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[1005]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[1006]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:TwistyTree|Sam_Final_Updated_Scene:TwistyTreeShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:rampShader2SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[1007]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[1008]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:FallenTrunk|Sam_Final_Updated_Scene:FallenTrunkShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:rampShader3SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[1009]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[1010]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:SmallBushes|Sam_Final_Updated_Scene:Leaves8|Sam_Final_Updated_Scene:Leaves8Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:SmallBush_SC:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[1011]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[1012]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:SmallBushes|Sam_Final_Updated_Scene:Leaves9|Sam_Final_Updated_Scene:Leaves9Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:SmallBush_SC:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[1013]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[1014]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:SmallBushes|Sam_Final_Updated_Scene:Leaves10|Sam_Final_Updated_Scene:Leaves10Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:SmallBush_SC:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[1015]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[1016]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:SmallBushes|Sam_Final_Updated_Scene:Leaves6|Sam_Final_Updated_Scene:Leaves6Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:SmallBush_SC:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[1017]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[1018]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:SmallBushes|Sam_Final_Updated_Scene:Leaves|Sam_Final_Updated_Scene:LeavesShape.instObjGroups" 
+		"Sam_Final_Updated_Scene:SmallBush_SC:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[1019]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[1020]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:SmallBushes|Sam_Final_Updated_Scene:Leaves11|Sam_Final_Updated_Scene:Leaves11Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:SmallBush_SC:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[1021]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[1022]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:SmallBushes|Sam_Final_Updated_Scene:Leaves7|Sam_Final_Updated_Scene:Leaves7Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:SmallBush_SC:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[1023]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[1024]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:SmallBushes|Sam_Final_Updated_Scene:Leaves5|Sam_Final_Updated_Scene:Leaves5Shape.instObjGroups" 
+		"Sam_Final_Updated_Scene:SmallBush_SC:rampShader1SG.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[1025]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[1026]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:GodRays1|Sam_Final_Updated_Scene:coneShape1.instObjGroups" 
+		"Sam_Final_Updated_Scene:lightFogSE1.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[1027]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[1028]" ""
+		5 0 "Sam_Final_Updated_SceneRN" "|Sam_Final_Updated_Scene:GodRays2|Sam_Final_Updated_Scene:coneShape2.instObjGroups" 
+		"Sam_Final_Updated_Scene:lightFogSE2.dagSetMembers" "Sam_Final_Updated_SceneRN.placeHolderList[1029]" 
+		"Sam_Final_Updated_SceneRN.placeHolderList[1030]" "";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode lambert -n "RampMaterial";
@@ -5449,3665 +7997,45 @@ createNode simpleSelector -n "collection1Selector";
 		+ "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere5\n|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere4\n|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere2\n|Sam_Final_Updated_Scene:Ground");
 createNode projection -n "projection1";
 	rename -uid "B3AEE20B-4176-8F4D-DBBB-4C9285E95052";
-	setAttr ".vt1" -type "float2" -0.85838401 1.9093966 ;
-	setAttr ".vt2" -type "float2" -0.85838401 1.9093966 ;
-	setAttr ".vt3" -type "float2" -0.85838401 1.9093966 ;
+	setAttr ".vt1" -type "float2" 0.5 0.5 ;
+	setAttr ".vt2" -type "float2" 0.5 0.5 ;
+	setAttr ".vt3" -type "float2" 0.5 0.5 ;
 createNode shadingEngine -n "lambert14SG";
 	rename -uid "42EE8DEA-4973-C207-AA15-37A5CA7448E1";
 	setAttr ".ihi" 0;
-	setAttr -s 521 ".dsm";
 	setAttr ".ro" yes;
 createNode materialInfo -n "materialInfo32";
 	rename -uid "94D55F7E-448D-6F99-7AB3-238AE33837BE";
 createNode materialOverride -n "materialOverride1";
 	rename -uid "9FE83C91-4CF7-5507-251B-5B8B8583406B";
 	addAttr -s false -ci true -sn "atv" -ln "attrValue" -at "message";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_MeshShape_iog_0_";
-	rename -uid "534223EF-4B73-98AF-FD66-7D90F5AC9924";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:Sam_WithBoys:Mesh|Sam_Final_Updated_Scene:Sam_WithBoys:MeshShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader15SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pSphereShape26_iog_0_";
-	rename -uid "37703218-4CEE-8214-FBDE-F1AC9464CE58";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere26|Sam_Final_Updated_Scene:pSphereShape26.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:blinn1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape3_iog_0_";
-	rename -uid "506A09F5-46DD-1B9F-5C5F-0BA2FF7C127B";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Bamboo3|Sam_Final_Updated_Scene:BambooShape3.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pSphereShape29_iog_0_";
-	rename -uid "931C8A1D-4D85-907F-401A-9DB9A00F7498";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere29|Sam_Final_Updated_Scene:pSphereShape29.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:blinn1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape6_iog_0_";
-	rename -uid "2214DAC3-4177-8C7A-D86C-288C098750DE";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced8|Sam_Final_Updated_Scene:Bamboo6|Sam_Final_Updated_Scene:BambooShape6.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape11_iog_0_";
-	rename -uid "9DD3C489-409C-C5F4-77B6-BD9545BA576A";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Bamboo11|Sam_Final_Updated_Scene:BambooShape11.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_pCubeShape1_iog_0_";
-	rename -uid "C0FCA7A5-44E2-D9C4-C391-4793016E610D";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:Sam_WithBoys:pCube1|Sam_Final_Updated_Scene:Sam_WithBoys:pCubeShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader15SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape3_iog_0_";
-	rename -uid "EE912DF9-4777-8315-7BE3-74841BE5A6CB";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape3.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape12_iog_0_";
-	rename -uid "06E97F05-4D45-F407-6301-F0907B16D907";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo12|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape12.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush23Shape_iog_0_";
-	rename -uid "DF83943D-4720-279C-0203-129A47E481D4";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush23|Sam_Final_Updated_Scene:Bush23Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape12_iog_0_1";
-	rename -uid "57044EA3-49F4-17C0-837A-8F8BC41066AE";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo12|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape12.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_pPlaneShape1_iog_0_";
-	rename -uid "86506445-45E0-7DDF-7810-82B041F73BA8";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Shine_on_ground|Sam_Final_Updated_Scene:Sam_WithBoys:pPlane1|Sam_Final_Updated_Scene:Sam_WithBoys:pPlaneShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:lambert2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape32_iog_0_";
-	rename -uid "89D979D4-4E77-500B-CA99-6EB83A08A258";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch32|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape32.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape1_iog_0_";
-	rename -uid "797DD261-41C1-F537-B330-78958FC75075";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch1|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape2_iog_0_";
-	rename -uid "0F660CD7-4440-DE20-C47B-6C829112D564";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Bamboo2|Sam_Final_Updated_Scene:BambooShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush46Shape_iog_0_";
-	rename -uid "1347C402-4822-03AE-F54C-EC8520EDF087";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush46|Sam_Final_Updated_Scene:Bush46Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape10_iog_0_";
-	rename -uid "8D44E479-4956-AE90-4F03-A69AE307B3D2";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo10|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape10.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape3_iog_0_1";
-	rename -uid "54EBE36C-4CD3-CE02-228B-8683D40E545D";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Bamboo3|Sam_Final_Updated_Scene:BambooShape3.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape9_iog_0_";
-	rename -uid "B3B211AF-4784-734E-8799-3A91A08A5470";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo9|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape9.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape5_iog_0_";
-	rename -uid "DD7164B4-43B5-4BDB-6319-EA924123AEE6";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape5.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape20_iog_0_";
-	rename -uid "1A3BF07B-4C51-785F-1ECE-348C907FF587";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere20|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape20.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape7_iog_0_";
-	rename -uid "583F9E00-43FD-7865-9D4D-BA94E8F30595";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo7|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape7.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape33_iog_0_";
-	rename -uid "442D1A7F-4B30-4096-49FE-5F83DC9DA4E7";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch33|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape33.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape8_iog_0_";
-	rename -uid "256B0A64-4566-F5C4-23BE-9AA342F5A12A";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Bamboo8|Sam_Final_Updated_Scene:BambooShape8.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush34Shape_iog_0_";
-	rename -uid "0A4C9CD1-460C-3D73-553D-34BC66CC8D73";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush34|Sam_Final_Updated_Scene:Bush34Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape1_iog_0_";
-	rename -uid "8AB43C3E-4CF4-F9B9-E11E-1DA6D6AEECE8";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape12_iog_0_2";
-	rename -uid "4F153B1E-4F74-0A39-F7D1-58A8FFD1CA64";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo12|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape12.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape_iog_0_";
-	rename -uid "E94D16A1-4261-7422-BDDF-06BA591721E2";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush20Shape_iog_0_";
-	rename -uid "3B9B73CD-4E70-231E-C9BE-D196E4D5EEBA";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush20|Sam_Final_Updated_Scene:Bush20Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape6_iog_0_1";
-	rename -uid "6E7129C1-4C4D-660D-DD0F-74826E19EF79";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Bamboo6|Sam_Final_Updated_Scene:BambooShape6.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape3_iog_0_";
-	rename -uid "946CFCF2-40A9-7491-4F41-7BB06BBF18D4";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo3|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape3.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape5_iog_0_";
-	rename -uid "7FE0B2CF-4029-F93A-1D2E-ABA6338E9625";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced7|Sam_Final_Updated_Scene:Bamboo5|Sam_Final_Updated_Scene:BambooShape5.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape8_iog_0_1";
-	rename -uid "318AF72D-49B6-CDDE-E415-23A832D9A79B";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Bamboo8|Sam_Final_Updated_Scene:BambooShape8.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape4_iog_0_";
-	rename -uid "81B87DED-4602-D085-BE93-C18D43D032A7";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape4.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape1_iog_0_";
-	rename -uid "07A4FFDC-4DBB-9F8D-A4BC-08B104E5C519";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo1|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_JungleTreeByLS1Shape_iog_0_";
-	rename -uid "90A50767-4D63-6B40-2D1E-EEAE721EA726";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Logan_sTrees|Sam_Final_Updated_Scene:JungleTreeByLS1|Sam_Final_Updated_Scene:JungleTreeByLS1Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader14SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape9_iog_0_";
-	rename -uid "E2C63185-4475-E380-D506-5598976F74BE";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Bamboo9|Sam_Final_Updated_Scene:BambooShape9.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape10_iog_0_";
-	rename -uid "D5D2B4E5-4B0C-22E9-1A92-2894D20006DE";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo10|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape10.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape5_iog_0_1";
-	rename -uid "64A4AB5C-41BD-BA8C-06C4-8D8904F166E8";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape5.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape10_iog_0_";
-	rename -uid "0C777B20-4790-E154-0F2E-7BA4FEF18A11";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced8|Sam_Final_Updated_Scene:Bamboo10|Sam_Final_Updated_Scene:BambooShape10.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape7_iog_0_";
-	rename -uid "50810DA9-4D38-58B9-2519-55BA1E22AF69";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo7|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape7.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Leaves7Shape_iog_0_";
-	rename -uid "B5A6724E-46CC-97A0-880B-7EAF5DBF192D";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:SmallBushes|Sam_Final_Updated_Scene:Leaves7|Sam_Final_Updated_Scene:Leaves7Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:SmallBush_SC:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Halp_Shape_iog_0_";
-	rename -uid "7392EEBA-4F37-23A3-049F-3BB238013F16";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	setAttr ".tg" -type "TdataCompound" ;
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_LeafBundle7Shape_iog_0_";
-	rename -uid "531BB4A6-4736-0703-F4CD-0EAC5E6CF2D6";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:TallSwampTrees|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:LeafBundle7|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:LeafBundle7Shape.instObjGroups[0]";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape1_iog_0_1";
-	rename -uid "AEF5DC6E-421A-5246-87E7-42B4D091B7EF";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pSphereShape37_iog_0_";
-	rename -uid "C975C2DD-48A3-CE25-6424-D19146CF8AE8";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:pSphere37|Sam_Final_Updated_Scene:pSphereShape37.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape8_iog_0_";
-	rename -uid "889A4932-4429-4D4E-B55C-278B562001B1";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo8|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape8.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape7_iog_0_1";
-	rename -uid "3614F3E7-4426-196C-F84B-3A936833D40C";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo7|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape7.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape5_iog_0_";
-	rename -uid "4F446737-4BEC-9F53-0589-AEB4FE7DF6D1";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch5|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape5.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape7_iog_0_";
-	rename -uid "9FE2C366-46E7-34B3-7831-A4A5CCE90771";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced6|Sam_Final_Updated_Scene:Bamboo7|Sam_Final_Updated_Scene:BambooShape7.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape7_iog_0_";
-	rename -uid "4DA68E08-43AB-7A32-3AA4-64B159827EB6";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere7|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape7.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape1_iog_0_";
-	rename -uid "9145012D-4ADD-0530-D5BB-93AA90D4BB40";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced7|Sam_Final_Updated_Scene:Bamboo1|Sam_Final_Updated_Scene:BambooShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape4_iog_0_";
-	rename -uid "50DEB4A6-42FD-A775-6FE2-A0BD99EEDED8";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo4|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape4.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush13Shape_iog_0_";
-	rename -uid "6106B38A-433D-60C2-880E-B8A7B603335B";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush13|Sam_Final_Updated_Scene:Bush13Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape12_iog_0_3";
-	rename -uid "CC17B433-4735-5098-135C-80AEF596608F";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo12|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape12.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape13_iog_0_";
-	rename -uid "962895E5-4B26-236B-8433-5688647660FC";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced8|Sam_Final_Updated_Scene:Bamboo13|Sam_Final_Updated_Scene:BambooShape13.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape8_iog_0_2";
-	rename -uid "385BEBCA-401B-FE66-E267-F5824AD7B2EC";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Bamboo8|Sam_Final_Updated_Scene:BambooShape8.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pCylinderShape1_iog_0_";
-	rename -uid "F99C79E6-4943-7CF1-2F25-8C8709DBBF6A";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:TallSwampTrees|Sam_Final_Updated_Scene:pCylinder1|Sam_Final_Updated_Scene:pCylinderShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape13_iog_0_1";
-	rename -uid "5B0AC61F-4C38-76C4-F098-3BB6E68B22FC";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Bamboo13|Sam_Final_Updated_Scene:BambooShape13.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape11_iog_0_1";
-	rename -uid "3C166B78-496B-18A0-17E1-CB9DDBA52407";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced7|Sam_Final_Updated_Scene:Bamboo11|Sam_Final_Updated_Scene:BambooShape11.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_TwistyTreeShape_iog_0_";
-	rename -uid "48FE37B7-435C-DEA6-095D-38B73EF12D7E";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:TwistyTree|Sam_Final_Updated_Scene:TwistyTreeShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:rampShader2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape13_iog_0_2";
-	rename -uid "E42043B4-409A-5A1E-999F-AA9F8EC8B9D0";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Bamboo13|Sam_Final_Updated_Scene:BambooShape13.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape5_iog_0_1";
-	rename -uid "98129EA2-4663-F872-C17B-FA97B499406E";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced9|Sam_Final_Updated_Scene:Bamboo5|Sam_Final_Updated_Scene:BambooShape5.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape4_iog_0_1";
-	rename -uid "E59803B4-4587-7681-D562-44B0FC5CE043";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape4.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape11_iog_0_2";
-	rename -uid "5EF69EFE-4404-0DA6-F768-1AB54BAF7BBE";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Bamboo11|Sam_Final_Updated_Scene:BambooShape11.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape7_iog_0_1";
-	rename -uid "4846B959-499D-84D4-4BA3-A9930C854FFE";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Bamboo7|Sam_Final_Updated_Scene:BambooShape7.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape2_iog_0_";
-	rename -uid "7625CC76-45ED-C81E-36AA-E7BDC28BEEA1";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere2|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape12_iog_0_";
-	rename -uid "DCA72BCA-40FF-4393-998B-358702616980";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Bamboo12|Sam_Final_Updated_Scene:BambooShape12.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape7_iog_0_2";
-	rename -uid "85158E8E-44ED-0135-548E-C1AF1E816E74";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Bamboo7|Sam_Final_Updated_Scene:BambooShape7.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape10_iog_0_1";
-	rename -uid "D81381DC-4C6F-6A08-F152-80B57959626C";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Bamboo10|Sam_Final_Updated_Scene:BambooShape10.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush38Shape_iog_0_";
-	rename -uid "E546D29F-4A66-1900-A044-C6B033BD9E81";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush38|Sam_Final_Updated_Scene:Bush38Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape30_iog_0_";
-	rename -uid "7F5DDF47-4C9E-A477-75BB-67B855F8709D";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere30|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape30.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape10_iog_0_2";
-	rename -uid "EF343284-4FE0-8188-521B-B791127A1250";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced9|Sam_Final_Updated_Scene:Bamboo10|Sam_Final_Updated_Scene:BambooShape10.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush3Shape_iog_0_";
-	rename -uid "A21331EB-43DB-FD60-E13B-3F83355D2A5D";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush3|Sam_Final_Updated_Scene:Bush3Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape5_iog_0_2";
-	rename -uid "D546A207-4273-C5FE-F825-269DB760C0B4";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Bamboo5|Sam_Final_Updated_Scene:BambooShape5.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape9_iog_0_";
-	rename -uid "66E20E32-49FF-B2C0-C007-DAABE87A7AE3";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo9|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape9.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape5_iog_0_";
-	rename -uid "3B434E81-4249-1924-EC8E-268FEB42B172";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo5|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape5.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape22_iog_0_";
-	rename -uid "A878879C-4B1B-1969-2A37-A6AE06C4966A";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere22|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape22.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:blinn1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape24_iog_0_";
-	rename -uid "002D0227-42CC-F484-3ED6-689085442895";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere24|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape24.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape13_iog_0_";
-	rename -uid "C4EA2F91-4600-AE8F-A48E-27ACB5917923";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo13|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape13.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape11_iog_0_3";
-	rename -uid "D22F2B20-4D0F-D968-1F7C-BB925B21E898";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Bamboo11|Sam_Final_Updated_Scene:BambooShape11.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape5_iog_0_1";
-	rename -uid "4B4A7324-4131-A78B-A21E-1A92678BC1B6";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo5|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape5.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Rock3Shape_iog_0_";
-	rename -uid "6B69D928-4A7F-FD36-4CB6-36A793AF5298";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:Rock3|Sam_Final_Updated_Scene:Rock3Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:AnotherRock_JonathanFranklin1:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush24Shape_iog_0_";
-	rename -uid "7F29B673-4B4E-39A0-BFF6-D896545D5217";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush24|Sam_Final_Updated_Scene:Bush24Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_TwistyTree1Shape_iog_0_";
-	rename -uid "71593682-47F0-024E-8116-979C24106269";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:TwistyTree1|Sam_Final_Updated_Scene:TwistyTree1Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:rampShader2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape13_iog_0_3";
-	rename -uid "F351EA54-48B3-DE02-E1F5-B8A5B4F505C3";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Bamboo13|Sam_Final_Updated_Scene:BambooShape13.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape1_iog_0_1";
-	rename -uid "DA46F38D-4855-5A32-9566-1584C5501BFC";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo1|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape11_iog_0_";
-	rename -uid "B455AFE3-4B88-8D7B-7B93-6282FFFC8EC9";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo11|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape11.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape18_iog_0_";
-	rename -uid "4E502657-4202-A61B-F032-C3BAD1135A8A";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch18|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape18.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush33Shape_iog_0_";
-	rename -uid "764D7C4B-418E-BAFE-F2D7-26ACAD93BD75";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush33|Sam_Final_Updated_Scene:Bush33Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape3_iog_0_1";
-	rename -uid "C1CA838C-4C58-7DB2-2594-D087AB31F58B";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape3.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape2_iog_0_1";
-	rename -uid "5EBFA221-4FFC-1C0C-F046-66A9C12A9109";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced9|Sam_Final_Updated_Scene:Bamboo2|Sam_Final_Updated_Scene:BambooShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape_iog_0_1";
-	rename -uid "2387E5F8-4415-0042-C298-3E9EF42B6893";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape10_iog_0_3";
-	rename -uid "FDC29028-4D62-F97D-23AA-11A25E95FF1A";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Bamboo10|Sam_Final_Updated_Scene:BambooShape10.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape8_iog_0_1";
-	rename -uid "92A6CEF6-4D23-7EF1-0C60-59B0CD4FF51E";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo8|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape8.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pSphereShape39_iog_0_";
-	rename -uid "31B596C5-4804-249B-ED3A-259A0DEE581D";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:pSphere39|Sam_Final_Updated_Scene:pSphereShape39.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape_iog_0_";
-	rename -uid "C5639927-4CF2-197D-67B0-A392F37CE487";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BigTree2Shape_iog_0__og_0_";
-	rename -uid "970E247E-4EF3-8B28-1A67-4B94E25FB4A0";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BigTree2|Sam_Final_Updated_Scene:BigTree2Shape.instObjGroups[0].objectGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:THEtree_SC:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BigTree2Shape_iog_0__og_1_";
-	rename -uid "9849E418-429A-C086-1F90-00920CFE9572";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BigTree2|Sam_Final_Updated_Scene:BigTree2Shape.instObjGroups[0].objectGroups[1]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:THEtree_SC:rampShader2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape15_iog_0_";
-	rename -uid "097C758E-4128-C86A-7D3E-5595DA4EC59C";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch15|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape15.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape4_iog_0_";
-	rename -uid "7E94169F-45C0-E61A-2246-429A1890AC77";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced6|Sam_Final_Updated_Scene:Bamboo4|Sam_Final_Updated_Scene:BambooShape4.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_PalmShape_iog_0__og_0_";
-	rename -uid "8D6832A4-4B7E-295F-0C0A-228832DA851D";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Palms|Sam_Final_Updated_Scene:Palm|Sam_Final_Updated_Scene:PalmShape.instObjGroups[0].objectGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:PalmTree_SC:rampShader3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_PalmShape_iog_0__og_1_";
-	rename -uid "80627DE0-494D-C614-A290-1A82C75942DB";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Palms|Sam_Final_Updated_Scene:Palm|Sam_Final_Updated_Scene:PalmShape.instObjGroups[0].objectGroups[1]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:PalmTree_SC:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_PalmShape_iog_0__og_2_";
-	rename -uid "98A366CA-4C47-9BCA-840D-1498CE7999AA";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Palms|Sam_Final_Updated_Scene:Palm|Sam_Final_Updated_Scene:PalmShape.instObjGroups[0].objectGroups[2]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:PalmTree_SC:rampShader4SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape9_iog_0_1";
-	rename -uid "B2642387-4AC8-56EB-0E8A-F8A1D76D1F6F";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Bamboo9|Sam_Final_Updated_Scene:BambooShape9.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_SwampTallTreeNoLeaves_JonathanFranklin3_pCylinderShape1_iog_0_";
-	rename -uid "57ABC786-447B-2F07-68C7-2A991F46ECCC";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:TallSwampTrees|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:SwampTallTreeNoLeaves_JonathanFranklin3:pCylinder1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:SwampTallTreeNoLeaves_JonathanFranklin3:pCylinderShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape8_iog_0_";
-	rename -uid "9754E73D-48D5-C314-DFAF-3D81AAAEBA87";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo8|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape8.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Rock5Shape_iog_0_";
-	rename -uid "CDD107A8-4428-4C96-709C-C9906387DBFB";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:Rock5|Sam_Final_Updated_Scene:Rock5Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:AnotherRock_JonathanFranklin1:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush16Shape_iog_0_";
-	rename -uid "9319AE2B-47E0-CAC3-7D5F-12B033796408";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush16|Sam_Final_Updated_Scene:Bush16Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape11_iog_0_4";
-	rename -uid "5678C05E-4C12-B78F-78EB-39AB4E389F37";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced9|Sam_Final_Updated_Scene:Bamboo11|Sam_Final_Updated_Scene:BambooShape11.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape3_iog_0_2";
-	rename -uid "7D24CFE2-40F1-6ED6-FFB5-21B716FF5F79";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Bamboo3|Sam_Final_Updated_Scene:BambooShape3.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape4_iog_0_2";
-	rename -uid "F8D2A17D-402F-A114-AEA2-B9A1EAE3C0BB";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape4.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape3_iog_0_3";
-	rename -uid "9215A677-436D-D433-A4C3-F6851C4E4B7F";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Bamboo3|Sam_Final_Updated_Scene:BambooShape3.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape8_iog_0_3";
-	rename -uid "A2B2FE54-4182-D2AA-8FFF-53BF42F4A99C";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Bamboo8|Sam_Final_Updated_Scene:BambooShape8.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_grid1Shape_iog_0_";
-	rename -uid "B1A6833E-46AB-5191-DDB9-2387108BEE03";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Short_Palms|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:grid1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:grid1Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader4SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pSphereShape27_iog_0_";
-	rename -uid "CF2C2F58-4FD1-EADD-A33F-4EBD1E988284";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere27|Sam_Final_Updated_Scene:pSphereShape27.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape3_iog_0_4";
-	rename -uid "B22A39F5-4AFB-9D21-1759-AFBCBBB132F4";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced8|Sam_Final_Updated_Scene:Bamboo3|Sam_Final_Updated_Scene:BambooShape3.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_grid4Shape_iog_0_";
-	rename -uid "569C9504-4B71-C6B2-B327-5BB7BEBCA1DE";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Short_Palms|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:grid4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:grid4Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader4SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape_iog_0_";
-	rename -uid "7C4E26B5-4BD7-3E76-2268-9C97FF66FC22";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape9_iog_0_1";
-	rename -uid "9918B946-47FD-0FEB-D8D3-7DB34FBF0C68";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo9|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape9.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush1Shape_iog_0_";
-	rename -uid "07DC17FD-4BE5-E1B3-0410-1EA13525C038";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush1|Sam_Final_Updated_Scene:Bush1Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape4_iog_0_1";
-	rename -uid "0007CC24-40B3-6BCF-4AC7-A29509A32A80";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo4|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape4.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape15_iog_0_";
-	rename -uid "06778B3B-4635-2BEF-BAF3-AB88898E4483";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere15|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape15.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Palm1Shape_iog_0__og_0_";
-	rename -uid "2C6EB7A0-4709-AAEA-393E-B1A06E74C239";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Palms|Sam_Final_Updated_Scene:Palm1|Sam_Final_Updated_Scene:Palm1Shape.instObjGroups[0].objectGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:PalmTree_SC:rampShader3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Palm1Shape_iog_0__og_1_";
-	rename -uid "32513121-456F-D1D9-ABB9-5EBCA7FDE77B";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Palms|Sam_Final_Updated_Scene:Palm1|Sam_Final_Updated_Scene:Palm1Shape.instObjGroups[0].objectGroups[1]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:PalmTree_SC:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Palm1Shape_iog_0__og_2_";
-	rename -uid "193D0E2B-41C8-6AB5-DEEA-C488D7B4A2FA";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Palms|Sam_Final_Updated_Scene:Palm1|Sam_Final_Updated_Scene:Palm1Shape.instObjGroups[0].objectGroups[2]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:PalmTree_SC:rampShader4SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape23_iog_0_";
-	rename -uid "70D3990A-46BA-0BB8-612B-DC8C31FF270B";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere23|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape23.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape11_iog_0_5";
-	rename -uid "A0242D6F-4095-B8DD-8BAA-2386615F8E5A";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Bamboo11|Sam_Final_Updated_Scene:BambooShape11.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape13_iog_0_1";
-	rename -uid "64524255-4339-0EEB-B435-1DBB09770A96";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo13|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape13.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_pCubeShape2_iog_0_";
-	rename -uid "8BA5BD36-4C26-210B-8C67-11A49ABD7153";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:Sam_WithBoys:pCube2|Sam_Final_Updated_Scene:Sam_WithBoys:pCubeShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader15SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape2_iog_0_";
-	rename -uid "A2F59259-4F80-F0B6-3BCD-C2A6C291A03B";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_YB_FrontShape2_iog_0_";
-	rename -uid "9D2B5D21-451A-9223-3312-EBAB0BE44D80";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	setAttr ".tg" -type "TdataCompound" ;
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape11_iog_0_1";
-	rename -uid "AF6764D3-4744-0AD9-99F3-5B89F42F2498";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo11|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape11.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pSphereShape25_iog_0_";
-	rename -uid "4F49FECD-468D-A800-5A8F-96891152A9EA";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere25|Sam_Final_Updated_Scene:pSphereShape25.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:blinn1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape10_iog_0_4";
-	rename -uid "5FD4FC84-4335-E9C8-B86F-77AAE33A344F";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Bamboo10|Sam_Final_Updated_Scene:BambooShape10.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape14_iog_0_";
-	rename -uid "5CA18D03-4F50-C7BB-0FF6-3A8FBDDEBCF2";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere14|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape14.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape10_iog_0_5";
-	rename -uid "49C05577-499D-A9AA-92E2-6E8C2A4A00B8";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Bamboo10|Sam_Final_Updated_Scene:BambooShape10.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush30Shape_iog_0_";
-	rename -uid "2D25CFD0-4320-A8DC-28A6-458943D80388";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush30|Sam_Final_Updated_Scene:Bush30Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Leaves8Shape_iog_0_";
-	rename -uid "2D20A0FD-4CC8-5A7B-E4CF-F4BC71DA7EBA";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:SmallBushes|Sam_Final_Updated_Scene:Leaves8|Sam_Final_Updated_Scene:Leaves8Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:SmallBush_SC:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_trunkShape_iog_0_";
-	rename -uid "EFD3ADE6-4107-0A00-DFBD-FF90830B54F3";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:trunk|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:trunkShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape6_iog_0_";
-	rename -uid "9E206914-4383-4085-62E9-34AA85DEE401";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo6|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape6.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape12_iog_0_1";
-	rename -uid "079A2FAC-42FD-9540-428B-498086A52F74";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Bamboo12|Sam_Final_Updated_Scene:BambooShape12.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape10_iog_0_1";
-	rename -uid "4E044514-4AF4-65D0-D273-BC9875A11F9E";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo10|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape10.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape6_iog_0_2";
-	rename -uid "26BCD865-47D4-C91F-B19B-36A1E607B231";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Bamboo6|Sam_Final_Updated_Scene:BambooShape6.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush44Shape_iog_0_";
-	rename -uid "8CA11BAC-4665-5A40-AB80-FF86CF821A37";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush44|Sam_Final_Updated_Scene:Bush44Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape13_iog_0_";
-	rename -uid "B0343A4D-47E9-090B-0DB2-2E90A434B40D";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo13|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape13.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape_iog_0_1";
-	rename -uid "15168E87-4D47-F6EE-3DC9-8B96414C8EDA";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced7|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape6_iog_0_1";
-	rename -uid "0B8ED43E-4AB5-8DAE-6AFC-AA9B241FEB87";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo6|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape6.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape29_iog_0_";
-	rename -uid "50BC63F1-4BF5-780D-AC6C-6C9DB3D7ACE7";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch29|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape29.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape35_iog_0_";
-	rename -uid "16D0F38E-456F-4342-B868-A18EA52D82A9";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere35|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape35.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_LeavesShape_iog_0_";
-	rename -uid "84C1C1C0-4ABA-09A3-060A-47B2DFEAD80A";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:SmallBushes|Sam_Final_Updated_Scene:Leaves|Sam_Final_Updated_Scene:LeavesShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:SmallBush_SC:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape2_iog_0_1";
-	rename -uid "80318453-48E9-D70F-8776-F4AB06A2349B";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape2_iog_0_2";
-	rename -uid "B4F802D5-4489-5FE8-3F78-17BA0326C092";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Bamboo2|Sam_Final_Updated_Scene:BambooShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_bushShape_iog_0__og_0_";
-	rename -uid "613482CB-4C89-444B-BB94-EEB492FC089B";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:bush|Sam_Final_Updated_Scene:bushShape.instObjGroups[0].objectGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:SmallBush_SC:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Rock4Shape_iog_0_";
-	rename -uid "20CD7964-4594-601B-5B7D-6F855E919C82";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:Rock4|Sam_Final_Updated_Scene:Rock4Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:AnotherRock_JonathanFranklin1:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape3_iog_0_2";
-	rename -uid "2C073C36-4305-E285-EF2E-1898353C45A8";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape3.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape11_iog_0_6";
-	rename -uid "26D0A836-4DAA-55D5-6990-12AEEE3C86C8";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced8|Sam_Final_Updated_Scene:Bamboo11|Sam_Final_Updated_Scene:BambooShape11.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape3_iog_0_5";
-	rename -uid "1E8B0F3D-4B09-13EF-2411-11AE241A65AC";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced9|Sam_Final_Updated_Scene:Bamboo3|Sam_Final_Updated_Scene:BambooShape3.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape8_iog_0_4";
-	rename -uid "578FCFEB-4B92-2AE8-07E8-0C9B0CD25E83";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced8|Sam_Final_Updated_Scene:Bamboo8|Sam_Final_Updated_Scene:BambooShape8.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush43Shape_iog_0_";
-	rename -uid "5902FCF4-4F54-A865-91D8-14B56E97E88E";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush43|Sam_Final_Updated_Scene:Bush43Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pSphereShape8_iog_0_";
-	rename -uid "18FB8AFD-4737-C76D-2D05-2F9547FA7B93";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:pSphere8|Sam_Final_Updated_Scene:pSphereShape8.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape5_iog_0_2";
-	rename -uid "FCD9E52F-473E-D239-259C-F0BDF6D6FD4B";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo5|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape5.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape8_iog_0_1";
-	rename -uid "161678BC-4ED3-92EE-E58B-4DBAB88F5501";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo8|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape8.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape9_iog_0_1";
-	rename -uid "D861BB33-45E6-E9C5-5C07-939CEDB42A38";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo9|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape9.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape6_iog_0_";
-	rename -uid "CB1C4188-4492-31CB-DD6A-7D9E80D868A6";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch6|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape6.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape5_iog_0_3";
-	rename -uid "6583C31A-4B0A-3563-F3FF-77B7DFA9A0EC";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced6|Sam_Final_Updated_Scene:Bamboo5|Sam_Final_Updated_Scene:BambooShape5.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape12_iog_0_2";
-	rename -uid "07D7DB73-43C2-D39C-FE95-BDA683241D03";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Bamboo12|Sam_Final_Updated_Scene:BambooShape12.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pSphereShape33_iog_0_";
-	rename -uid "8366D22E-4BA5-6B73-B10E-109D9C6E2FD8";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere33|Sam_Final_Updated_Scene:pSphereShape33.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape3_iog_0_1";
-	rename -uid "B83215A1-4FEB-65E1-079F-23B7754DB5D1";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo3|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape3.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush12Shape_iog_0_";
-	rename -uid "764345A9-4B62-3C12-FB81-FD8B9CCC8D9C";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush12|Sam_Final_Updated_Scene:Bush12Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape9_iog_0_2";
-	rename -uid "605C0E03-4D61-E566-CE78-FF8AEF01CDBE";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Bamboo9|Sam_Final_Updated_Scene:BambooShape9.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape10_iog_0_2";
-	rename -uid "69567BE7-4FA1-8DBD-83AD-728F323EF2C9";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo10|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape10.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape_iog_0_2";
-	rename -uid "54D2BE6E-40C6-679E-BA07-1DB94D2E84FB";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape2_iog_0_";
-	rename -uid "6474AC37-47BB-07FB-1BB8-A0AD3B5934A4";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo2|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pSphereShape30_iog_0_";
-	rename -uid "98D5CB4B-4EE2-B34E-2C86-D0814CAA6A8B";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere30|Sam_Final_Updated_Scene:pSphereShape30.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape12_iog_0_3";
-	rename -uid "4118F1F3-4AB4-5A03-50FC-3D950E0F1233";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Bamboo12|Sam_Final_Updated_Scene:BambooShape12.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape7_iog_0_1";
-	rename -uid "8E45B48F-4E57-F9EE-3DDE-368B94F74269";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo7|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape7.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape3_iog_0_2";
-	rename -uid "292D787B-4EC8-BDC9-0AC2-95B8ED3D9B34";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo3|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape3.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape10_iog_0_1";
-	rename -uid "1DB1A889-4558-C699-61AB-E3BA4698E095";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo10|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape10.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pCubeShape1_iog_0_";
-	rename -uid "51FB09FE-4591-16FE-0570-308C17484E8C";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:pCube1|Sam_Final_Updated_Scene:pCubeShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader15SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape13_iog_0_";
-	rename -uid "89BDCEE8-45D4-DE75-3C20-899C0646D305";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere13|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape13.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape11_iog_0_";
-	rename -uid "97F6831A-4194-1537-2916-D3B145E231B2";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo11|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape11.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape4_iog_0_";
-	rename -uid "BBE0E352-4D9F-0299-9C50-469A1D08182A";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch4|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape4.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pSphereShape9_iog_0_";
-	rename -uid "6D1E2A79-4308-81B4-45DA-219928AAB307";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere9|Sam_Final_Updated_Scene:pSphereShape9.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape1_iog_0_1";
-	rename -uid "BF6D4B7B-4555-5060-73D3-879249F9A878";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced9|Sam_Final_Updated_Scene:Bamboo1|Sam_Final_Updated_Scene:BambooShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape3_iog_0_6";
-	rename -uid "5A7D443E-44A9-188C-FB86-8BBD6A22771C";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced7|Sam_Final_Updated_Scene:Bamboo3|Sam_Final_Updated_Scene:BambooShape3.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush6Shape_iog_0_";
-	rename -uid "AD94AB96-4DAA-591D-92FF-268796D2C25B";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush6|Sam_Final_Updated_Scene:Bush6Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape13_iog_0_1";
-	rename -uid "F2D63438-49A8-F908-5685-FB86B824AF95";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo13|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape13.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape1_iog_0_2";
-	rename -uid "0DAA14C9-472D-7903-C32F-F3823EBB80D7";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape1_iog_0_";
-	rename -uid "20ED82F5-4E4F-06BB-9648-DFAF19D6FA5B";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere1|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape3_iog_0_3";
-	rename -uid "D7544A24-49E2-B013-4301-1A8BE23B3863";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape3.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape7_iog_0_3";
-	rename -uid "AE0E7B7B-4F1A-A170-4D7B-21A7ACD79B00";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced7|Sam_Final_Updated_Scene:Bamboo7|Sam_Final_Updated_Scene:BambooShape7.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape6_iog_0_3";
-	rename -uid "8D5244C7-4916-ADE6-D459-CFBD66F806E0";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Bamboo6|Sam_Final_Updated_Scene:BambooShape6.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush32Shape_iog_0_";
-	rename -uid "1DCB28CE-43B3-399C-4545-17B87C3E40B5";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush32|Sam_Final_Updated_Scene:Bush32Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape8_iog_0_2";
-	rename -uid "64293766-4911-67BC-F581-44B985B3518E";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo8|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape8.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pCubeShape6_iog_0_";
-	rename -uid "D22DEA89-492D-4573-2E89-0AB75FEBC45D";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:pCube6|Sam_Final_Updated_Scene:pCubeShape6.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader15SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush25Shape_iog_0_";
-	rename -uid "FAA9D65C-4E93-BEFA-44C5-D1956EECE979";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush25|Sam_Final_Updated_Scene:Bush25Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape6_iog_0_";
-	rename -uid "7AC8CB98-4CF3-CA30-5D3D-7D9119A1725E";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere6|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape6.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_THE_TreeShape_iog_0__og_0_";
-	rename -uid "4CDA2CE5-4E14-86BF-250F-4C827F8851A4";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:THE_Tree|Sam_Final_Updated_Scene:THE_TreeShape.instObjGroups[0].objectGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:THEtree_SC:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_THE_TreeShape_iog_0__og_1_";
-	rename -uid "8E7E20F9-4F14-F2EB-E810-C484026D31EC";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:THE_Tree|Sam_Final_Updated_Scene:THE_TreeShape.instObjGroups[0].objectGroups[1]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:THEtree_SC:rampShader2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape9_iog_0_2";
-	rename -uid "C2C5B2C5-48E8-B7AC-9DCE-848A7BD6DECE";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo9|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape9.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape_iog_0_3";
-	rename -uid "96C16090-45E5-9D65-F794-8DBCCF6A6E11";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape1_iog_0_2";
-	rename -uid "81205100-4219-93EA-1437-C48742F05D1C";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo1|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape11_iog_0_7";
-	rename -uid "7DBB14EE-4D6E-8898-8723-078CDF4D7112";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Bamboo11|Sam_Final_Updated_Scene:BambooShape11.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape7_iog_0_4";
-	rename -uid "13DA20EC-4C65-BF15-EBB5-12967ECAF678";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Bamboo7|Sam_Final_Updated_Scene:BambooShape7.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush40Shape_iog_0_";
-	rename -uid "DB9C9452-4533-9E14-C40F-5A9048E51C0A";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush40|Sam_Final_Updated_Scene:Bush40Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_FallenTrunkShape_iog_0_";
-	rename -uid "66520A44-4534-6405-DAC6-ABAF0FADF28F";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:FallenTrunk|Sam_Final_Updated_Scene:FallenTrunkShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:rampShader3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape12_iog_0_";
-	rename -uid "690EAD55-4946-DB72-566F-32AB06678CD7";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo12|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape12.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape6_iog_0_";
-	rename -uid "0ADD8EB2-4B8B-EE51-7548-E198BFEC1A66";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo6|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape6.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pSphereShape6_iog_0_";
-	rename -uid "D189758A-466D-20E9-309F-0F86EC81B598";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:pSphere6|Sam_Final_Updated_Scene:pSphereShape6.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape4_iog_0_3";
-	rename -uid "895EF8A7-4A03-612D-C32A-12A93F96405B";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape4.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape12_iog_0_";
-	rename -uid "0EE5A492-4422-E273-DE92-0B93B0DF3382";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch12|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape12.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_bananaShape_iog_0__og_0_";
-	rename -uid "331A45B6-4798-B185-1294-B7B255F3C253";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BananaTrees|Sam_Final_Updated_Scene:banana|Sam_Final_Updated_Scene:bananaShape.instObjGroups[0].objectGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BananaTree_SC3:rampShader2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_bananaShape_iog_0__og_1_";
-	rename -uid "9265DB7D-45E8-43DE-F5BB-F0885196871B";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BananaTrees|Sam_Final_Updated_Scene:banana|Sam_Final_Updated_Scene:bananaShape.instObjGroups[0].objectGroups[1]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BananaTree_SC3:rampShader3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_bananaShape_iog_0__og_2_";
-	rename -uid "2CC27CBE-493C-A199-6A50-32A7F81A382B";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BananaTrees|Sam_Final_Updated_Scene:banana|Sam_Final_Updated_Scene:bananaShape.instObjGroups[0].objectGroups[2]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BananaTree_SC3:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape6_iog_0_2";
-	rename -uid "F6820975-4801-AAC5-67CF-97927D9FD320";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo6|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape6.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape17_iog_0_";
-	rename -uid "58751B98-4B4D-0E44-B904-B9BFDB3E68B4";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch17|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape17.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape12_iog_0_4";
-	rename -uid "F3A0E017-42A4-EF3E-8A0B-55AE37311C3D";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced6|Sam_Final_Updated_Scene:Bamboo12|Sam_Final_Updated_Scene:BambooShape12.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape3_iog_0_7";
-	rename -uid "5075B60A-4C0E-8389-4CD9-9A931186DFA5";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Bamboo3|Sam_Final_Updated_Scene:BambooShape3.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BigTree1Shape_iog_0__og_0_";
-	rename -uid "A9B172D7-43FA-2A70-6A0D-C3A6B7D26DD5";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BigTree1|Sam_Final_Updated_Scene:BigTree1Shape.instObjGroups[0].objectGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:THEtree_SC:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BigTree1Shape_iog_0__og_1_";
-	rename -uid "4DEBFE36-4B3B-BC4A-FCBE-E38239E33645";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BigTree1|Sam_Final_Updated_Scene:BigTree1Shape.instObjGroups[0].objectGroups[1]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:THEtree_SC:rampShader2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape7_iog_0_2";
-	rename -uid "AB55D06D-4407-73AB-7471-33B63C364B87";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo7|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape7.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pCubeShape2_iog_0_";
-	rename -uid "F5080BF6-4B4C-562D-6208-83AF732134D7";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:pCube2|Sam_Final_Updated_Scene:pCubeShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader15SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush10Shape_iog_0_";
-	rename -uid "9C40FC5F-45F0-0DF7-71A0-5F8547B4B0B9";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush10|Sam_Final_Updated_Scene:Bush10Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pSphereShape31_iog_0_";
-	rename -uid "1740396E-477E-02E9-6056-41A847AC573E";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere31|Sam_Final_Updated_Scene:pSphereShape31.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:blinn1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape1_iog_0_3";
-	rename -uid "79C7B716-4ED3-C5B3-958F-01BB0F0B178F";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape_iog_0_4";
-	rename -uid "C6B75716-4860-D71B-C20B-B39C610F34D0";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape6_iog_0_4";
-	rename -uid "1439F5D9-4E5F-0860-1203-B594205A5E60";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced7|Sam_Final_Updated_Scene:Bamboo6|Sam_Final_Updated_Scene:BambooShape6.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape6_iog_0_5";
-	rename -uid "B5AFCB8F-4BD8-809D-EF43-E09072E4231C";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Bamboo6|Sam_Final_Updated_Scene:BambooShape6.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape5_iog_0_4";
-	rename -uid "E4032CC0-4FE0-7D9F-F54D-BDBC983BA4A4";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced8|Sam_Final_Updated_Scene:Bamboo5|Sam_Final_Updated_Scene:BambooShape5.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pSphereShape24_iog_0_";
-	rename -uid "146ADA97-4A1A-8A1D-A1C2-29B9F9EB8CAB";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere24|Sam_Final_Updated_Scene:pSphereShape24.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape2_iog_0_3";
-	rename -uid "287DB69E-4676-4F46-5906-1CA1B4A167AF";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced8|Sam_Final_Updated_Scene:Bamboo2|Sam_Final_Updated_Scene:BambooShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape2_iog_0_4";
-	rename -uid "B4DCDDE5-4991-66BE-D508-36A265A64241";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Bamboo2|Sam_Final_Updated_Scene:BambooShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape8_iog_0_2";
-	rename -uid "3C39B2D2-4CC3-5959-7703-C5B2FF63D0A4";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo8|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape8.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape11_iog_0_2";
-	rename -uid "E197FC9E-4B42-2F29-504B-6197D5EC6A64";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo11|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape11.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pSphereShape36_iog_0_";
-	rename -uid "C4574A4E-4CF6-49DE-BAE4-90906FA698F7";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:pSphere36|Sam_Final_Updated_Scene:pSphereShape36.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pSphereShape42_iog_0_";
-	rename -uid "9E89AA7B-46B4-FDFC-BE4A-4BA1A0807FE6";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:pSphere42|Sam_Final_Updated_Scene:pSphereShape42.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape10_iog_0_3";
-	rename -uid "BAEF81B7-4020-D0BF-6D6B-57BDE69A2D71";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo10|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape10.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape14_iog_0_";
-	rename -uid "F1D0E71A-429E-ED73-92BC-90A7D75FA2CF";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch14|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape14.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape10_iog_0_6";
-	rename -uid "FF665B3D-410B-C918-6A07-F2B08DD3358A";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced6|Sam_Final_Updated_Scene:Bamboo10|Sam_Final_Updated_Scene:BambooShape10.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape8_iog_0_5";
-	rename -uid "E58F6511-4A71-0C49-4E65-B5B0C67E2597";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Bamboo8|Sam_Final_Updated_Scene:BambooShape8.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape13_iog_0_4";
-	rename -uid "6E834CFC-4BBB-3D0A-A85E-F7A47A468CC7";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced9|Sam_Final_Updated_Scene:Bamboo13|Sam_Final_Updated_Scene:BambooShape13.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape_iog_0_1";
-	rename -uid "4B5E4DAF-4525-CFD8-53CE-7990D3764BD9";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape1_iog_0_3";
-	rename -uid "EBA1C552-49D9-7DF9-8CA5-CEA66952FCEB";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo1|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape7_iog_0_5";
-	rename -uid "A3E58F44-4A8C-2A7C-1C95-ACB7A8D36611";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced9|Sam_Final_Updated_Scene:Bamboo7|Sam_Final_Updated_Scene:BambooShape7.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush5Shape_iog_0_";
-	rename -uid "D644F6E2-4039-4C1C-F6C9-ACB76F256F9C";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush5|Sam_Final_Updated_Scene:Bush5Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_YB_FrontShape2_iog_0_1";
-	rename -uid "7953D0AF-44EA-992F-4349-D29CFA5CD461";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-createNode applyConnectionOverride -n "materialOverride1_Halp_Shape_iog_0_1";
-	rename -uid "2FE91A37-4E8B-181F-9404-6CA6DE09B40A";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-createNode applyConnectionOverride -n "materialOverride1_YB_MidShape1_iog_0_";
-	rename -uid "C3290D4A-4B04-1232-63FD-04BA26B8D2B0";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-createNode applyConnectionOverride -n "materialOverride1_YB_SuperFrontShape1_iog_0_";
-	rename -uid "20AD4A78-4A94-FEE4-4302-16BC78349CE2";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-createNode applyConnectionOverride -n "materialOverride1_YB_SuperBack1Shape_iog_0_";
-	rename -uid "E06134A1-460C-0037-7AEB-8DAFDADA6F88";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape3_iog_0_4";
-	rename -uid "BBF0A18F-45EB-D33E-B5F1-A4B06049B997";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape3.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape7_iog_0_2";
-	rename -uid "909978B8-4E5C-9A3D-F5B8-448169B3A5D7";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo7|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape7.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape2_iog_0_1";
-	rename -uid "CF1E6DC9-4E9C-740F-77CC-6EB13A007324";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo2|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape10_iog_0_2";
-	rename -uid "B587C98C-45C2-8640-F675-F78A4758B3DB";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo10|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape10.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape11_iog_0_";
-	rename -uid "08B7A981-4056-8A91-5007-038F0C34F0B6";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere11|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape11.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape17_iog_0_";
-	rename -uid "2D6FA65E-4349-9AFA-6E10-E7B9CE16CB61";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere17|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape17.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape1_iog_0_2";
-	rename -uid "1632BBAC-4ADC-CC25-793D-628C72671561";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Bamboo1|Sam_Final_Updated_Scene:BambooShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_bananatreeShape_iog_0__og_0_";
-	rename -uid "8087AB1D-443C-83C8-B660-E99792EB45CC";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BananaTrees|Sam_Final_Updated_Scene:bananatree|Sam_Final_Updated_Scene:bananatreeShape.instObjGroups[0].objectGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BananaTree_SC1:rampShader2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_bananatreeShape_iog_0__og_1_";
-	rename -uid "79146918-492E-EE09-9977-BEB9F0EF804C";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BananaTrees|Sam_Final_Updated_Scene:bananatree|Sam_Final_Updated_Scene:bananatreeShape.instObjGroups[0].objectGroups[1]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BananaTree_SC1:rampShader3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_bananatreeShape_iog_0__og_2_";
-	rename -uid "F8C6EBF4-4E84-447C-FA4B-DA91808198C1";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BananaTrees|Sam_Final_Updated_Scene:bananatree|Sam_Final_Updated_Scene:bananatreeShape.instObjGroups[0].objectGroups[2]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BananaTree_SC1:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape12_iog_0_5";
-	rename -uid "6D23C91E-448F-7C3E-D28C-A3BFBEABFDBF";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Bamboo12|Sam_Final_Updated_Scene:BambooShape12.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush29Shape_iog_0_";
-	rename -uid "F0EA62BF-4D77-A219-D47F-1D9A3E1ED25B";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush29|Sam_Final_Updated_Scene:Bush29Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape2_iog_0_2";
-	rename -uid "1F0112E2-4627-7D1E-1C8E-1FA5CA9FE6D5";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_RockShape1_iog_0_";
-	rename -uid "62D1006A-46D5-7C1A-D4C9-488FD184260A";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:Rock1|Sam_Final_Updated_Scene:RockShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Rock_JonathanFranklin:rampShader2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape2_iog_0_3";
-	rename -uid "5490A9FF-4CB5-75AE-8C57-3B8426332BBC";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape_iog_0_5";
-	rename -uid "6A20DEAF-4688-3F8A-7A30-68871A713945";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced6|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_JungleTreeByLSShape_iog_0_";
-	rename -uid "E046DE67-4E18-CD65-CCA6-C694C2B31913";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Logan_sTrees|Sam_Final_Updated_Scene:JungleTreeByLS|Sam_Final_Updated_Scene:JungleTreeByLSShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader14SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush37Shape_iog_0_";
-	rename -uid "35311F8E-4A17-B5B9-D956-EF89B7BC8444";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush37|Sam_Final_Updated_Scene:Bush37Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush4Shape_iog_0_";
-	rename -uid "3F0F20AA-414C-6CC1-726E-A18E20451CE7";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush4|Sam_Final_Updated_Scene:Bush4Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape13_iog_0_2";
-	rename -uid "989213A8-4C4B-F82C-0D1A-3BB188B594C6";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo13|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape13.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape10_iog_0_3";
-	rename -uid "D54BFD9C-4B4F-15C8-AE9A-B6A1E22FE06C";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo10|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape10.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape32_iog_0_";
-	rename -uid "DD43B658-40B9-0915-2642-DDBB3E4B4C79";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere32|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape32.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape2_iog_0_5";
-	rename -uid "720DC7FC-44B6-06D5-B948-CEA348FFC8CF";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced7|Sam_Final_Updated_Scene:Bamboo2|Sam_Final_Updated_Scene:BambooShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape1_iog_0_4";
-	rename -uid "C114F290-4318-03FD-0B45-B5A2122288EC";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush15Shape_iog_0_";
-	rename -uid "B0BF0AA8-487E-B0F7-B509-2083FC1874F1";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush15|Sam_Final_Updated_Scene:Bush15Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_GroundShape_iog_0_";
-	rename -uid "A306FFFD-4A14-285F-7D32-8EACE8C40609";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Ground|Sam_Final_Updated_Scene:GroundShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:lambert2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pSphereShape28_iog_0_";
-	rename -uid "69E30805-4FBE-5C86-9505-39BB83E0814C";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere28|Sam_Final_Updated_Scene:pSphereShape28.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape8_iog_0_3";
-	rename -uid "8536155B-4C3A-37C0-B8C1-CF9C68465E3F";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo8|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape8.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape7_iog_0_3";
-	rename -uid "98EB95F1-4FB4-2E78-6AE1-2DBD7D397C66";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo7|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape7.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape9_iog_0_3";
-	rename -uid "B6641D52-451D-1656-C654-218F27B8F65E";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced8|Sam_Final_Updated_Scene:Bamboo9|Sam_Final_Updated_Scene:BambooShape9.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape10_iog_0_7";
-	rename -uid "59D10FAA-4C80-A44A-AC37-64B6D3519B37";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Bamboo10|Sam_Final_Updated_Scene:BambooShape10.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape19_iog_0_";
-	rename -uid "9FBE914C-47C0-33D7-EA0A-5EA86E46F455";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere19|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape19.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pSphereShape34_iog_0_";
-	rename -uid "32653DB8-4F22-8B4A-B77A-9C840B23602A";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere34|Sam_Final_Updated_Scene:pSphereShape34.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:blinn1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Leaves6Shape_iog_0_";
-	rename -uid "68CEE900-4C63-D062-BEE9-F7A8C72F873F";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:SmallBushes|Sam_Final_Updated_Scene:Leaves6|Sam_Final_Updated_Scene:Leaves6Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:SmallBush_SC:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape11_iog_0_1";
-	rename -uid "890C6D4F-4E5B-A86E-C72F-A6BB27DBDE29";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo11|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape11.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_TreesbranchShape_iog_0_";
-	rename -uid "48B35E22-4FD5-BDC0-8DF8-FAAE4E89F21E";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Treesbranch|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_TreesbranchShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape9_iog_0_4";
-	rename -uid "E6F65B54-4A7C-5B38-C5BB-1596392A649A";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced6|Sam_Final_Updated_Scene:Bamboo9|Sam_Final_Updated_Scene:BambooShape9.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape1_iog_0_4";
-	rename -uid "09C70311-4B72-730F-7512-329F63944E07";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo1|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape2_iog_0_2";
-	rename -uid "6458EB6A-4939-CD04-743A-9FB6CBE968AD";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo2|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush7Shape_iog_0_";
-	rename -uid "699351F1-467F-519B-053B-C3827E1540DE";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush7|Sam_Final_Updated_Scene:Bush7Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BushShape_iog_0_";
-	rename -uid "F1F5B48E-40A8-7FF4-3090-BBB9EFA94E86";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush|Sam_Final_Updated_Scene:BushShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape33_iog_0_";
-	rename -uid "7F8E3A78-40F3-2B94-FA28-DB931AFC72C3";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere33|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape33.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape6_iog_0_1";
-	rename -uid "955DA717-4AA7-0BC3-69CB-F4B5AAE697B0";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo6|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape6.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape2_iog_0_6";
-	rename -uid "863CB526-4D46-01DE-D24B-D288CBDC32F1";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Bamboo2|Sam_Final_Updated_Scene:BambooShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape_iog_0_6";
-	rename -uid "D119D29B-43EF-F224-8861-5F80F3565547";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape4_iog_0_1";
-	rename -uid "8846081F-4DA9-FC26-1765-A197CA08F0FF";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced7|Sam_Final_Updated_Scene:Bamboo4|Sam_Final_Updated_Scene:BambooShape4.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape7_iog_0_6";
-	rename -uid "4F3A2F7B-4022-0367-FBC3-CD8A4914B929";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Bamboo7|Sam_Final_Updated_Scene:BambooShape7.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape_iog_0_";
-	rename -uid "6F691EF1-4082-201C-3655-309D109DF836";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape6_iog_0_2";
-	rename -uid "64C52A55-43FC-359F-4F15-6991DAEFF4CC";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo6|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape6.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape11_iog_0_2";
-	rename -uid "0A3F8B26-4C91-5CC7-348C-AE9483B75806";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo11|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape11.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape10_iog_0_4";
-	rename -uid "126EB0C8-4C3B-CD6C-9563-1D9B2A07CA35";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo10|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape10.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape3_iog_0_5";
-	rename -uid "9C1486DF-4A85-80C6-65E8-A0B2C728E152";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape3.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape21_iog_0_";
-	rename -uid "D3578E93-4A5A-940B-E9E3-109D192850BF";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere21|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape21.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape4_iog_0_";
-	rename -uid "AC016DCD-475E-FF54-08AD-F991DC5DBF6C";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere4|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape4.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pSphereShape22_iog_0_";
-	rename -uid "45301506-4F09-14F8-4CA7-70B14A18C578";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere22|Sam_Final_Updated_Scene:pSphereShape22.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:blinn1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape4_iog_0_2";
-	rename -uid "455DCC92-4101-0609-F8B3-95A2A52E9338";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Bamboo4|Sam_Final_Updated_Scene:BambooShape4.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush45Shape_iog_0_";
-	rename -uid "196B5C4C-4C37-FBA0-0CB5-B7A7D25FD422";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush45|Sam_Final_Updated_Scene:Bush45Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape26_iog_0_";
-	rename -uid "289D2974-4DE1-E91D-3D4E-16A6AA5D08E8";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere26|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape26.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:blinn1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush14Shape_iog_0_";
-	rename -uid "89DA65EC-42AB-A3EB-9802-22AE912D7142";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush14|Sam_Final_Updated_Scene:Bush14Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape4_iog_0_3";
-	rename -uid "248A4984-4C59-886E-BAF5-618CC3B447E1";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Bamboo4|Sam_Final_Updated_Scene:BambooShape4.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape8_iog_0_3";
-	rename -uid "0BF70E08-4E62-7D88-CE79-359DE6094F95";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo8|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape8.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape4_iog_0_2";
-	rename -uid "32A71DE4-4E3C-7DE0-2953-B39587F54973";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo4|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape4.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_TrunkShape_iog_0_";
-	rename -uid "8338CFED-4C84-19A4-FAAE-B992B7B7DA7D";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:Trunk|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TrunkShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape9_iog_0_5";
-	rename -uid "D00C2585-4D6E-B327-6253-C78CA408C2C4";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Bamboo9|Sam_Final_Updated_Scene:BambooShape9.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape13_iog_0_5";
-	rename -uid "BD6CA1C6-49CE-41C8-66B6-FB94D5E5BE62";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced7|Sam_Final_Updated_Scene:Bamboo13|Sam_Final_Updated_Scene:BambooShape13.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape13_iog_0_6";
-	rename -uid "DED7FA54-4ABC-A38E-F92D-51B09DE535AF";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Bamboo13|Sam_Final_Updated_Scene:BambooShape13.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape28_iog_0_";
-	rename -uid "67AC1D4B-4A38-9CE3-EA3D-698FCD086BFE";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere28|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape28.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape10_iog_0_4";
-	rename -uid "6355F850-4380-1370-C91C-8E9D8CEABADB";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo10|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape10.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pCubeShape3_iog_0_";
-	rename -uid "CBA60FB0-4C04-5B0A-9781-9F8778E0DC6C";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:pCube3|Sam_Final_Updated_Scene:pCubeShape3.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader15SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush18Shape_iog_0_";
-	rename -uid "44162EA2-480C-6E75-A18C-4685E329AD77";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush18|Sam_Final_Updated_Scene:Bush18Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BananaTreeShape_iog_0__og_0_";
-	rename -uid "98628B55-4A9C-8268-68DB-2D82D096A6BF";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BananaTrees|Sam_Final_Updated_Scene:BananaTree|Sam_Final_Updated_Scene:BananaTreeShape.instObjGroups[0].objectGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader5SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BananaTreeShape_iog_0__og_1_";
-	rename -uid "B3E46693-4B81-10D3-87DC-C0AB4E8660A0";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BananaTrees|Sam_Final_Updated_Scene:BananaTree|Sam_Final_Updated_Scene:BananaTreeShape.instObjGroups[0].objectGroups[1]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader7SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BananaTreeShape_iog_0__og_2_";
-	rename -uid "AD8509AB-4D7F-5DF0-0EC2-29B744D4F877";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BananaTrees|Sam_Final_Updated_Scene:BananaTree|Sam_Final_Updated_Scene:BananaTreeShape.instObjGroups[0].objectGroups[2]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader6SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BananaTreeShape_iog_0__og_3_";
-	rename -uid "6D0C7256-4AC6-2B79-7A18-C89275B01BC1";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BananaTrees|Sam_Final_Updated_Scene:BananaTree|Sam_Final_Updated_Scene:BananaTreeShape.instObjGroups[0].objectGroups[3]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader8SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape13_iog_0_3";
-	rename -uid "01BCEB2D-4278-25BF-7CCE-F783E2671E97";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo13|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape13.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_2dCompiled_OB_SuperFrontShape3_iog_0_";
-	rename -uid "5DEE5DAE-430C-BC66-539B-3DB6CD334B45";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:CAMERA_TO_USE|Sam_Final_Updated_Scene:LayerRig|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:OB_SuperFront3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:OB_SuperFrontShape3.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:lambert8SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_2dCompiled_OB_FrontShape3_iog_0_";
-	rename -uid "E9200621-44A8-30CB-2B9C-7F8459614ADB";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:CAMERA_TO_USE|Sam_Final_Updated_Scene:LayerRig|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:OB_Front3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:OB_FrontShape3.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:lambert9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_2dCompiled_OB_MidShape2_iog_0_";
-	rename -uid "4E247B54-4D6F-B449-5AC9-3AAAD1D7793D";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:CAMERA_TO_USE|Sam_Final_Updated_Scene:LayerRig|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:OB_Mid2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:OB_MidShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:lambert10SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_2dCompiled_OB_Back2Shape_iog_0_";
-	rename -uid "10421593-458C-8708-0AD0-0A989A8C8A5F";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:CAMERA_TO_USE|Sam_Final_Updated_Scene:LayerRig|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:OB_Back2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:OB_Back2Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:lambert11SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_2dCompiled_OB_SuperBack2Shape_iog_0_";
-	rename -uid "A9F43F37-4AA6-EE60-BDEB-208F6E760E49";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:CAMERA_TO_USE|Sam_Final_Updated_Scene:LayerRig|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:OB_SuperBack2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:OB_SuperBack2Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:lambert12SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_2dCompiled_YB_SuperBack1Shape_iog_0_";
-	rename -uid "9FD9534C-47B6-1293-BDB7-F6AC84499077";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:CAMERA_TO_USE|Sam_Final_Updated_Scene:LayerRig|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:YB_SuperBack1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:YB_SuperBack1Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:lambert7SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_2dCompiled_YB_BackShape_iog_0_";
-	rename -uid "316DE8D2-4997-6FED-FEAC-96A201F5C89E";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:CAMERA_TO_USE|Sam_Final_Updated_Scene:LayerRig|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:YB_Back|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:YB_BackShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:lambert6SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_2dCompiled_YB_MidShape1_iog_0_";
-	rename -uid "45309624-49FA-8F0F-710E-3C81CE951D43";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:CAMERA_TO_USE|Sam_Final_Updated_Scene:LayerRig|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:YB_Mid1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:YB_MidShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:lambert5SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_2dCompiled_YB_FrontShape2_iog_0_";
-	rename -uid "FB36802E-4E05-34E3-8F60-63A51F638F12";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:CAMERA_TO_USE|Sam_Final_Updated_Scene:LayerRig|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:YB_Front2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:YB_FrontShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:lambert4SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_2dCompiled_YB_SuperFrontShape1_iog_0_";
-	rename -uid "AAE37E2B-4E63-9DA2-DA3F-B7958ADB138C";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:CAMERA_TO_USE|Sam_Final_Updated_Scene:LayerRig|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:YB_SuperFront1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:YB_SuperFrontShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_2dCompiled:lambert3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape12_iog_0_1";
-	rename -uid "36DC2466-46A5-E1E9-2A4D-0B9A53D3C087";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo12|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape12.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape7_iog_0_4";
-	rename -uid "A5C76926-4254-3542-3934-0D8D03D80ADB";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo7|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape7.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape12_iog_0_6";
-	rename -uid "211F7036-4CE7-367D-E22A-43819918B9D2";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced9|Sam_Final_Updated_Scene:Bamboo12|Sam_Final_Updated_Scene:BambooShape12.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush39Shape_iog_0_";
-	rename -uid "46FD7849-43DD-5744-8E26-609BB5BD7A52";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush39|Sam_Final_Updated_Scene:Bush39Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape13_iog_0_4";
-	rename -uid "9A30DDC8-4203-6821-713D-97A965809FFC";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo13|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape13.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Leaves11Shape_iog_0_";
-	rename -uid "857059FC-4700-432B-F04A-0696AFA5CCF9";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:SmallBushes|Sam_Final_Updated_Scene:Leaves11|Sam_Final_Updated_Scene:Leaves11Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:SmallBush_SC:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_SwampTallTreeNoLeaves_JonathanFranklin_pCylinderShape1_iog_0_";
-	rename -uid "D3EAA122-423E-9EA0-F60B-CEB96A0185D8";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:TallSwampTrees|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:SwampTallTreeNoLeaves_JonathanFranklin:pCylinder1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:SwampTallTreeNoLeaves_JonathanFranklin:pCylinderShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape13_iog_0_2";
-	rename -uid "72A30997-49B3-4A70-3D83-739C8D535C7D";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo13|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape13.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape7_iog_0_5";
-	rename -uid "C0702261-4CAE-C52C-BCE6-4AAC802B6CB8";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo7|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape7.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pSphereShape38_iog_0_";
-	rename -uid "472258E0-415F-FEF6-6B9A-4A9A358FCDB8";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:pSphere38|Sam_Final_Updated_Scene:pSphereShape38.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape12_iog_0_4";
-	rename -uid "ADD0CD52-44C2-BF1C-EA99-D48A5C829199";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo12|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape12.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape_iog_0_2";
-	rename -uid "5E876541-4139-AF96-5F5F-C7A0625843FC";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape6_iog_0_6";
-	rename -uid "7CDBD10D-4EED-8A30-AC9C-8EB5FBCC30C4";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced6|Sam_Final_Updated_Scene:Bamboo6|Sam_Final_Updated_Scene:BambooShape6.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape1_iog_0_3";
-	rename -uid "44693B4F-4963-61A2-0F2C-0595F2D0D632";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Bamboo1|Sam_Final_Updated_Scene:BambooShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape8_iog_0_";
-	rename -uid "142F0A6B-4676-2D14-A49C-E1B538C4F4BA";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere8|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape8.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_FogShape2_iog_0_";
-	rename -uid "A7F29CB3-4670-5D73-2CA1-F89BA37282C3";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Fog|Sam_Final_Updated_Scene:Fog2|Sam_Final_Updated_Scene:FogShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:cubeFogSG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape6_iog_0_3";
-	rename -uid "C5C6C0B9-48C4-91A3-4079-5D88DB06FB06";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo6|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape6.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush26Shape_iog_0_";
-	rename -uid "D37961AF-4C0A-1DFF-8E32-C4BB2B5465F0";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush26|Sam_Final_Updated_Scene:Bush26Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape4_iog_0_4";
-	rename -uid "A007F02D-4FB0-36E7-AA7D-E78049144243";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Bamboo4|Sam_Final_Updated_Scene:BambooShape4.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape6_iog_0_7";
-	rename -uid "3A06F4D4-4418-CB1D-1B8D-A79BBA8A77EB";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Bamboo6|Sam_Final_Updated_Scene:BambooShape6.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape8_iog_0_4";
-	rename -uid "60D87FB2-4AC7-04EF-07AD-8E89B15193D8";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo8|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape8.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_SwampTallTreeNoLeaves_JonathanFranklin1_pCylinderShape1_iog_0_";
-	rename -uid "AD166723-4804-A80E-849F-46A1935A7303";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:TallSwampTrees|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:SwampTallTreeNoLeaves_JonathanFranklin1:pCylinder1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:SwampTallTreeNoLeaves_JonathanFranklin1:pCylinderShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape1_iog_0_4";
-	rename -uid "B6EA8197-4D09-342C-02BA-93BB95335636";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced8|Sam_Final_Updated_Scene:Bamboo1|Sam_Final_Updated_Scene:BambooShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape1_iog_0_5";
-	rename -uid "E23636BA-426F-F86F-00E0-3FA26F9A9E30";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Bamboo1|Sam_Final_Updated_Scene:BambooShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape_iog_0_2";
-	rename -uid "2C6FBF91-468A-8C1B-A4BC-8EBA22DDA6EB";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape11_iog_0_3";
-	rename -uid "34A97218-4E61-42AE-0B91-EBB32DD807EC";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo11|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape11.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape12_iog_0_2";
-	rename -uid "A5CBCFA7-4ABB-EDC5-95B9-9FBDB7B79082";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo12|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape12.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pSphereShape40_iog_0_";
-	rename -uid "C8013125-4C45-1A64-8CDC-BE8419CAF7F8";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:pSphere40|Sam_Final_Updated_Scene:pSphereShape40.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_bananatreeShape1_iog_0__og_0_";
-	rename -uid "C2A2F32B-44FE-19E1-5474-889015DBAC07";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BananaTrees|Sam_Final_Updated_Scene:bananatree1|Sam_Final_Updated_Scene:bananatreeShape1.instObjGroups[0].objectGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BananaTree_SC2:rampShader2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_bananatreeShape1_iog_0__og_1_";
-	rename -uid "583C25E8-452B-04C1-15D5-F78F98335D3A";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BananaTrees|Sam_Final_Updated_Scene:bananatree1|Sam_Final_Updated_Scene:bananatreeShape1.instObjGroups[0].objectGroups[1]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BananaTree_SC2:rampShader3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_bananatreeShape1_iog_0__og_2_";
-	rename -uid "14F5CF5F-43D1-1B5E-7F8C-3CA7D94FE3BD";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:BananaTrees|Sam_Final_Updated_Scene:bananatree1|Sam_Final_Updated_Scene:bananatreeShape1.instObjGroups[0].objectGroups[2]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BananaTree_SC2:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape_iog_0_3";
-	rename -uid "5022496C-436D-BA01-9904-38B05030E3D0";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape9_iog_0_2";
-	rename -uid "045226B5-45B1-E105-DC37-F69AA03BC985";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo9|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape9.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape6_iog_0_8";
-	rename -uid "E995B695-4211-BC23-AABD-5F9C0AD964AA";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Bamboo6|Sam_Final_Updated_Scene:BambooShape6.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape8_iog_0_6";
-	rename -uid "B73C444B-4F9E-41DB-4CFA-558DA4FE8BEF";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced9|Sam_Final_Updated_Scene:Bamboo8|Sam_Final_Updated_Scene:BambooShape8.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape_iog_0_4";
-	rename -uid "7217F743-4AAE-21B8-74B8-7B94D0775379";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape6_iog_0_9";
-	rename -uid "0C7CE901-47CB-7240-0867-8486B25F4999";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced9|Sam_Final_Updated_Scene:Bamboo6|Sam_Final_Updated_Scene:BambooShape6.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush11Shape_iog_0_";
-	rename -uid "E01E3496-4ED8-BEC7-4EF4-3FB7B9D9CAA4";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush11|Sam_Final_Updated_Scene:Bush11Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape9_iog_0_6";
-	rename -uid "0BD8FC9B-4ADA-E6C5-25B3-06AA678589D1";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced7|Sam_Final_Updated_Scene:Bamboo9|Sam_Final_Updated_Scene:BambooShape9.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush9Shape_iog_0_";
-	rename -uid "B4EEB727-4D4A-39F9-5FC1-DD9000D916D4";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush9|Sam_Final_Updated_Scene:Bush9Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape2_iog_0_3";
-	rename -uid "9141219D-480D-0433-1CB4-C08FB8FD6C92";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo2|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape25_iog_0_";
-	rename -uid "A848ED80-4EB8-8D76-81BC-7B9670894E56";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere25|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape25.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:blinn1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush8Shape_iog_0_";
-	rename -uid "8E5E8F25-40FB-CE4E-CBAA-46B0CB54FF57";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush8|Sam_Final_Updated_Scene:Bush8Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape4_iog_0_5";
-	rename -uid "6D70579E-40BD-DC4C-8941-8C8F4D19024D";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced8|Sam_Final_Updated_Scene:Bamboo4|Sam_Final_Updated_Scene:BambooShape4.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape1_iog_0_6";
-	rename -uid "0C58F0E7-4484-64A0-EBF8-51A62DE64EE1";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Bamboo1|Sam_Final_Updated_Scene:BambooShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pSphereShape43_iog_0_";
-	rename -uid "349B19D2-4711-9574-AE69-8C821ACF763A";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:pSphere43|Sam_Final_Updated_Scene:pSphereShape43.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape5_iog_0_2";
-	rename -uid "A589F05A-4D37-9042-458D-F09DFEEF2390";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape5.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape3_iog_0_3";
-	rename -uid "74675C48-4861-6169-85C4-2BBC6ECA80A5";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo3|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape3.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush31Shape_iog_0_";
-	rename -uid "C37E1168-4971-B154-77ED-868E5E7FCAE5";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush31|Sam_Final_Updated_Scene:Bush31Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape13_iog_0_5";
-	rename -uid "ADD49142-4FE8-9DB1-638E-F294D6745E6A";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo13|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape13.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush28Shape_iog_0_";
-	rename -uid "170F3DE2-43D6-FB74-3937-8BB3E9D40FC1";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush28|Sam_Final_Updated_Scene:Bush28Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape5_iog_0_3";
-	rename -uid "4F419E0D-4DAC-9FB8-3638-F09E5B65CF69";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo5|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape5.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape10_iog_0_5";
-	rename -uid "7D5A915B-4B77-19E4-35B5-009C03F83738";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo10|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape10.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape10_iog_0_8";
-	rename -uid "663963D5-4C47-120C-EFC3-2DABF58E9EB2";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Bamboo10|Sam_Final_Updated_Scene:BambooShape10.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape_iog_0_3";
-	rename -uid "1B727D2C-4CC7-7214-AF07-FEAE586305B3";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape_iog_0_7";
-	rename -uid "C50C6E81-4E38-9BED-4037-15B7D2F80EB3";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced9|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_grid3Shape_iog_0_";
-	rename -uid "CA05EA92-4835-9776-3EC4-00A09B958A90";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Short_Palms|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:grid3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:grid3Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader4SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape8_iog_0_7";
-	rename -uid "DD967CBB-488C-EFC6-16DA-C4A08F86A883";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced7|Sam_Final_Updated_Scene:Bamboo8|Sam_Final_Updated_Scene:BambooShape8.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush41Shape_iog_0_";
-	rename -uid "30494BA4-4747-62BE-4198-2F9F8700E93B";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush41|Sam_Final_Updated_Scene:Bush41Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_TrunkShape_iog_0_";
-	rename -uid "FD7C43C6-4C44-3200-C1C6-BA8497F84073";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trunk|Sam_Final_Updated_Scene:TrunkShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape5_iog_0_5";
-	rename -uid "A180C028-4425-D969-EE14-CCBD9656AF44";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Bamboo5|Sam_Final_Updated_Scene:BambooShape5.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape8_iog_0_4";
-	rename -uid "798E252B-40A4-387B-44FB-D39959955494";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo8|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape8.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape21_iog_0_";
-	rename -uid "EE57E74E-4CFE-9928-2368-D5AB8540BE9B";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch21|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape21.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape31_iog_0_";
-	rename -uid "311507B4-48E1-EBEB-6AF2-38866FF2C552";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere31|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape31.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:blinn1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape13_iog_0_7";
-	rename -uid "9436CCDB-4623-F6F5-2F6D-A389A409C86D";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced6|Sam_Final_Updated_Scene:Bamboo13|Sam_Final_Updated_Scene:BambooShape13.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape11_iog_0_3";
-	rename -uid "AD468EB3-4445-1357-0522-FF8120F40760";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo11|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape11.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape11_iog_0_8";
-	rename -uid "2961D547-4606-4CF6-0D26-37952BE27D4F";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Bamboo11|Sam_Final_Updated_Scene:BambooShape11.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_RockShape_iog_0_";
-	rename -uid "58AD0595-4403-91D1-DFDC-8FB3BEEE4B00";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:Rock|Sam_Final_Updated_Scene:RockShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:AnotherRock_JonathanFranklin:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush17Shape_iog_0_";
-	rename -uid "77CFF284-4DF7-D672-3EC7-73927665B457";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush17|Sam_Final_Updated_Scene:Bush17Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape5_iog_0_6";
-	rename -uid "391ECBFE-4F59-0ACE-B635-37A27D27ECB5";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Bamboo5|Sam_Final_Updated_Scene:BambooShape5.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape7_iog_0_7";
-	rename -uid "49955346-4AD2-469B-E756-BB82BF566295";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Bamboo7|Sam_Final_Updated_Scene:BambooShape7.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape5_iog_0_7";
-	rename -uid "CE08D7BE-4A02-D49E-6DB5-34A97CD00C76";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Bamboo5|Sam_Final_Updated_Scene:BambooShape5.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Leaves9Shape_iog_0_";
-	rename -uid "699F91AF-46BE-FA7D-9E9B-D1B7FE6376E4";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:SmallBushes|Sam_Final_Updated_Scene:Leaves9|Sam_Final_Updated_Scene:Leaves9Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:SmallBush_SC:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape1_iog_0_5";
-	rename -uid "C06D367A-49F0-3428-036D-91A4C5023C22";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape12_iog_0_3";
-	rename -uid "96839C61-4344-118A-2ADA-C2BC8820D202";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo12|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape12.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape5_iog_0_3";
-	rename -uid "994BB9C8-46A2-5F10-A15D-1ABD4C4ADECC";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape5.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape2_iog_0_4";
-	rename -uid "53CFF16F-4DB4-4C62-7DB4-F0B971AF6E18";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape26_iog_0_";
-	rename -uid "493225E3-4EEF-1A94-8396-CCB02E9F8881";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch26|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape26.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_coneShape2_iog_0_";
-	rename -uid "E8142058-4A76-AC18-9C85-02B666224A77";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:GodRays2|Sam_Final_Updated_Scene:coneShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:lightFogSE2";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape3_iog_0_8";
-	rename -uid "7119BE03-4831-A549-F0E0-1A982F8CF5CC";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced6|Sam_Final_Updated_Scene:Bamboo3|Sam_Final_Updated_Scene:BambooShape3.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_RockShape2_iog_0_";
-	rename -uid "6115E051-4291-75E6-87F2-61AF35D7E9E3";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:Rock2|Sam_Final_Updated_Scene:RockShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:SmallRock_JonathanFranklin:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape9_iog_0_3";
-	rename -uid "BC9A7CBC-4D67-65A0-10E9-23ACBB7103BB";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo9|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape9.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pSphereShape23_iog_0_";
-	rename -uid "38F2A38F-46CD-C4E1-7217-C79C601FADF7";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere23|Sam_Final_Updated_Scene:pSphereShape23.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape_iog_0_4";
-	rename -uid "4855E6F7-40E1-B1DD-9CFA-73A0475515EC";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape5_iog_0_8";
-	rename -uid "E3BF8D7A-4CC0-8BD0-C3ED-40A826F1D801";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Bamboo5|Sam_Final_Updated_Scene:BambooShape5.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape16_iog_0_";
-	rename -uid "5E1EC7E4-4F55-F35D-1CF2-4ABF3CC70564";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere16|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape16.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape34_iog_0_";
-	rename -uid "21030B59-402D-6D8E-7E87-1AB5ED752B36";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere34|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape34.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:blinn1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape12_iog_0_7";
-	rename -uid "538BE816-448B-C7E4-5106-5382F8E4B58F";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced7|Sam_Final_Updated_Scene:Bamboo12|Sam_Final_Updated_Scene:BambooShape12.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape2_iog_0_5";
-	rename -uid "F768F44B-495D-43EE-F284-DCA2DEC5BF41";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape7_iog_0_3";
-	rename -uid "3DCA91AE-49DA-2EF5-117C-A2B4C2EFD410";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo7|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape7.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape2_iog_0_7";
-	rename -uid "1731C0D0-46D2-4A64-D7BC-2EA2D45E7C1E";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Bamboo2|Sam_Final_Updated_Scene:BambooShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush36Shape_iog_0_";
-	rename -uid "F1CAC8AD-4FA8-7AB8-25D9-A6A708FAE4F0";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush36|Sam_Final_Updated_Scene:Bush36Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pSphereShape32_iog_0_";
-	rename -uid "ECAA0C46-4EE8-1617-D36E-9D95F460D8FA";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere32|Sam_Final_Updated_Scene:pSphereShape32.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape2_iog_0_8";
-	rename -uid "9E0BC7D2-4362-0D04-2CC1-0AB0AC9B5173";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced6|Sam_Final_Updated_Scene:Bamboo2|Sam_Final_Updated_Scene:BambooShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape4_iog_0_4";
-	rename -uid "43A9E247-4696-A8B1-F5D4-0D97A2B63564";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape4.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape2_iog_0_9";
-	rename -uid "0A07B204-4E02-8B3F-EBC7-269B39A4E815";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Bamboo2|Sam_Final_Updated_Scene:BambooShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape10_iog_0_";
-	rename -uid "B204B210-4742-61FD-333C-13BB0A922C97";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere10|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape10.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape1_iog_0_7";
-	rename -uid "D8C0152B-464F-8507-039C-FFBAC24EBA2D";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Bamboo1|Sam_Final_Updated_Scene:BambooShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape9_iog_0_4";
-	rename -uid "7F558ECF-4BB3-9FB0-C367-11A4F9363E09";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo9|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape9.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape7_iog_0_4";
-	rename -uid "21060215-4D39-C5BC-8FFE-A7BC3DB362CE";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo7|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape7.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape9_iog_0_";
-	rename -uid "468EF502-433C-ECB3-75BE-C98BD713ADC4";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere9|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape9.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape12_iog_0_5";
-	rename -uid "35AE46B5-4804-DDEB-35EE-35849CFE59A9";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo12|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape12.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape_iog_0_8";
-	rename -uid "866D2B75-4C69-FF77-0CEC-DCA2AF8975D1";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced8|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape9_iog_0_7";
-	rename -uid "675C9C66-4E93-C2A3-F7FB-5587453A08A6";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Bamboo9|Sam_Final_Updated_Scene:BambooShape9.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape6_iog_0_4";
-	rename -uid "C04428F3-4A32-37DC-1824-10A4A1F87D69";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo6|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape6.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pCubeShape4_iog_0_";
-	rename -uid "AD04F7E4-44AD-CB33-5EB7-A3922647B0C0";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:pCube4|Sam_Final_Updated_Scene:pCubeShape4.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader15SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush19Shape_iog_0_";
-	rename -uid "DFED43FC-4864-AE2C-A762-26A776565BFB";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush19|Sam_Final_Updated_Scene:Bush19Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_pPlaneShape1_iog_0_1";
-	rename -uid "81D369E9-41A5-C600-7CD6-BD9A9DD89CB1";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Leaves_to_shine_on_boys|Sam_Final_Updated_Scene:Sam_WithBoys:pPlane1|Sam_Final_Updated_Scene:Sam_WithBoys:pPlaneShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:lambert2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape20_iog_0_";
-	rename -uid "79EC95CD-425A-1E00-9809-CF897D0E9266";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch20|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape20.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape6_iog_0_3";
-	rename -uid "D3CAFD52-494A-4669-E124-1BB482E92C4D";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo6|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape6.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape_iog_0_9";
-	rename -uid "84E49481-4271-3FBD-7EE9-ABA7F65F4A05";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape13_iog_0_8";
-	rename -uid "F66CC108-4949-CDD5-054B-75BF7DFB49CD";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Bamboo13|Sam_Final_Updated_Scene:BambooShape13.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush35Shape_iog_0_";
-	rename -uid "6FE02C29-4F03-7DF9-CE11-51AE51A33914";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush35|Sam_Final_Updated_Scene:Bush35Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape11_iog_0_4";
-	rename -uid "829ECBBD-481B-0414-ED9A-43991A1976A7";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo11|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape11.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape12_iog_0_8";
-	rename -uid "C19EF663-4CA0-FF54-7F3E-3D8DCA24DB6A";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced8|Sam_Final_Updated_Scene:Bamboo12|Sam_Final_Updated_Scene:BambooShape12.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Leaves10Shape_iog_0_";
-	rename -uid "CB61DED7-4E20-EE9E-6EC5-A39E49A236D9";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:SmallBushes|Sam_Final_Updated_Scene:Leaves10|Sam_Final_Updated_Scene:Leaves10Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:SmallBush_SC:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_FogShape1_iog_0_";
-	rename -uid "8FDF2775-4A17-3321-3146-FF9BB6D88B7C";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Fog|Sam_Final_Updated_Scene:Fog1|Sam_Final_Updated_Scene:FogShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:cubeFogSG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_MeshShape_iog_0_";
-	rename -uid "01492A74-405B-5AC5-0A9A-0EAA96798C9A";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Rocks|Sam_Final_Updated_Scene:Mesh|Sam_Final_Updated_Scene:MeshShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader15SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape4_iog_0_5";
-	rename -uid "45B8636C-41CC-6416-E8DB-67B05062D346";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo4|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape4.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pSphereShape12_iog_0_";
-	rename -uid "770EB432-4374-94D2-A01F-038F0DEE7E60";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:pSphere12|Sam_Final_Updated_Scene:pSphereShape12.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape5_iog_0_4";
-	rename -uid "48961CC7-4E15-4ACA-1000-DE95E9DA5B06";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape5.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape6_iog_0_4";
-	rename -uid "37B54BA0-4F4C-3B35-0749-25BFCC30FAA9";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo6|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape6.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_palmShape1_iog_0__og_0_";
-	rename -uid "6058FB8A-4658-F21B-A6A7-98B49D204A25";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Palms|Sam_Final_Updated_Scene:palm1|Sam_Final_Updated_Scene:palmShape1.instObjGroups[0].objectGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:PalmTree_SC2:rampShader3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_palmShape1_iog_0__og_1_";
-	rename -uid "FD03DCD7-4807-C137-1A33-04BACFD03C6A";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Palms|Sam_Final_Updated_Scene:palm1|Sam_Final_Updated_Scene:palmShape1.instObjGroups[0].objectGroups[1]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:PalmTree_SC2:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_palmShape1_iog_0__og_2_";
-	rename -uid "BF2B8394-4459-F377-289C-9B8DE9C61116";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Palms|Sam_Final_Updated_Scene:palm1|Sam_Final_Updated_Scene:palmShape1.instObjGroups[0].objectGroups[2]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:PalmTree_SC2:rampShader4SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape12_iog_0_4";
-	rename -uid "63C2A8B6-4A14-6B8D-A721-63876A79D1FD";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo12|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape12.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_coneShape1_iog_0_";
-	rename -uid "EC741986-461F-F7FE-EE00-91BEE79D07DE";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:GodRays1|Sam_Final_Updated_Scene:coneShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:lightFogSE1";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape8_iog_0_8";
-	rename -uid "D5DC744D-432D-FF27-2BA3-6F8E8908668E";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced6|Sam_Final_Updated_Scene:Bamboo8|Sam_Final_Updated_Scene:BambooShape8.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape13_iog_0_9";
-	rename -uid "E5E86E6E-4959-1D12-9B06-0B8A2F58D0FA";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Bamboo13|Sam_Final_Updated_Scene:BambooShape13.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape12_iog_0_";
-	rename -uid "58AD00A1-4204-F64E-EF34-868F0E466C9F";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere12|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape12.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush48Shape_iog_0_";
-	rename -uid "F8E5125B-4597-C78C-621E-2BA635AFBDD9";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush48|Sam_Final_Updated_Scene:Bush48Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape5_iog_0_4";
-	rename -uid "36282E47-4C75-AF59-83E9-FDBC7330EDC9";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo5|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape5.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush21Shape_iog_0_";
-	rename -uid "31ADCB18-4778-BAAF-F24D-73816E6DAD31";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush21|Sam_Final_Updated_Scene:Bush21Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape5_iog_0_9";
-	rename -uid "EB38106C-4355-FF51-D69A-00BA1DA4549F";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Bamboo5|Sam_Final_Updated_Scene:BambooShape5.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape9_iog_0_8";
-	rename -uid "26FD59E8-44CF-77F8-8CCD-019445E66B72";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Bamboo9|Sam_Final_Updated_Scene:BambooShape9.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape8_iog_0_5";
-	rename -uid "0AEFF10F-4104-872A-566D-BD9E9668E0A3";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo8|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape8.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape4_iog_0_6";
-	rename -uid "E8013897-42E7-FC7F-6848-2AABF4EC1898";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced4|Sam_Final_Updated_Scene:Bamboo4|Sam_Final_Updated_Scene:BambooShape4.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape12_iog_0_9";
-	rename -uid "4CC5FB8E-4BE8-0C68-89C5-04935BAC0CED";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Bamboo12|Sam_Final_Updated_Scene:BambooShape12.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape3_iog_0_9";
-	rename -uid "5733E532-47D5-7F41-3994-3686CD9302E0";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Bamboo3|Sam_Final_Updated_Scene:BambooShape3.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape5_iog_0_5";
-	rename -uid "D192F9D7-4D28-F5A1-FFF9-6DA66837A21D";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape5.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape4_iog_0_3";
-	rename -uid "ABD8C5DE-4171-8046-E940-F4B8819AAADB";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo4|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape4.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush47Shape_iog_0_";
-	rename -uid "A61890A6-4F04-B713-36B6-7682EBF8BE2B";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush47|Sam_Final_Updated_Scene:Bush47Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape_iog_0_5";
-	rename -uid "39AE3120-4AC0-685F-E260-C88FD7DD8256";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape18_iog_0_";
-	rename -uid "E728D6ED-4A36-87DC-CF3E-38A4D3606E38";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere18|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape18.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape13_iog_0_3";
-	rename -uid "97EBFA73-41B0-E185-36FA-B08DE5EC84EF";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo13|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape13.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_coneShape1_iog_0_";
-	rename -uid "447E70BA-4F8D-2E35-691C-7EBC99825EBA";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Shine_on_ground|Sam_Final_Updated_Scene:Sam_WithBoys:spotLight4|Sam_Final_Updated_Scene:Sam_WithBoys:coneShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:lightFogSE";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape8_iog_0_9";
-	rename -uid "48728EC4-48C2-5F5B-4B65-DD9849B036F1";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Bamboo8|Sam_Final_Updated_Scene:BambooShape8.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape4_iog_0_7";
-	rename -uid "00A665BF-4722-2A11-FCDD-1081DD0E75C9";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Bamboo4|Sam_Final_Updated_Scene:BambooShape4.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush42Shape_iog_0_";
-	rename -uid "90B3A3A1-4550-E82F-1096-1CA2C8088F16";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush42|Sam_Final_Updated_Scene:Bush42Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape13_iog_0_";
-	rename -uid "83873BEF-4F24-26EF-2EBE-3191AF5F18AC";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch13|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape13.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_JungleTreeByLS2Shape_iog_0_";
-	rename -uid "E835B564-446B-36A6-4497-3F9A2244159A";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Logan_sTrees|Sam_Final_Updated_Scene:JungleTreeByLS2|Sam_Final_Updated_Scene:JungleTreeByLS2Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader14SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape4_iog_0_8";
-	rename -uid "7BD8CC7D-4A6F-1CA7-70E4-CA8C25378224";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced9|Sam_Final_Updated_Scene:Bamboo4|Sam_Final_Updated_Scene:BambooShape4.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape7_iog_0_8";
-	rename -uid "A37988F1-4F04-F0A4-EEE2-D486125BB797";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced|Sam_Final_Updated_Scene:Bamboo7|Sam_Final_Updated_Scene:BambooShape7.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape9_iog_0_3";
-	rename -uid "1DAF978F-4E32-2327-DABF-619A04875742";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo9|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape9.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape28_iog_0_";
-	rename -uid "2D958E9D-4741-C9FF-B4C3-8E8B10A5AE4A";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branch28|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:branchShape28.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:treeSwamp:blinn1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape5_iog_0_";
-	rename -uid "4FDAF98F-41DC-0CBA-55ED-C2A9188326B6";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere5|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape5.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape27_iog_0_";
-	rename -uid "924BC913-4776-FA9C-65A8-EAAF787C2523";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere27|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape27.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape13_iog_0_4";
-	rename -uid "712CFE30-4312-F362-79F2-1AA41E44AC51";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo13|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape13.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape4_iog_0_9";
-	rename -uid "ADE2F1C0-4365-5B24-F4B7-D5874204812F";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Bamboo4|Sam_Final_Updated_Scene:BambooShape4.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape10_iog_0_9";
-	rename -uid "33EA8C67-499E-924C-254E-74A794F9D77A";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced7|Sam_Final_Updated_Scene:Bamboo10|Sam_Final_Updated_Scene:BambooShape10.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape6_iog_0_5";
-	rename -uid "BABEA793-4F4F-482E-5360-70B1AE874BB6";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo6|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape6.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape4_iog_0_4";
-	rename -uid "5587CFAB-4CB9-341E-FE45-B39991B0D6F4";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo4|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape4.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush27Shape_iog_0_";
-	rename -uid "24BF1C27-4579-8D31-D9CA-4F8539FEEC3B";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush27|Sam_Final_Updated_Scene:Bush27Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape11_iog_0_5";
-	rename -uid "8E10B070-43E0-A39F-4B8D-6D9B7B5EE575";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo11|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape11.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pSphereShape35_iog_0_";
-	rename -uid "46FD2732-4F28-DEBE-F121-7BAB68A4BDC9";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:leaves|Sam_Final_Updated_Scene:pSphere35|Sam_Final_Updated_Scene:pSphereShape35.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pointyleaves2SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape3_iog_0_4";
-	rename -uid "38AAE6EC-428A-1200-3CC8-ACB0680530B7";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced3|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo3|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape3.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape9_iog_0_9";
-	rename -uid "D5C9D3C4-44F7-08B4-1FAB-5D863D39D5B3";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced9|Sam_Final_Updated_Scene:Bamboo9|Sam_Final_Updated_Scene:BambooShape9.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Leaves5Shape_iog_0_";
-	rename -uid "9CFF5082-439F-2D0A-76EA-619DAAEA60F4";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:SmallBushes|Sam_Final_Updated_Scene:Leaves5|Sam_Final_Updated_Scene:Leaves5Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:SmallBush_SC:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape1_iog_0_8";
-	rename -uid "C2891956-43A5-DFBD-6E6A-0992A7872071";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced6|Sam_Final_Updated_Scene:Bamboo1|Sam_Final_Updated_Scene:BambooShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape2_iog_0_4";
-	rename -uid "C4E2D8F3-4784-3146-9CDF-1FB238DE5AD6";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo2|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape2.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape7_iog_0_9";
-	rename -uid "175D6F04-4E5A-49B2-69A9-8C88ACDA5944";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced8|Sam_Final_Updated_Scene:Bamboo7|Sam_Final_Updated_Scene:BambooShape7.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_grid2Shape_iog_0_";
-	rename -uid "0C7367A0-48CC-3293-7E9A-E29BC0859DD3";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Short_Palms|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:grid2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:grid2Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader4SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_SwampTallTreeNoLeaves_JonathanFranklin2_pCylinderShape1_iog_0_";
-	rename -uid "E254AC53-4785-0C2C-8DAA-149F17DD5EBC";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:TallSwampTrees|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:SwampTallTreeNoLeaves_JonathanFranklin2:pCylinder1|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:SwampTallTreeNoLeaves_JonathanFranklin2:pCylinderShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape9_iog_0_5";
-	rename -uid "23CFC3BC-4651-8A06-704D-149C7C7EF6E6";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooNotReferenced2|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:Bamboo9|Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:BambooShape9.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_pSphereShape41_iog_0_";
-	rename -uid "77878CAA-4486-F7BA-84E1-28A922F0D75A";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeBig|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:pSphere41|Sam_Final_Updated_Scene:pSphereShape41.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:roundleavesSG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush2Shape_iog_0_";
-	rename -uid "0AB8AC22-41FE-6996-2433-1F9E4CBF2D87";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush2|Sam_Final_Updated_Scene:Bush2Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape1_iog_0_9";
-	rename -uid "9D0A312D-411F-7373-B6A4-F0A54482F737";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced5|Sam_Final_Updated_Scene:Bamboo1|Sam_Final_Updated_Scene:BambooShape1.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape11_iog_0_4";
-	rename -uid "FD829C25-403C-F8DE-D931-8496C0543D73";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced4|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo11|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape11.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape29_iog_0_";
-	rename -uid "0EBBA13C-499D-CD4B-E642-D8A983B2550A";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:ShadowLeaves_will_need_lights_|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:Josh_Trees:TreeSmall|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:leaves|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphere29|Sam_Final_Updated_Scene:Trees_withLeaves_BJ:pSphereShape29.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Trees_withLeaves_BJ:blinn1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_BambooShape11_iog_0_9";
-	rename -uid "B6CBEEF1-48E9-B178-49C0-BDBF30CBFDE1";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:BambooNotReferenced6|Sam_Final_Updated_Scene:Bamboo11|Sam_Final_Updated_Scene:BambooShape11.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_palmShape_iog_0__og_0_";
-	rename -uid "1A6982AD-4A8D-354F-3D3B-24934047A1CC";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Palms|Sam_Final_Updated_Scene:palm|Sam_Final_Updated_Scene:palmShape.instObjGroups[0].objectGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:PalmTree_SC1:rampShader4SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_palmShape_iog_0__og_1_";
-	rename -uid "758CACA1-4D04-5E6A-E93E-29BE856BE90C";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Palms|Sam_Final_Updated_Scene:palm|Sam_Final_Updated_Scene:palmShape.instObjGroups[0].objectGroups[1]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:PalmTree_SC1:rampShader1SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_palmShape_iog_0__og_2_";
-	rename -uid "C92E9B95-42EF-A99E-892A-20B7C01E8EFE";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Palms|Sam_Final_Updated_Scene:palm|Sam_Final_Updated_Scene:palmShape.instObjGroups[0].objectGroups[2]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:Sam_Final_Scene:PalmTree_SC1:rampShader3SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape9_iog_0_4";
-	rename -uid "F9AA8A46-41CB-79EB-050A-AC8327529B95";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Bamboo|Sam_Final_Updated_Scene:Sam_WithBoys:BambooNotReferenced|Sam_Final_Updated_Scene:Sam_WithBoys:Bamboo9|Sam_Final_Updated_Scene:Sam_WithBoys:BambooShape9.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader9SG";
-createNode applyConnectionOverride -n "materialOverride1_Sam_Final_Updated_Scene_Bush22Shape_iog_0_";
-	rename -uid "AE1DCF91-4C47-0FCD-0BDE-F1B32DF2ECBE";
-	addAttr -s false -ci true -sn "org" -ln "original" -at "message";
-	addAttr -ci true -sn "tgn" -ln "targetName" -dt "string";
-	addAttr -ci true -sn "sen" -ln "shadingEngineName" -dt "string";
-	setAttr ".tgn" -type "string" "|Sam_Final_Updated_Scene:Set__CHANGE_ONLY_SLIGHTLY|Sam_Final_Updated_Scene:Ferns|Sam_Final_Updated_Scene:Bush22|Sam_Final_Updated_Scene:Bush22Shape.instObjGroups[0]";
-	setAttr ".sen" -type "string" "Sam_Final_Updated_Scene:Sam_WithBoys:rampShader1SG";
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "A42AA59A-4426-D831-5894-1EAC077A8EDE";
+	rename -uid "7A4BF6EA-4B04-2F54-DF2C-4E9DE6B85146";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
-	setAttr ".tgi[0].vl" -type "double2" 627.38092745107417 1256.3618985257676 ;
-	setAttr ".tgi[0].vh" -type "double2" 2002.3808728134854 2659.1141363633837 ;
+	setAttr ".tgi[0].vl" -type "double2" 520.87613552012556 1520.0496141447327 ;
+	setAttr ".tgi[0].vh" -type "double2" 1897.8459334935387 2924.8114630864166 ;
 	setAttr -s 7 ".tgi[0].ni";
-	setAttr ".tgi[0].ni[0].x" 856.83636474609375;
-	setAttr ".tgi[0].ni[0].y" 2452.135009765625;
+	setAttr ".tgi[0].ni[0].x" 1069.6002197265625;
+	setAttr ".tgi[0].ni[0].y" 2643.283203125;
 	setAttr ".tgi[0].ni[0].nvs" 1923;
-	setAttr ".tgi[0].ni[1].x" 1799.646728515625;
-	setAttr ".tgi[0].ni[1].y" 2448.571533203125;
-	setAttr ".tgi[0].ni[1].nvs" 1923;
-	setAttr ".tgi[0].ni[2].x" 1088.4046630859375;
-	setAttr ".tgi[0].ni[2].y" 2489.246826171875;
+	setAttr ".tgi[0].ni[1].x" 1222.857177734375;
+	setAttr ".tgi[0].ni[1].y" 1944.2857666015625;
+	setAttr ".tgi[0].ni[1].nvs" 1922;
+	setAttr ".tgi[0].ni[2].x" 1328.369140625;
+	setAttr ".tgi[0].ni[2].y" 2471.667724609375;
 	setAttr ".tgi[0].ni[2].nvs" 1923;
-	setAttr ".tgi[0].ni[3].x" 1328.369140625;
-	setAttr ".tgi[0].ni[3].y" 2471.667724609375;
+	setAttr ".tgi[0].ni[3].x" 1551.646728515625;
+	setAttr ".tgi[0].ni[3].y" 2494.3759765625;
 	setAttr ".tgi[0].ni[3].nvs" 1923;
-	setAttr ".tgi[0].ni[4].x" 1551.646728515625;
-	setAttr ".tgi[0].ni[4].y" 2494.3759765625;
+	setAttr ".tgi[0].ni[4].x" 1799.646728515625;
+	setAttr ".tgi[0].ni[4].y" 2448.571533203125;
 	setAttr ".tgi[0].ni[4].nvs" 1923;
-	setAttr ".tgi[0].ni[5].x" 1069.6002197265625;
-	setAttr ".tgi[0].ni[5].y" 2643.283203125;
+	setAttr ".tgi[0].ni[5].x" 856.83636474609375;
+	setAttr ".tgi[0].ni[5].y" 2452.135009765625;
 	setAttr ".tgi[0].ni[5].nvs" 1923;
-	setAttr ".tgi[0].ni[6].x" 1222.857177734375;
-	setAttr ".tgi[0].ni[6].y" 1944.2857666015625;
-	setAttr ".tgi[0].ni[6].nvs" 1922;
+	setAttr ".tgi[0].ni[6].x" 1088.4046630859375;
+	setAttr ".tgi[0].ni[6].y" 2489.246826171875;
+	setAttr ".tgi[0].ni[6].nvs" 1923;
 select -ne :time1;
 	setAttr ".o" 40;
 	setAttr ".unw" 40;
@@ -9134,6 +8062,7 @@ select -ne :defaultTextureList1;
 	setAttr -s 97 ".tx";
 select -ne :lambert1;
 select -ne :initialShadingGroup;
+	setAttr -s 2 ".dsm";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
@@ -9154,11 +8083,1039 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".btrs" 512;
 select -ne :defaultHideFaceDataSet;
 	setAttr -s 6 ".dnsm";
+select -ne :ikSystem;
+	setAttr -s 4 ".sol";
 connectAttr "Sam_Final_Updated_SceneRN.phl[1]" ":lightEditorRoot.dsm" -na;
 connectAttr "Sam_Final_Updated_SceneRN.phl[2]" ":lightEditorRoot.dsm" -na;
 connectAttr "Sam_Final_Updated_SceneRN.phl[3]" ":lightEditorRoot.dsm" -na;
+connectAttr "Sam_Final_Updated_SceneRN.phl[4]" ":initialShadingGroup.dsm" -na;
+connectAttr "Sam_Final_Updated_SceneRN.phl[5]" "Sam_Final_Updated_SceneRN.phl[6]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[7]" "Sam_Final_Updated_SceneRN.phl[8]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[9]" "Sam_Final_Updated_SceneRN.phl[10]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[11]" "Sam_Final_Updated_SceneRN.phl[12]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[13]" "Sam_Final_Updated_SceneRN.phl[14]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[15]" "Sam_Final_Updated_SceneRN.phl[16]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[17]" "Sam_Final_Updated_SceneRN.phl[18]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[19]" "Sam_Final_Updated_SceneRN.phl[20]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[21]" "Sam_Final_Updated_SceneRN.phl[22]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[23]" "Sam_Final_Updated_SceneRN.phl[24]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[25]" "Sam_Final_Updated_SceneRN.phl[26]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[27]" "Sam_Final_Updated_SceneRN.phl[28]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[29]" "Sam_Final_Updated_SceneRN.phl[30]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[31]" "Sam_Final_Updated_SceneRN.phl[32]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[33]" "Sam_Final_Updated_SceneRN.phl[34]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[35]" "Sam_Final_Updated_SceneRN.phl[36]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[37]" "Sam_Final_Updated_SceneRN.phl[38]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[39]" "Sam_Final_Updated_SceneRN.phl[40]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[41]" "Sam_Final_Updated_SceneRN.phl[42]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[43]" "Sam_Final_Updated_SceneRN.phl[44]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[45]" "Sam_Final_Updated_SceneRN.phl[46]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[47]" "Sam_Final_Updated_SceneRN.phl[48]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[49]" "Sam_Final_Updated_SceneRN.phl[50]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[51]" "Sam_Final_Updated_SceneRN.phl[52]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[53]" "Sam_Final_Updated_SceneRN.phl[54]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[55]" "Sam_Final_Updated_SceneRN.phl[56]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[57]" "Sam_Final_Updated_SceneRN.phl[58]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[59]" "Sam_Final_Updated_SceneRN.phl[60]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[61]" "Sam_Final_Updated_SceneRN.phl[62]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[63]" "Sam_Final_Updated_SceneRN.phl[64]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[65]" "Sam_Final_Updated_SceneRN.phl[66]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[67]" "Sam_Final_Updated_SceneRN.phl[68]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[69]" "Sam_Final_Updated_SceneRN.phl[70]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[71]" "Sam_Final_Updated_SceneRN.phl[72]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[73]" "Sam_Final_Updated_SceneRN.phl[74]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[75]" "Sam_Final_Updated_SceneRN.phl[76]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[77]" "Sam_Final_Updated_SceneRN.phl[78]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[79]" "Sam_Final_Updated_SceneRN.phl[80]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[81]" "Sam_Final_Updated_SceneRN.phl[82]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[83]" "Sam_Final_Updated_SceneRN.phl[84]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[85]" "Sam_Final_Updated_SceneRN.phl[86]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[87]" "Sam_Final_Updated_SceneRN.phl[88]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[89]" "Sam_Final_Updated_SceneRN.phl[90]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[91]" "Sam_Final_Updated_SceneRN.phl[92]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[93]" "Sam_Final_Updated_SceneRN.phl[94]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[95]" "Sam_Final_Updated_SceneRN.phl[96]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[97]" "Sam_Final_Updated_SceneRN.phl[98]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[99]" "Sam_Final_Updated_SceneRN.phl[100]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[101]" "Sam_Final_Updated_SceneRN.phl[102]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[103]" "Sam_Final_Updated_SceneRN.phl[104]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[105]" "Sam_Final_Updated_SceneRN.phl[106]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[107]" "Sam_Final_Updated_SceneRN.phl[108]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[109]" "Sam_Final_Updated_SceneRN.phl[110]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[111]" "Sam_Final_Updated_SceneRN.phl[112]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[113]" "Sam_Final_Updated_SceneRN.phl[114]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[115]" "Sam_Final_Updated_SceneRN.phl[116]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[117]" "Sam_Final_Updated_SceneRN.phl[118]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[119]" "Sam_Final_Updated_SceneRN.phl[120]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[121]" "Sam_Final_Updated_SceneRN.phl[122]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[123]" "Sam_Final_Updated_SceneRN.phl[124]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[125]" "Sam_Final_Updated_SceneRN.phl[126]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[127]" "Sam_Final_Updated_SceneRN.phl[128]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[129]" "Sam_Final_Updated_SceneRN.phl[130]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[131]" "Sam_Final_Updated_SceneRN.phl[132]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[133]" "Sam_Final_Updated_SceneRN.phl[134]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[135]" "Sam_Final_Updated_SceneRN.phl[136]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[137]" "Sam_Final_Updated_SceneRN.phl[138]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[139]" "Sam_Final_Updated_SceneRN.phl[140]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[141]" "Sam_Final_Updated_SceneRN.phl[142]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[143]" "Sam_Final_Updated_SceneRN.phl[144]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[145]" "Sam_Final_Updated_SceneRN.phl[146]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[147]" "Sam_Final_Updated_SceneRN.phl[148]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[149]" "Sam_Final_Updated_SceneRN.phl[150]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[151]" "Sam_Final_Updated_SceneRN.phl[152]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[153]" "Sam_Final_Updated_SceneRN.phl[154]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[155]" "Sam_Final_Updated_SceneRN.phl[156]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[157]" "Sam_Final_Updated_SceneRN.phl[158]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[159]" "Sam_Final_Updated_SceneRN.phl[160]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[161]" "Sam_Final_Updated_SceneRN.phl[162]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[163]" "Sam_Final_Updated_SceneRN.phl[164]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[165]" "Sam_Final_Updated_SceneRN.phl[166]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[167]" "Sam_Final_Updated_SceneRN.phl[168]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[169]" "Sam_Final_Updated_SceneRN.phl[170]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[171]" "Sam_Final_Updated_SceneRN.phl[172]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[173]" "Sam_Final_Updated_SceneRN.phl[174]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[175]" "Sam_Final_Updated_SceneRN.phl[176]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[177]" "Sam_Final_Updated_SceneRN.phl[178]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[179]" "Sam_Final_Updated_SceneRN.phl[180]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[181]" "Sam_Final_Updated_SceneRN.phl[182]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[183]" "Sam_Final_Updated_SceneRN.phl[184]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[185]" "Sam_Final_Updated_SceneRN.phl[186]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[187]" "Sam_Final_Updated_SceneRN.phl[188]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[189]" "Sam_Final_Updated_SceneRN.phl[190]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[191]" "Sam_Final_Updated_SceneRN.phl[192]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[193]" "Sam_Final_Updated_SceneRN.phl[194]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[195]" "Sam_Final_Updated_SceneRN.phl[196]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[197]" "Sam_Final_Updated_SceneRN.phl[198]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[199]" "Sam_Final_Updated_SceneRN.phl[200]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[201]" "Sam_Final_Updated_SceneRN.phl[202]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[203]" "Sam_Final_Updated_SceneRN.phl[204]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[205]" "Sam_Final_Updated_SceneRN.phl[206]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[207]" "Sam_Final_Updated_SceneRN.phl[208]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[209]" "Sam_Final_Updated_SceneRN.phl[210]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[211]" "Sam_Final_Updated_SceneRN.phl[212]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[213]" "Sam_Final_Updated_SceneRN.phl[214]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[215]" "Sam_Final_Updated_SceneRN.phl[216]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[217]" "Sam_Final_Updated_SceneRN.phl[218]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[219]" "Sam_Final_Updated_SceneRN.phl[220]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[221]" "Sam_Final_Updated_SceneRN.phl[222]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[223]" "Sam_Final_Updated_SceneRN.phl[224]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[225]" "Sam_Final_Updated_SceneRN.phl[226]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[227]" "Sam_Final_Updated_SceneRN.phl[228]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[229]" "Sam_Final_Updated_SceneRN.phl[230]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[231]" "Sam_Final_Updated_SceneRN.phl[232]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[233]" "Sam_Final_Updated_SceneRN.phl[234]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[235]" "Sam_Final_Updated_SceneRN.phl[236]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[237]" "Sam_Final_Updated_SceneRN.phl[238]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[239]" "Sam_Final_Updated_SceneRN.phl[240]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[241]" "Sam_Final_Updated_SceneRN.phl[242]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[243]" "Sam_Final_Updated_SceneRN.phl[244]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[245]" "Sam_Final_Updated_SceneRN.phl[246]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[247]" "Sam_Final_Updated_SceneRN.phl[248]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[249]" "Sam_Final_Updated_SceneRN.phl[250]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[251]" "Sam_Final_Updated_SceneRN.phl[252]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[253]" "Sam_Final_Updated_SceneRN.phl[254]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[255]" "Sam_Final_Updated_SceneRN.phl[256]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[257]" "Sam_Final_Updated_SceneRN.phl[258]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[259]" "Sam_Final_Updated_SceneRN.phl[260]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[261]" "Sam_Final_Updated_SceneRN.phl[262]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[263]" "Sam_Final_Updated_SceneRN.phl[264]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[265]" "Sam_Final_Updated_SceneRN.phl[266]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[267]" "Sam_Final_Updated_SceneRN.phl[268]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[269]" "Sam_Final_Updated_SceneRN.phl[270]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[271]" "Sam_Final_Updated_SceneRN.phl[272]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[273]" "Sam_Final_Updated_SceneRN.phl[274]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[275]" "Sam_Final_Updated_SceneRN.phl[276]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[277]" "Sam_Final_Updated_SceneRN.phl[278]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[279]" "Sam_Final_Updated_SceneRN.phl[280]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[281]" "Sam_Final_Updated_SceneRN.phl[282]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[283]" "Sam_Final_Updated_SceneRN.phl[284]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[285]" "Sam_Final_Updated_SceneRN.phl[286]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[287]" "Sam_Final_Updated_SceneRN.phl[288]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[289]" "Sam_Final_Updated_SceneRN.phl[290]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[291]" "Sam_Final_Updated_SceneRN.phl[292]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[293]" "Sam_Final_Updated_SceneRN.phl[294]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[295]" "Sam_Final_Updated_SceneRN.phl[296]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[297]" "Sam_Final_Updated_SceneRN.phl[298]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[299]" "Sam_Final_Updated_SceneRN.phl[300]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[301]" "Sam_Final_Updated_SceneRN.phl[302]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[303]" "Sam_Final_Updated_SceneRN.phl[304]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[305]" "Sam_Final_Updated_SceneRN.phl[306]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[307]" "Sam_Final_Updated_SceneRN.phl[308]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[309]" "Sam_Final_Updated_SceneRN.phl[310]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[311]" "Sam_Final_Updated_SceneRN.phl[312]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[313]" "Sam_Final_Updated_SceneRN.phl[314]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[315]" "Sam_Final_Updated_SceneRN.phl[316]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[317]" "Sam_Final_Updated_SceneRN.phl[318]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[319]" "Sam_Final_Updated_SceneRN.phl[320]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[321]" "Sam_Final_Updated_SceneRN.phl[322]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[323]" "Sam_Final_Updated_SceneRN.phl[324]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[325]" "Sam_Final_Updated_SceneRN.phl[326]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[327]" "Sam_Final_Updated_SceneRN.phl[328]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[329]" "Sam_Final_Updated_SceneRN.phl[330]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[331]" "Sam_Final_Updated_SceneRN.phl[332]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[333]" "Sam_Final_Updated_SceneRN.phl[334]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[335]" "Sam_Final_Updated_SceneRN.phl[336]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[337]" "Sam_Final_Updated_SceneRN.phl[338]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[339]" "Sam_Final_Updated_SceneRN.phl[340]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[341]" "Sam_Final_Updated_SceneRN.phl[342]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[343]" "Sam_Final_Updated_SceneRN.phl[344]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[345]" "Sam_Final_Updated_SceneRN.phl[346]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[347]" "Sam_Final_Updated_SceneRN.phl[348]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[349]" "Sam_Final_Updated_SceneRN.phl[350]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[351]" "Sam_Final_Updated_SceneRN.phl[352]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[353]" "Sam_Final_Updated_SceneRN.phl[354]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[355]" "Sam_Final_Updated_SceneRN.phl[356]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[357]" "Sam_Final_Updated_SceneRN.phl[358]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[359]" "Sam_Final_Updated_SceneRN.phl[360]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[361]" "Sam_Final_Updated_SceneRN.phl[362]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[363]" "Sam_Final_Updated_SceneRN.phl[364]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[365]" "Sam_Final_Updated_SceneRN.phl[366]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[367]" "Sam_Final_Updated_SceneRN.phl[368]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[369]" "Sam_Final_Updated_SceneRN.phl[370]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[371]" "Sam_Final_Updated_SceneRN.phl[372]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[373]" "Sam_Final_Updated_SceneRN.phl[374]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[375]" "Sam_Final_Updated_SceneRN.phl[376]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[377]" "Sam_Final_Updated_SceneRN.phl[378]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[379]" "Sam_Final_Updated_SceneRN.phl[380]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[381]" "Sam_Final_Updated_SceneRN.phl[382]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[383]" "Sam_Final_Updated_SceneRN.phl[384]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[385]" "Sam_Final_Updated_SceneRN.phl[386]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[387]" "Sam_Final_Updated_SceneRN.phl[388]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[389]" "Sam_Final_Updated_SceneRN.phl[390]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[391]" "Sam_Final_Updated_SceneRN.phl[392]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[393]" "Sam_Final_Updated_SceneRN.phl[394]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[395]" "Sam_Final_Updated_SceneRN.phl[396]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[397]" "Sam_Final_Updated_SceneRN.phl[398]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[399]" "Sam_Final_Updated_SceneRN.phl[400]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[401]" "Sam_Final_Updated_SceneRN.phl[402]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[403]" "Sam_Final_Updated_SceneRN.phl[404]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[405]" "Sam_Final_Updated_SceneRN.phl[406]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[407]" "Sam_Final_Updated_SceneRN.phl[408]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[409]" "Sam_Final_Updated_SceneRN.phl[410]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[411]" "Sam_Final_Updated_SceneRN.phl[412]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[413]" "Sam_Final_Updated_SceneRN.phl[414]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[415]" "Sam_Final_Updated_SceneRN.phl[416]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[417]" "Sam_Final_Updated_SceneRN.phl[418]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[419]" "Sam_Final_Updated_SceneRN.phl[420]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[421]" "Sam_Final_Updated_SceneRN.phl[422]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[423]" "Sam_Final_Updated_SceneRN.phl[424]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[425]" "Sam_Final_Updated_SceneRN.phl[426]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[427]" "Sam_Final_Updated_SceneRN.phl[428]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[429]" "Sam_Final_Updated_SceneRN.phl[430]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[431]" "Sam_Final_Updated_SceneRN.phl[432]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[433]" "Sam_Final_Updated_SceneRN.phl[434]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[435]" "Sam_Final_Updated_SceneRN.phl[436]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[437]" "Sam_Final_Updated_SceneRN.phl[438]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[439]" "Sam_Final_Updated_SceneRN.phl[440]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[441]" "Sam_Final_Updated_SceneRN.phl[442]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[443]" "Sam_Final_Updated_SceneRN.phl[444]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[445]" "Sam_Final_Updated_SceneRN.phl[446]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[447]" "Sam_Final_Updated_SceneRN.phl[448]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[449]" "Sam_Final_Updated_SceneRN.phl[450]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[451]" "Sam_Final_Updated_SceneRN.phl[452]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[453]" "Sam_Final_Updated_SceneRN.phl[454]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[455]" "Sam_Final_Updated_SceneRN.phl[456]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[457]" "Sam_Final_Updated_SceneRN.phl[458]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[459]" "Sam_Final_Updated_SceneRN.phl[460]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[461]" "Sam_Final_Updated_SceneRN.phl[462]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[463]" "Sam_Final_Updated_SceneRN.phl[464]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[465]" "Sam_Final_Updated_SceneRN.phl[466]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[467]" "Sam_Final_Updated_SceneRN.phl[468]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[469]" "Sam_Final_Updated_SceneRN.phl[470]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[471]" "Sam_Final_Updated_SceneRN.phl[472]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[473]" "Sam_Final_Updated_SceneRN.phl[474]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[475]" "Sam_Final_Updated_SceneRN.phl[476]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[477]" "Sam_Final_Updated_SceneRN.phl[478]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[479]" "Sam_Final_Updated_SceneRN.phl[480]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[481]" "Sam_Final_Updated_SceneRN.phl[482]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[483]" "Sam_Final_Updated_SceneRN.phl[484]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[485]" "Sam_Final_Updated_SceneRN.phl[486]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[487]" "Sam_Final_Updated_SceneRN.phl[488]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[489]" "Sam_Final_Updated_SceneRN.phl[490]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[491]" "Sam_Final_Updated_SceneRN.phl[492]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[493]" "Sam_Final_Updated_SceneRN.phl[494]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[495]" "Sam_Final_Updated_SceneRN.phl[496]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[497]" "Sam_Final_Updated_SceneRN.phl[498]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[499]" "Sam_Final_Updated_SceneRN.phl[500]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[501]" "Sam_Final_Updated_SceneRN.phl[502]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[503]" "Sam_Final_Updated_SceneRN.phl[504]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[505]" "Sam_Final_Updated_SceneRN.phl[506]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[507]" "Sam_Final_Updated_SceneRN.phl[508]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[509]" "Sam_Final_Updated_SceneRN.phl[510]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[511]" "Sam_Final_Updated_SceneRN.phl[512]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[513]" "Sam_Final_Updated_SceneRN.phl[514]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[515]" "Sam_Final_Updated_SceneRN.phl[516]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[517]" "Sam_Final_Updated_SceneRN.phl[518]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[519]" "Sam_Final_Updated_SceneRN.phl[520]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[521]" "Sam_Final_Updated_SceneRN.phl[522]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[523]" "Sam_Final_Updated_SceneRN.phl[524]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[525]" "Sam_Final_Updated_SceneRN.phl[526]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[527]" "Sam_Final_Updated_SceneRN.phl[528]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[529]" "Sam_Final_Updated_SceneRN.phl[530]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[531]" "Sam_Final_Updated_SceneRN.phl[532]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[533]" "Sam_Final_Updated_SceneRN.phl[534]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[535]" "Sam_Final_Updated_SceneRN.phl[536]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[537]" "Sam_Final_Updated_SceneRN.phl[538]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[539]" "Sam_Final_Updated_SceneRN.phl[540]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[541]" "Sam_Final_Updated_SceneRN.phl[542]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[543]" "Sam_Final_Updated_SceneRN.phl[544]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[545]" "Sam_Final_Updated_SceneRN.phl[546]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[547]" "Sam_Final_Updated_SceneRN.phl[548]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[549]" "Sam_Final_Updated_SceneRN.phl[550]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[551]" "Sam_Final_Updated_SceneRN.phl[552]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[553]" "Sam_Final_Updated_SceneRN.phl[554]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[555]" "Sam_Final_Updated_SceneRN.phl[556]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[557]" "Sam_Final_Updated_SceneRN.phl[558]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[559]" "Sam_Final_Updated_SceneRN.phl[560]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[561]" "Sam_Final_Updated_SceneRN.phl[562]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[563]" "Sam_Final_Updated_SceneRN.phl[564]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[565]" "Sam_Final_Updated_SceneRN.phl[566]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[567]" "Sam_Final_Updated_SceneRN.phl[568]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[569]" "Sam_Final_Updated_SceneRN.phl[570]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[571]" "Sam_Final_Updated_SceneRN.phl[572]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[573]" "Sam_Final_Updated_SceneRN.phl[574]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[575]" "Sam_Final_Updated_SceneRN.phl[576]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[577]" "Sam_Final_Updated_SceneRN.phl[578]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[579]" "Sam_Final_Updated_SceneRN.phl[580]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[581]" "Sam_Final_Updated_SceneRN.phl[582]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[583]" "Sam_Final_Updated_SceneRN.phl[584]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[585]" "Sam_Final_Updated_SceneRN.phl[586]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[587]" "Sam_Final_Updated_SceneRN.phl[588]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[589]" "Sam_Final_Updated_SceneRN.phl[590]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[591]" "Sam_Final_Updated_SceneRN.phl[592]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[593]" "Sam_Final_Updated_SceneRN.phl[594]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[595]" "Sam_Final_Updated_SceneRN.phl[596]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[597]" "Sam_Final_Updated_SceneRN.phl[598]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[599]" "Sam_Final_Updated_SceneRN.phl[600]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[601]" "Sam_Final_Updated_SceneRN.phl[602]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[603]" "Sam_Final_Updated_SceneRN.phl[604]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[605]" "Sam_Final_Updated_SceneRN.phl[606]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[607]" "Sam_Final_Updated_SceneRN.phl[608]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[609]" "Sam_Final_Updated_SceneRN.phl[610]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[611]" "Sam_Final_Updated_SceneRN.phl[612]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[613]" "Sam_Final_Updated_SceneRN.phl[614]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[615]" "Sam_Final_Updated_SceneRN.phl[616]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[617]" "Sam_Final_Updated_SceneRN.phl[618]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[619]" "Sam_Final_Updated_SceneRN.phl[620]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[621]" "Sam_Final_Updated_SceneRN.phl[622]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[623]" "Sam_Final_Updated_SceneRN.phl[624]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[625]" "Sam_Final_Updated_SceneRN.phl[626]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[627]" "Sam_Final_Updated_SceneRN.phl[628]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[629]" "Sam_Final_Updated_SceneRN.phl[630]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[631]" "Sam_Final_Updated_SceneRN.phl[632]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[633]" "Sam_Final_Updated_SceneRN.phl[634]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[635]" "Sam_Final_Updated_SceneRN.phl[636]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[637]" "Sam_Final_Updated_SceneRN.phl[638]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[639]" "Sam_Final_Updated_SceneRN.phl[640]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[641]" "Sam_Final_Updated_SceneRN.phl[642]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[643]" "Sam_Final_Updated_SceneRN.phl[644]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[645]" "Sam_Final_Updated_SceneRN.phl[646]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[647]" "Sam_Final_Updated_SceneRN.phl[648]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[649]" "Sam_Final_Updated_SceneRN.phl[650]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[651]" "Sam_Final_Updated_SceneRN.phl[652]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[653]" "Sam_Final_Updated_SceneRN.phl[654]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[655]" "Sam_Final_Updated_SceneRN.phl[656]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[657]" "Sam_Final_Updated_SceneRN.phl[658]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[659]" "Sam_Final_Updated_SceneRN.phl[660]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[661]" "Sam_Final_Updated_SceneRN.phl[662]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[663]" "Sam_Final_Updated_SceneRN.phl[664]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[665]" "Sam_Final_Updated_SceneRN.phl[666]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[667]" "Sam_Final_Updated_SceneRN.phl[668]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[669]" "Sam_Final_Updated_SceneRN.phl[670]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[671]" "Sam_Final_Updated_SceneRN.phl[672]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[673]" "Sam_Final_Updated_SceneRN.phl[674]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[675]" "Sam_Final_Updated_SceneRN.phl[676]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[677]" "Sam_Final_Updated_SceneRN.phl[678]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[679]" "Sam_Final_Updated_SceneRN.phl[680]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[681]" "Sam_Final_Updated_SceneRN.phl[682]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[683]" "Sam_Final_Updated_SceneRN.phl[684]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[685]" "Sam_Final_Updated_SceneRN.phl[686]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[687]" "Sam_Final_Updated_SceneRN.phl[688]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[689]" "Sam_Final_Updated_SceneRN.phl[690]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[691]" "Sam_Final_Updated_SceneRN.phl[692]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[693]" "Sam_Final_Updated_SceneRN.phl[694]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[695]" "Sam_Final_Updated_SceneRN.phl[696]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[697]" "Sam_Final_Updated_SceneRN.phl[698]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[699]" "Sam_Final_Updated_SceneRN.phl[700]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[701]" "Sam_Final_Updated_SceneRN.phl[702]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[703]" "Sam_Final_Updated_SceneRN.phl[704]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[705]" "Sam_Final_Updated_SceneRN.phl[706]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[707]" "Sam_Final_Updated_SceneRN.phl[708]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[709]" "Sam_Final_Updated_SceneRN.phl[710]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[711]" "Sam_Final_Updated_SceneRN.phl[712]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[713]" "Sam_Final_Updated_SceneRN.phl[714]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[715]" "Sam_Final_Updated_SceneRN.phl[716]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[717]" "Sam_Final_Updated_SceneRN.phl[718]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[719]" "Sam_Final_Updated_SceneRN.phl[720]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[721]" "Sam_Final_Updated_SceneRN.phl[722]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[723]" "Sam_Final_Updated_SceneRN.phl[724]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[725]" "Sam_Final_Updated_SceneRN.phl[726]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[727]" "Sam_Final_Updated_SceneRN.phl[728]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[729]" "Sam_Final_Updated_SceneRN.phl[730]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[731]" "Sam_Final_Updated_SceneRN.phl[732]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[733]" "Sam_Final_Updated_SceneRN.phl[734]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[735]" "Sam_Final_Updated_SceneRN.phl[736]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[737]" "Sam_Final_Updated_SceneRN.phl[738]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[739]" "Sam_Final_Updated_SceneRN.phl[740]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[741]" "Sam_Final_Updated_SceneRN.phl[742]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[743]" "Sam_Final_Updated_SceneRN.phl[744]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[745]" "Sam_Final_Updated_SceneRN.phl[746]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[747]" "Sam_Final_Updated_SceneRN.phl[748]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[749]" "Sam_Final_Updated_SceneRN.phl[750]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[751]" "Sam_Final_Updated_SceneRN.phl[752]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[753]" "Sam_Final_Updated_SceneRN.phl[754]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[755]" "Sam_Final_Updated_SceneRN.phl[756]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[757]" "Sam_Final_Updated_SceneRN.phl[758]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[759]" "Sam_Final_Updated_SceneRN.phl[760]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[761]" "Sam_Final_Updated_SceneRN.phl[762]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[763]" "Sam_Final_Updated_SceneRN.phl[764]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[765]" "Sam_Final_Updated_SceneRN.phl[766]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[767]" "Sam_Final_Updated_SceneRN.phl[768]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[769]" "Sam_Final_Updated_SceneRN.phl[770]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[771]" "Sam_Final_Updated_SceneRN.phl[772]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[773]" "Sam_Final_Updated_SceneRN.phl[774]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[775]" "Sam_Final_Updated_SceneRN.phl[776]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[777]" "Sam_Final_Updated_SceneRN.phl[778]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[779]" "Sam_Final_Updated_SceneRN.phl[780]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[781]" "Sam_Final_Updated_SceneRN.phl[782]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[783]" "Sam_Final_Updated_SceneRN.phl[784]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[785]" "Sam_Final_Updated_SceneRN.phl[786]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[787]" "Sam_Final_Updated_SceneRN.phl[788]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[789]" "Sam_Final_Updated_SceneRN.phl[790]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[791]" "Sam_Final_Updated_SceneRN.phl[792]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[793]" "Sam_Final_Updated_SceneRN.phl[794]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[795]" "Sam_Final_Updated_SceneRN.phl[796]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[797]" "Sam_Final_Updated_SceneRN.phl[798]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[799]" "Sam_Final_Updated_SceneRN.phl[800]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[801]" "Sam_Final_Updated_SceneRN.phl[802]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[803]" "Sam_Final_Updated_SceneRN.phl[804]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[805]" "Sam_Final_Updated_SceneRN.phl[806]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[807]" "Sam_Final_Updated_SceneRN.phl[808]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[809]" "Sam_Final_Updated_SceneRN.phl[810]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[811]" "Sam_Final_Updated_SceneRN.phl[812]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[813]" "Sam_Final_Updated_SceneRN.phl[814]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[815]" "Sam_Final_Updated_SceneRN.phl[816]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[817]" "Sam_Final_Updated_SceneRN.phl[818]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[819]" "Sam_Final_Updated_SceneRN.phl[820]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[821]" "Sam_Final_Updated_SceneRN.phl[822]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[823]" "Sam_Final_Updated_SceneRN.phl[824]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[825]" "Sam_Final_Updated_SceneRN.phl[826]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[827]" "Sam_Final_Updated_SceneRN.phl[828]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[829]" "Sam_Final_Updated_SceneRN.phl[830]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[831]" "Sam_Final_Updated_SceneRN.phl[832]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[833]" "Sam_Final_Updated_SceneRN.phl[834]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[835]" "Sam_Final_Updated_SceneRN.phl[836]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[837]" "Sam_Final_Updated_SceneRN.phl[838]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[839]" "Sam_Final_Updated_SceneRN.phl[840]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[841]" "Sam_Final_Updated_SceneRN.phl[842]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[843]" "Sam_Final_Updated_SceneRN.phl[844]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[845]" "Sam_Final_Updated_SceneRN.phl[846]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[847]" "Sam_Final_Updated_SceneRN.phl[848]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[849]" "Sam_Final_Updated_SceneRN.phl[850]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[851]" "Sam_Final_Updated_SceneRN.phl[852]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[853]" "Sam_Final_Updated_SceneRN.phl[854]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[855]" "Sam_Final_Updated_SceneRN.phl[856]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[857]" "Sam_Final_Updated_SceneRN.phl[858]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[859]" "Sam_Final_Updated_SceneRN.phl[860]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[861]" "Sam_Final_Updated_SceneRN.phl[862]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[863]" "Sam_Final_Updated_SceneRN.phl[864]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[865]" "Sam_Final_Updated_SceneRN.phl[866]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[867]" "Sam_Final_Updated_SceneRN.phl[868]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[869]" "Sam_Final_Updated_SceneRN.phl[870]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[871]" "Sam_Final_Updated_SceneRN.phl[872]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[873]" "Sam_Final_Updated_SceneRN.phl[874]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[875]" "Sam_Final_Updated_SceneRN.phl[876]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[877]" "Sam_Final_Updated_SceneRN.phl[878]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[879]" "Sam_Final_Updated_SceneRN.phl[880]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[881]" "Sam_Final_Updated_SceneRN.phl[882]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[883]" "Sam_Final_Updated_SceneRN.phl[884]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[885]" "Sam_Final_Updated_SceneRN.phl[886]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[887]" "Sam_Final_Updated_SceneRN.phl[888]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[889]" "Sam_Final_Updated_SceneRN.phl[890]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[891]" "Sam_Final_Updated_SceneRN.phl[892]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[893]" "Sam_Final_Updated_SceneRN.phl[894]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[895]" "Sam_Final_Updated_SceneRN.phl[896]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[897]" "Sam_Final_Updated_SceneRN.phl[898]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[899]" "Sam_Final_Updated_SceneRN.phl[900]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[901]" "Sam_Final_Updated_SceneRN.phl[902]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[903]" "Sam_Final_Updated_SceneRN.phl[904]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[905]" "Sam_Final_Updated_SceneRN.phl[906]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[907]" "Sam_Final_Updated_SceneRN.phl[908]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[909]" "Sam_Final_Updated_SceneRN.phl[910]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[911]" "Sam_Final_Updated_SceneRN.phl[912]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[913]" "Sam_Final_Updated_SceneRN.phl[914]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[915]" "Sam_Final_Updated_SceneRN.phl[916]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[917]" "Sam_Final_Updated_SceneRN.phl[918]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[919]" "Sam_Final_Updated_SceneRN.phl[920]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[921]" "Sam_Final_Updated_SceneRN.phl[922]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[923]" "Sam_Final_Updated_SceneRN.phl[924]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[925]" "Sam_Final_Updated_SceneRN.phl[926]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[927]" "Sam_Final_Updated_SceneRN.phl[928]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[929]" "Sam_Final_Updated_SceneRN.phl[930]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[931]" "Sam_Final_Updated_SceneRN.phl[932]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[933]" "Sam_Final_Updated_SceneRN.phl[934]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[935]" "Sam_Final_Updated_SceneRN.phl[936]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[937]" "Sam_Final_Updated_SceneRN.phl[938]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[939]" "Sam_Final_Updated_SceneRN.phl[940]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[941]" "Sam_Final_Updated_SceneRN.phl[942]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[943]" "Sam_Final_Updated_SceneRN.phl[944]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[945]" "Sam_Final_Updated_SceneRN.phl[946]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[947]" "Sam_Final_Updated_SceneRN.phl[948]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[949]" "Sam_Final_Updated_SceneRN.phl[950]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[951]" "Sam_Final_Updated_SceneRN.phl[952]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[953]" "Sam_Final_Updated_SceneRN.phl[954]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[955]" "Sam_Final_Updated_SceneRN.phl[956]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[957]" "Sam_Final_Updated_SceneRN.phl[958]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[959]" "Sam_Final_Updated_SceneRN.phl[960]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[961]" "Sam_Final_Updated_SceneRN.phl[962]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[963]" "Sam_Final_Updated_SceneRN.phl[964]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[965]" "Sam_Final_Updated_SceneRN.phl[966]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[967]" "Sam_Final_Updated_SceneRN.phl[968]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[969]" "Sam_Final_Updated_SceneRN.phl[970]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[971]" "Sam_Final_Updated_SceneRN.phl[972]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[973]" "Sam_Final_Updated_SceneRN.phl[974]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[975]" "Sam_Final_Updated_SceneRN.phl[976]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[977]" "Sam_Final_Updated_SceneRN.phl[978]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[979]" "Sam_Final_Updated_SceneRN.phl[980]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[981]" "Sam_Final_Updated_SceneRN.phl[982]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[983]" "Sam_Final_Updated_SceneRN.phl[984]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[985]" "Sam_Final_Updated_SceneRN.phl[986]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[987]" "Sam_Final_Updated_SceneRN.phl[988]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[989]" "Sam_Final_Updated_SceneRN.phl[990]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[991]" "Sam_Final_Updated_SceneRN.phl[992]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[993]" "Sam_Final_Updated_SceneRN.phl[994]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[995]" "Sam_Final_Updated_SceneRN.phl[996]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[997]" "Sam_Final_Updated_SceneRN.phl[998]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[999]" "Sam_Final_Updated_SceneRN.phl[1000]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[1001]" "Sam_Final_Updated_SceneRN.phl[1002]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[1003]" "Sam_Final_Updated_SceneRN.phl[1004]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[1005]" "Sam_Final_Updated_SceneRN.phl[1006]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[1007]" "Sam_Final_Updated_SceneRN.phl[1008]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[1009]" "Sam_Final_Updated_SceneRN.phl[1010]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[1011]" "Sam_Final_Updated_SceneRN.phl[1012]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[1013]" "Sam_Final_Updated_SceneRN.phl[1014]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[1015]" "Sam_Final_Updated_SceneRN.phl[1016]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[1017]" "Sam_Final_Updated_SceneRN.phl[1018]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[1019]" "Sam_Final_Updated_SceneRN.phl[1020]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[1021]" "Sam_Final_Updated_SceneRN.phl[1022]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[1023]" "Sam_Final_Updated_SceneRN.phl[1024]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[1025]" "Sam_Final_Updated_SceneRN.phl[1026]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[1027]" "Sam_Final_Updated_SceneRN.phl[1028]"
+		;
+connectAttr "Sam_Final_Updated_SceneRN.phl[1029]" "Sam_Final_Updated_SceneRN.phl[1030]"
+		;
 connectAttr "rs_Depth.ri" "camera1.rlio[0]";
-connectAttr "rs_Depth.ri" "YB_Projection_Rig.rlio[0]";
 connectAttr "camera1.t" "|ImageProjectionRigRNfosterParent1|YB_Projection_Rig_parentConstraint1.tg[0].tt"
 		;
 connectAttr "camera1.rp" "|ImageProjectionRigRNfosterParent1|YB_Projection_Rig_parentConstraint1.tg[0].trp"
@@ -9353,6 +9310,7 @@ connectAttr "sharedReferenceNode.sr" "ImageProjectionRigRN.sr";
 connectAttr "file1.oc" "lambert2.c";
 connectAttr "file1.ot" "lambert2.it";
 connectAttr "lambert2.oc" "lambert2SG.ss";
+connectAttr "YB_MidShape1.iog" "lambert2SG.dsm" -na;
 connectAttr "lambert2SG.msg" "materialInfo1.sg";
 connectAttr "lambert2.msg" "materialInfo1.m";
 connectAttr "file1.msg" "materialInfo1.t" -na;
@@ -9383,6 +9341,7 @@ connectAttr ":time1.o" "expression1.tim";
 connectAttr "file2.oc" "lambert3.c";
 connectAttr "file2.ot" "lambert3.it";
 connectAttr "lambert3.oc" "lambert3SG.ss";
+connectAttr "YB_FrontShape2.iog" "lambert3SG.dsm" -na;
 connectAttr "lambert3SG.msg" "materialInfo2.sg";
 connectAttr "lambert3.msg" "materialInfo2.m";
 connectAttr "file2.msg" "materialInfo2.t" -na;
@@ -9413,6 +9372,7 @@ connectAttr ":time1.o" "expression2.tim";
 connectAttr "file3.oc" "lambert4.c";
 connectAttr "file3.ot" "lambert4.it";
 connectAttr "lambert4.oc" "lambert4SG.ss";
+connectAttr "YB_SuperFrontShape1.iog" "lambert4SG.dsm" -na;
 connectAttr "lambert4SG.msg" "materialInfo3.sg";
 connectAttr "lambert4.msg" "materialInfo3.m";
 connectAttr "file3.msg" "materialInfo3.t" -na;
@@ -9634,1088 +9594,25 @@ connectAttr "ramp1.oc" "projection1.im";
 connectAttr "place3dTexture1.m" "projection1.pm";
 connectAttr "RampMaterial.oc" "lambert14SG.ss";
 connectAttr "pPlaneShape1.iog" "lambert14SG.dsm" -na;
-connectAttr "YB_SuperBack1Shape.iog" "lambert14SG.dsm" -na;
-connectAttr "YB_SuperFrontShape1.iog" "lambert14SG.dsm" -na;
-connectAttr "Halp_Shape.iog" "lambert14SG.dsm" -na;
-connectAttr "YB_MidShape1.iog" "lambert14SG.dsm" -na;
-connectAttr "YB_FrontShape2.iog" "lambert14SG.dsm" -na;
 connectAttr "lambert14SG.msg" "materialInfo32.sg";
 connectAttr "RampMaterial.msg" "materialInfo32.m";
 connectAttr "ramp1.msg" "materialInfo32.t" -na;
 connectAttr "Models1.lit" "materialOverride1.pls";
 connectAttr "Models1.en" "materialOverride1.pen";
 connectAttr "lambert14SG.msg" "materialOverride1.atv";
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_MeshShape_iog_0_.en"
+connectAttr "place3dTexture1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
 		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pSphereShape26_iog_0_.en"
+connectAttr "cameraShape2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
 		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape3_iog_0_.en"
+connectAttr "projection1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
 		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pSphereShape29_iog_0_.en"
+connectAttr "RampMaterial.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
 		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape6_iog_0_.en"
+connectAttr "lambert14SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
 		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape11_iog_0_.en"
+connectAttr "place2dTexture7.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
 		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_pCubeShape1_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape3_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape12_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush23Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape12_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_pPlaneShape1_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape32_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape1_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape2_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush46Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape10_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape3_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape9_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape5_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape20_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape7_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape33_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape8_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush34Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape1_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape12_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush20Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape6_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape3_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape5_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape8_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape4_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape1_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_JungleTreeByLS1Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape9_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape10_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape5_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape10_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape7_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Leaves7Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Halp_Shape_iog_0_.en";
-connectAttr "lambert11SG.msg" "materialOverride1_Halp_Shape_iog_0_.org";
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_LeafBundle7Shape_iog_0_.en"
-		;
-connectAttr ":initialShadingGroup.msg" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_LeafBundle7Shape_iog_0_.org"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape1_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pSphereShape37_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape8_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape7_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape5_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape7_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape7_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape1_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape4_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush13Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape12_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape13_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape8_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pCylinderShape1_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape13_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape11_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_TwistyTreeShape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape13_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape5_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape4_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape11_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape7_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape2_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape12_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape7_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape10_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush38Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape30_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape10_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush3Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape5_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape9_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape5_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape22_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape24_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape13_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape11_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape5_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Rock3Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush24Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_TwistyTree1Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape13_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape1_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape11_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape18_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush33Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape3_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape2_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape10_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape8_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pSphereShape39_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BigTree2Shape_iog_0__og_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BigTree2Shape_iog_0__og_1_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape15_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape4_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_PalmShape_iog_0__og_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_PalmShape_iog_0__og_1_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_PalmShape_iog_0__og_2_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape9_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_SwampTallTreeNoLeaves_JonathanFranklin3_pCylinderShape1_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape8_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Rock5Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush16Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape11_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape3_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape4_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape3_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape8_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_grid1Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pSphereShape27_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape3_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_grid4Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape9_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush1Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape4_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape15_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Palm1Shape_iog_0__og_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Palm1Shape_iog_0__og_1_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Palm1Shape_iog_0__og_2_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape23_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape11_iog_0_5.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape13_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_pCubeShape2_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape2_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_YB_FrontShape2_iog_0_.en";
-connectAttr "lambert3SG.msg" "materialOverride1_YB_FrontShape2_iog_0_.org";
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape11_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pSphereShape25_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape10_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape14_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape10_iog_0_5.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush30Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Leaves8Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_trunkShape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape6_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape12_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape10_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape6_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush44Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape13_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape6_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape29_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape35_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_LeavesShape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape2_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape2_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_bushShape_iog_0__og_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Rock4Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape3_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape11_iog_0_6.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape3_iog_0_5.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape8_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush43Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pSphereShape8_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape5_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape8_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape9_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape6_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape5_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape12_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pSphereShape33_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape3_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush12Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape9_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape10_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape2_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pSphereShape30_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape12_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape7_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape3_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape10_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pCubeShape1_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape13_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape11_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape4_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pSphereShape9_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape1_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape3_iog_0_6.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush6Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape13_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape1_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape1_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape3_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape7_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape6_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush32Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape8_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pCubeShape6_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush25Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape6_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_THE_TreeShape_iog_0__og_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_THE_TreeShape_iog_0__og_1_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape9_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape1_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape11_iog_0_7.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape7_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush40Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_FallenTrunkShape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape12_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape6_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pSphereShape6_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape4_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape12_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_bananaShape_iog_0__og_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_bananaShape_iog_0__og_1_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_bananaShape_iog_0__og_2_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape6_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape17_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape12_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape3_iog_0_7.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BigTree1Shape_iog_0__og_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BigTree1Shape_iog_0__og_1_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape7_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pCubeShape2_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush10Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pSphereShape31_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape1_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape6_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape6_iog_0_5.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape5_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pSphereShape24_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape2_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape2_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape8_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape11_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pSphereShape36_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pSphereShape42_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape10_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape14_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape10_iog_0_6.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape8_iog_0_5.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape13_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape1_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape7_iog_0_5.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush5Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_YB_FrontShape2_iog_0_1.en"
-		;
-connectAttr "lambert3SG.msg" "materialOverride1_YB_FrontShape2_iog_0_1.org";
-connectAttr "materialOverride1_YB_FrontShape2_iog_0_.n" "materialOverride1_YB_FrontShape2_iog_0_1.p"
-		;
-connectAttr "YB_FrontShape2.iog" "materialOverride1_YB_FrontShape2_iog_0_1.tg";
-connectAttr "materialOverride1.en" "materialOverride1_Halp_Shape_iog_0_1.en";
-connectAttr "lambert11SG.msg" "materialOverride1_Halp_Shape_iog_0_1.org";
-connectAttr "materialOverride1_Halp_Shape_iog_0_.n" "materialOverride1_Halp_Shape_iog_0_1.p"
-		;
-connectAttr "Halp_Shape.iog" "materialOverride1_Halp_Shape_iog_0_1.tg";
-connectAttr "materialOverride1.en" "materialOverride1_YB_MidShape1_iog_0_.en";
-connectAttr "YB_MidShape1.iog" "materialOverride1_YB_MidShape1_iog_0_.tg";
-connectAttr "lambert2SG.msg" "materialOverride1_YB_MidShape1_iog_0_.org";
-connectAttr "materialOverride1.en" "materialOverride1_YB_SuperFrontShape1_iog_0_.en"
-		;
-connectAttr "YB_SuperFrontShape1.iog" "materialOverride1_YB_SuperFrontShape1_iog_0_.tg"
-		;
-connectAttr "lambert4SG.msg" "materialOverride1_YB_SuperFrontShape1_iog_0_.org";
-connectAttr "materialOverride1.en" "materialOverride1_YB_SuperBack1Shape_iog_0_.en"
-		;
-connectAttr "YB_SuperBack1Shape.iog" "materialOverride1_YB_SuperBack1Shape_iog_0_.tg"
-		;
-connectAttr "lambert5SG.msg" "materialOverride1_YB_SuperBack1Shape_iog_0_.org";
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape3_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape7_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape2_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape10_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape11_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape17_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape1_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_bananatreeShape_iog_0__og_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_bananatreeShape_iog_0__og_1_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_bananatreeShape_iog_0__og_2_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape12_iog_0_5.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush29Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape2_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_RockShape1_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape2_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape_iog_0_5.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_JungleTreeByLSShape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush37Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush4Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape13_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape10_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape32_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape2_iog_0_5.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape1_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush15Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_GroundShape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pSphereShape28_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape8_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape7_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape9_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape10_iog_0_7.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape19_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pSphereShape34_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Leaves6Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape11_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_TreesbranchShape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape9_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape1_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape2_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush7Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BushShape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape33_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape6_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape2_iog_0_6.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape_iog_0_6.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape4_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape7_iog_0_6.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape6_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape11_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape10_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape3_iog_0_5.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape21_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape4_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pSphereShape22_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape4_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush45Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape26_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush14Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape4_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape8_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape4_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_TrunkShape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape9_iog_0_5.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape13_iog_0_5.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape13_iog_0_6.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape28_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape10_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pCubeShape3_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush18Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BananaTreeShape_iog_0__og_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BananaTreeShape_iog_0__og_1_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BananaTreeShape_iog_0__og_2_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BananaTreeShape_iog_0__og_3_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape13_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_2dCompiled_OB_SuperFrontShape3_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_2dCompiled_OB_FrontShape3_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_2dCompiled_OB_MidShape2_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_2dCompiled_OB_Back2Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_2dCompiled_OB_SuperBack2Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_2dCompiled_YB_SuperBack1Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_2dCompiled_YB_BackShape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_2dCompiled_YB_MidShape1_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_2dCompiled_YB_FrontShape2_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_2dCompiled_YB_SuperFrontShape1_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape12_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape7_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape12_iog_0_6.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush39Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape13_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Leaves11Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_SwampTallTreeNoLeaves_JonathanFranklin_pCylinderShape1_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape13_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape7_iog_0_5.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pSphereShape38_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape12_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape6_iog_0_6.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape1_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape8_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_FogShape2_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape6_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush26Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape4_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape6_iog_0_7.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape8_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_SwampTallTreeNoLeaves_JonathanFranklin1_pCylinderShape1_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape1_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape1_iog_0_5.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape11_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape12_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pSphereShape40_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_bananatreeShape1_iog_0__og_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_bananatreeShape1_iog_0__og_1_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_bananatreeShape1_iog_0__og_2_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape9_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape6_iog_0_8.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape8_iog_0_6.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape6_iog_0_9.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush11Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape9_iog_0_6.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush9Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape2_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape25_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush8Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape4_iog_0_5.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape1_iog_0_6.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pSphereShape43_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape5_iog_0_2.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape3_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush31Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape13_iog_0_5.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush28Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape5_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape10_iog_0_5.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape10_iog_0_8.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape_iog_0_7.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_grid3Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape8_iog_0_7.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush41Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_TrunkShape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape5_iog_0_5.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape8_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape21_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape31_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape13_iog_0_7.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape11_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape11_iog_0_8.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_RockShape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush17Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape5_iog_0_6.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape7_iog_0_7.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape5_iog_0_7.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Leaves9Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape1_iog_0_5.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape12_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape5_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape2_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape26_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_coneShape2_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape3_iog_0_8.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_RockShape2_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape9_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pSphereShape23_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape5_iog_0_8.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape16_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape34_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape12_iog_0_7.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape2_iog_0_5.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape7_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape2_iog_0_7.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush36Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pSphereShape32_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape2_iog_0_8.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape4_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape2_iog_0_9.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape10_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape1_iog_0_7.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape9_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape7_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape9_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape12_iog_0_5.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape_iog_0_8.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape9_iog_0_7.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape6_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pCubeShape4_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush19Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_pPlaneShape1_iog_0_1.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape20_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape6_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape_iog_0_9.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape13_iog_0_8.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush35Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape11_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape12_iog_0_8.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Leaves10Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_FogShape1_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_MeshShape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape4_iog_0_5.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pSphereShape12_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape5_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape6_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_palmShape1_iog_0__og_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_palmShape1_iog_0__og_1_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_palmShape1_iog_0__og_2_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape12_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_coneShape1_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape8_iog_0_8.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape13_iog_0_9.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape12_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush48Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape5_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush21Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape5_iog_0_9.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape9_iog_0_8.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape8_iog_0_5.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape4_iog_0_6.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape12_iog_0_9.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape3_iog_0_9.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape5_iog_0_5.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape4_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush47Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape_iog_0_5.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape18_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape13_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_coneShape1_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape8_iog_0_9.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape4_iog_0_7.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush42Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape13_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_JungleTreeByLS2Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape4_iog_0_8.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape7_iog_0_8.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape9_iog_0_3.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_Josh_Trees_branchShape28_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape5_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape27_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape13_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape4_iog_0_9.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape10_iog_0_9.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape6_iog_0_5.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape4_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush27Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape11_iog_0_5.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pSphereShape35_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape3_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape9_iog_0_9.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Leaves5Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape1_iog_0_8.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape2_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape7_iog_0_9.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_grid2Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_SwampTallTreeNoLeaves_JonathanFranklin2_pCylinderShape1_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_Sam_Final_Scene_BambooShape9_iog_0_5.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_pSphereShape41_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush2Shape_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape1_iog_0_9.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape11_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Trees_withLeaves_BJ_pSphereShape29_iog_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_BambooShape11_iog_0_9.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_palmShape_iog_0__og_0_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_palmShape_iog_0__og_1_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_palmShape_iog_0__og_2_.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Sam_WithBoys_BambooShape9_iog_0_4.en"
-		;
-connectAttr "materialOverride1.en" "materialOverride1_Sam_Final_Updated_Scene_Bush22Shape_iog_0_.en"
-		;
-connectAttr "place2dTexture7.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
-		;
-connectAttr "lambert14SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
-		;
-connectAttr "ramp1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
-		;
-connectAttr "projection1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
-		;
-connectAttr "RampMaterial.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
-		;
-connectAttr "place3dTexture1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
-		;
-connectAttr "cameraShape2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+connectAttr "ramp1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
 		;
 connectAttr "trackInfoManager1.msg" ":sequenceManager1.tim";
 connectAttr "BananaTree_SC:Trunk1.pa" ":renderPartition.st" -na;
